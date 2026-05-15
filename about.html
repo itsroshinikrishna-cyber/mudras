@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Mudras</title>
+  <meta name="description" content="An illustrated compendium of sacred Indian hand gestures across yoga, dance, chakras, symbols, martial arts and music.">
+  <meta name="theme-color" content="#faf6f0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --ink: #1a1410;
+    --ink-soft: #4a3f35;
+    --ink-faint: #8a7a6e;
+    --ink-whisper: #c8bdb0;
+    --parchment: #faf6f0;
+    --parchment-deep: #f2ebe0;
+    --parchment-shadow: #e8ddd0;
+    --accent-saffron: #c8641a;
+    --accent-gold: #b8882a;
+    --accent-vermillion: #c03830;
+    --accent-teal: #2a7a6a;
+    --accent-indigo: #3a3880;
+    --line: rgba(26,20,16,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── TEXTURE OVERLAY ── */
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events:none; z-index:0;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    position: relative;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    background: var(--parchment);
+  }
+  .site-header::after {
+    content:'';
+    display:block;
+    width:80px; height:2px;
+    background: var(--accent-saffron);
+    margin: 1.5rem auto 0;
+  }
+  .devanagari {
+    font-size: 2rem;
+    color: var(--accent-saffron);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-family: serif;
+  }
+  .site-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .site-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 1rem;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-strip {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--line);
+    background: var(--parchment);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-strip::-webkit-scrollbar { display:none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    position: relative;
+    top: 1px;
+  }
+  .nav-btn:hover { color: var(--ink); }
+  .nav-btn.active {
+    color: var(--accent-saffron);
+    border-bottom-color: var(--accent-saffron);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main { position: relative; z-index: 1; }
+  .section { display:none; padding: 2.5rem 1.5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .section.active { display:block; }
+
+  /* ── SECTION INTRO ── */
+  .section-intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  @media(max-width:600px){ .section-intro { grid-template-columns:1fr; gap:1.5rem; } }
+  .intro-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 0.75rem;
+  }
+  .intro-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .intro-text {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .intro-quote {
+    margin-top: 1.5rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--accent-saffron);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  /* ── CATALOG GRID ── */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    border-bottom: none;
+  }
+
+  /* ── MUDRA CARD ── */
+  .mudra-card {
+    background: var(--parchment);
+    cursor: pointer;
+    transition: background 0.2s;
+    overflow: visible;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  /* When open, span full row so content is never cropped */
+  .mudra-card.open {
+    grid-column: 1 / -1;
+    background: var(--parchment-deep);
+    border-right: none;
+  }
+  .mudra-card:hover { background: var(--parchment-deep); }
+
+  .card-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem 1.75rem;
+    gap: 1rem;
+    user-select: none;
+  }
+  /* When card is open, show face inline left beside content */
+  .mudra-card.open .card-face {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.75rem 2rem 1.5rem;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .mudra-card.open .card-meta { text-align: left; }
+
+  .hand-icon {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    border-radius: 6px;
+  }
+
+  .card-meta { text-align: center; }
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .card-name-san {
+    font-family: serif;
+    font-size: 0.85rem;
+    color: var(--accent-saffron);
+    margin-top: 2px;
+    display: block;
+  }
+  .card-tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 10px;
+  }
+  .tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+  .tag-dance { background: #fce8d8; color: #8a3a10; }
+  .tag-yoga  { background: #dff0e8; color: #1a5a3a; }
+  .tag-icon  { background: #e0e4f5; color: #252070; }
+  .tag-univ  { background: #f0e8dc; color: #6a4020; }
+  .expand-hint {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-whisper);
+    margin-top: 12px;
+    transition: color 0.2s;
+  }
+  .mudra-card:hover .expand-hint { color: var(--ink-faint); }
+  .mudra-card.open .expand-hint { color: var(--accent-saffron); }
+  .expand-arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  .mudra-card.open .expand-arrow { transform: rotate(180deg); }
+
+  /* ── EXPANDED PANEL ── */
+  .card-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .mudra-card.open .card-expand { max-height: 9999px; }
+
+  .expand-inner {
+    padding: 1.5rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+  }
+  /* Labels and text blocks span both columns */
+  .expand-inner > .expand-section-label,
+  .expand-inner > .expand-text,
+  .expand-inner > .expand-list,
+  .expand-inner > .sources-row {
+    grid-column: 1 / -1;
+  }
+  /* Usage blocks column */
+  .expand-inner > .usage-section-label { grid-column: 1 / -1; }
+  .expand-section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .expand-text {
+    font-size: 0.83rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .expand-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.4rem;
+  }
+  .expand-list li {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--parchment);
+  }
+  .usage-blocks {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 0.5rem;
+  }
+  .usage-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 14px 12px;
+    background: var(--parchment);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .usage-block-head {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .usage-icon {
+    width: 34px; height: 34px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .usage-body { flex:1; }
+  .usage-cat {
+    font-size: 0.63rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .usage-desc {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-top: 0;
+  }
+  .usage-ref {
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    font-style: italic;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+    margin-top: 2px;
+  }
+  /* ── SOURCES ROW ── */
+  .sources-row {
+    grid-column: 1 / -1;
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .sources-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-right: 4px;
+  }
+  .source-chip {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--parchment);
+  }
+  .source-chip:hover {
+    border-color: var(--accent-saffron);
+    color: var(--accent-saffron);
+    background: var(--parchment-deep);
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+    background: var(--parchment-deep);
+  }
+
+  /* ── ABOUT SECTION ── */
+  .text-content {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .text-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
+  }
+  .text-content p {
+    font-size: 0.875rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  .text-content .pull {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--accent-saffron);
+    border-left: 3px solid var(--accent-saffron);
+    padding-left: 1.25rem;
+    margin: 2rem 0;
+    line-height: 1.6;
+  }
+  .elem-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 1.5rem 0;
+  }
+  @media(max-width:600px){ .elem-grid { grid-template-columns: repeat(3,1fr); } }
+  .elem-card {
+    text-align: center;
+    padding: 1.1rem 0.5rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--parchment);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .elem-card:hover { border-color: var(--accent-saffron); transform: translateY(-2px); }
+  .elem-svg {
+    width: 64px;
+    height: 70px;
+    display: block;
+    margin: 0 auto 8px;
+  }
+  .elem-name { font-size: 0.8rem; font-weight: 500; color: var(--ink); }
+  .elem-finger { font-size: 0.67rem; color: var(--ink-faint); margin-top: 3px; letter-spacing: 0.04em; }
+  .elem-quality { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-saffron); margin-top: 4px; opacity: 0.8; }
+
+  /* ── SOURCES SECTION ── */
+  .ref-block {
+    border: 1px solid var(--line);
+    padding: 1.25rem;
+    margin-bottom: 10px;
+    border-radius: 2px;
+  }
+  .ref-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .ref-meta { font-size: 0.72rem; color: var(--ink-faint); margin-bottom: 6px; }
+  .ref-desc { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.7; }
+  .ref-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    color: var(--accent-saffron);
+    text-decoration: none;
+    margin-top: 6px;
+  }
+  .ref-link:hover { text-decoration: underline; }
+
+  /* ── SEARCH BAR ── */
+  .search-row {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .search-input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus { border-color: var(--accent-saffron); }
+  .search-input::placeholder { color: var(--ink-whisper); }
+  .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-btn {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--ink-faint);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover { color: var(--ink); border-color: var(--ink-whisper); }
+  .filter-btn.active { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+
+  /* ── MUDRA COUNT ── */
+  .count-bar {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(16px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .mudra-card { animation: fadeUp 0.4s ease both; }
+  /* ── SYMBOLS SECTION ── */
+  .symbols-intro {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  .symbols-intro p {
+    font-size: 0.875rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-top: 1rem;
+  }
+  .sym-family-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 3rem 0 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 0.5rem;
+  }
+  .sym-card {
+    background: var(--parchment);
+    cursor: pointer;
+    transition: background 0.2s;
+    overflow: visible;
+    border-bottom: none;
+  }
+  .sym-card:hover { background: var(--parchment-deep); }
+  .sym-card.open  { background: var(--parchment-deep); grid-column: 1 / -1; }
+  .sym-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.75rem 1.25rem 1.5rem;
+    gap: 0.9rem;
+    user-select: none;
+  }
+  .sym-card.open .sym-face {
+    flex-direction: row;
+    padding: 1.5rem 2rem;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-card.open .sym-meta { text-align: left; }
+  .sym-glyph {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+  }
+  .sym-meta { text-align: center; }
+  .sym-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .sym-san {
+    font-family: serif;
+    font-size: 1rem;
+    color: var(--accent-saffron);
+    display: block;
+    margin-top: 2px;
+  }
+  .sym-tagline {
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+  .sym-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .sym-card.open .sym-expand { max-height: 9999px; }
+  .sym-expand-inner {
+    padding: 1.5rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+  }
+  .sym-expand-inner > * { grid-column: 1 / -1; }
+  .sym-section-lbl {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .sym-body {
+    font-size: 0.83rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .sym-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.4rem;
+  }
+  .sym-pill {
+    font-size: 0.72rem;
+    padding: 4px 11px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--parchment);
+  }
+  .sym-usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 12px;
+    margin-top: 0.5rem;
+  }
+  .sym-usage {
+    padding: 13px 14px 11px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--parchment);
+  }
+  .sym-usage-cat {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .sym-usage-desc {
+    font-size: 0.79rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .sym-sources {
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  /* ══ CHAKRAS SECTION ══ */
+  .chakra-page { max-width: 900px; margin: 0 auto; }
+  .chakra-intro {
+    font-size: 0.875rem; line-height: 1.9; color: var(--ink-soft);
+    max-width: 680px; margin: 0 auto 3rem;
+  }
+  .chakra-intro .pull {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--accent-saffron);
+    border-left: 2px solid var(--accent-saffron); padding-left: 1.2rem;
+    margin: 1.5rem 0; line-height: 1.7;
+  }
+  /* The spine track */
+  .chakra-track {
+    position: relative;
+    padding: 1rem 0 2rem;
+  }
+  .spine-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+      #c8641a 0%, #e8a030 14%, #e8c830 28%,
+      #2a9a5a 42%, #3a80c8 56%, #5040a0 70%, #9050c0 84%, #9050c0 100%);
+    transform: translateX(-50%);
+    opacity: 0.35;
+    z-index: 0;
+  }
+  @media(max-width: 640px) {
+    .spine-line { left: 28px; }
+  }
+  /* Individual chakra row */
+  .chakra-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    gap: 0 1.5rem;
+    margin-bottom: 0;
+    z-index: 1;
+    align-items: start;
+  }
+  @media(max-width: 640px) {
+    .chakra-row { grid-template-columns: 56px 1fr; gap: 0 1rem; }
+    .chakra-row .chakra-left { display: none; }
+    .chakra-row:nth-child(odd) .chakra-right,
+    .chakra-row:nth-child(even) .chakra-right { grid-column: 2; }
+  }
+  /* Alternating: odd = content left, even = content right */
+  .chakra-row.flip .chakra-left  { order: 3; }
+  .chakra-row.flip .chakra-spine { order: 2; }
+  .chakra-row.flip .chakra-right { order: 1; }
+
+  .chakra-spine {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+  .chakra-dot {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 2;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 6px var(--parchment);
+  }
+  .chakra-dot svg { width: 36px; height: 36px; }
+  .chakra-connector {
+    width: 2px; flex: 1; min-height: 40px;
+    opacity: 0.3;
+  }
+  /* Chakra card (left or right panel) */
+  .chakra-card {
+    background: var(--parchment);
+    border: 1px solid var(--line);
+    border-radius: var(--border-radius-lg, 12px);
+    padding: 1.25rem 1.4rem 1.1rem;
+    margin: 0.6rem 0 0.6rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .chakra-card:hover { background: var(--parchment-deep); transform: translateY(-1px); }
+  .chakra-card.open  { background: var(--parchment-deep); border-left-width: 3px; }
+  .chakra-empty { /* spacer for alternating layout */ }
+
+  .chakra-number {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-whisper); margin-bottom: 4px;
+  }
+  .chakra-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; line-height: 1.1;
+    color: var(--ink);
+  }
+  .chakra-name-san {
+    font-family: serif; font-size: 0.9rem; display: block; margin-top: 2px;
+  }
+  .chakra-keyword {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    margin-top: 6px; opacity: 0.8;
+  }
+  /* Quick-glance pills row */
+  .chakra-quick {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+  }
+  .qpill {
+    font-size: 0.65rem; padding: 3px 9px;
+    border-radius: 2px; border: 1px solid;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .expand-cue {
+    font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-whisper); margin-top: 10px; display: block;
+    transition: color 0.2s;
+  }
+  .chakra-card:hover .expand-cue { color: var(--ink-faint); }
+  .chakra-card.open  .expand-cue { color: var(--accent-saffron); }
+  .cue-arrow { display: inline-block; transition: transform 0.3s; }
+  .chakra-card.open .cue-arrow { transform: rotate(180deg); }
+
+  /* Expanded detail panel — spans full row below */
+  .chakra-detail-row {
+    grid-column: 1 / -1;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .chakra-row.expanded .chakra-detail-row { max-height: 9999px; }
+  .chakra-detail-inner {
+    border: 1px solid var(--line);
+    border-radius: var(--border-radius-lg, 12px);
+    background: var(--parchment-deep);
+    margin: 0 0 1.5rem;
+    padding: 1.75rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem 2rem;
+  }
+  .chakra-detail-inner > .full { grid-column: 1 / -1; }
+  .detail-label {
+    font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent-saffron); margin-bottom: 6px; display: block;
+  }
+  .detail-body { font-size: 0.82rem; line-height: 1.85; color: var(--ink-soft); }
+  .mudra-invoke-card {
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: 1rem 1.1rem;
+    background: var(--parchment);
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .mudra-invoke-glyph {
+    width: 70px; height: 70px; flex-shrink: 0; border-radius: 4px;
+  }
+  .mudra-invoke-body { flex: 1; }
+  .mudra-invoke-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--ink);
+  }
+  .mudra-invoke-form {
+    font-size: 0.77rem; color: var(--ink-soft); line-height: 1.65; margin-top: 3px;
+  }
+  .signs-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+  }
+  .sign-block {
+    font-size: 0.75rem; padding: 8px 10px;
+    border: 1px solid var(--line); border-radius: 4px;
+  }
+  .sign-label {
+    font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .sign-text { color: var(--ink-soft); line-height: 1.5; }
+  .practice-steps {
+    list-style: none; margin-top: 4px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .practice-steps li {
+    font-size: 0.78rem; color: var(--ink-soft); line-height: 1.65;
+    padding-left: 1.2rem; position: relative;
+  }
+  .practice-steps li::before {
+    content: attr(data-n);
+    position: absolute; left: 0;
+    font-size: 0.65rem; font-weight: 500;
+    color: var(--accent-saffron);
+  }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MOBILE FIRST
+   Breakpoints: 480px (phone), 768px (tablet)
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── Header ── */
+  .site-header { padding: 2.5rem 1.25rem 2rem; }
+  .devanagari { font-size: 1.4rem; }
+  .site-title { font-size: clamp(2rem, 10vw, 3.2rem); }
+  .site-subtitle { font-size: 0.7rem; letter-spacing: 0.18em; }
+
+  /* ── Nav ── */
+  .nav-strip { padding: 0; }
+  .nav-btn { padding: 0.8rem 1rem; font-size: 0.65rem; letter-spacing: 0.12em; }
+
+  /* ── Sections ── */
+  .section { padding: 1.5rem 1rem 3rem; }
+
+  /* ── Catalog grid — 1 or 2 cols on mobile ── */
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .mudra-card.open {
+    grid-column: 1 / -1;
+  }
+  .card-face { padding: 1.5rem 1rem 1.25rem; gap: 0.75rem; }
+  .hand-icon { width: 80px; height: 80px; }
+  .card-name { font-size: 1.2rem; }
+  .card-tagline { font-size: 0.65rem; }
+
+  /* Open card face goes horizontal */
+  .mudra-card.open .card-face {
+    padding: 1.25rem 1.25rem 1rem;
+    gap: 1rem;
+  }
+  .mudra-card.open .hand-icon { width: 70px; height: 70px; }
+
+  /* Expanded inner — single column on mobile */
+  .expand-inner {
+    padding: 1.25rem 1.25rem 2rem;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .usage-blocks {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── About page ── */
+  .text-content h2 { font-size: 2rem !important; }
+  .text-content h3 { font-size: 1.3rem; }
+  .elem-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .elem-svg { width: 50px; height: 56px; }
+  .elem-name { font-size: 0.72rem; }
+  .elem-finger { font-size: 0.6rem; }
+  .pull { font-size: 0.95rem; }
+
+  /* ── Symbols grid ── */
+  .sym-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .sym-card.open { grid-column: 1 / -1; }
+  .sym-face { padding: 1.5rem 1rem 1.25rem; gap: 0.75rem; }
+  .sym-glyph { width: 80px; height: 80px; }
+  .sym-name { font-size: 1.1rem; }
+  .sym-expand-inner {
+    padding: 1.25rem 1.25rem 2rem;
+    grid-template-columns: 1fr;
+  }
+  .sym-usage-grid { grid-template-columns: 1fr; }
+  .sym-card.open .sym-face {
+    flex-direction: row;
+    padding: 1.25rem;
+    gap: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-card.open .sym-meta { text-align: left; }
+
+  /* ── Chakras page ── */
+  .chakra-page { padding: 0 0.25rem; }
+  .chakra-intro { font-size: 0.82rem; }
+  .chakra-intro .pull { font-size: 0.95rem; }
+  .spine-line { left: 28px; width: 2px; }
+
+  /* Stack chakra rows vertically, spine on left */
+  .chakra-row {
+    grid-template-columns: 56px 1fr;
+    gap: 0 0.75rem;
+    margin-bottom: 0;
+  }
+  .chakra-row .chakra-empty { display: none; }
+  /* Override flip — all rows same direction on mobile */
+  .chakra-row.flip { direction: ltr; }
+  .chakra-row.flip .chakra-left  { order: unset; }
+  .chakra-row.flip .chakra-spine { order: unset; }
+  .chakra-row.flip .chakra-right { order: unset; }
+
+  /* Force all cards into column 2 */
+  .chakra-card { margin: 0.4rem 0; }
+  .chakra-name-en { font-size: 1.1rem; }
+  .chakra-quick { gap: 4px; }
+  .qpill { font-size: 0.58rem; padding: 2px 7px; }
+
+  /* Detail panel full width */
+  .chakra-detail-row { grid-column: 1 / -1; }
+  .chakra-detail-inner {
+    padding: 1.25rem 1rem 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .mudra-invoke-card { flex-direction: column; gap: 0.75rem; }
+  .mudra-invoke-glyph { width: 80px; height: 80px; }
+  .signs-grid { grid-template-columns: 1fr; }
+  .detail-ref-grid { grid-template-columns: 1fr 1fr; }
+
+  /* ── Sources ── */
+  .ref-block { padding: 1rem; }
+  .ref-title { font-size: 1rem; }
+
+  /* ── Symbols intro heading ── */
+  .symbols-intro h2 { font-size: 2rem !important; }
+  .sym-family-label { margin: 2rem 0 1rem; }
+
+  /* ── Sources row chips ── */
+  .sources-row { gap: 6px; }
+  .source-chip { font-size: 0.65rem; padding: 4px 10px; }
+}
+
+@media (max-width: 480px) {
+
+  /* Phone — tighter still */
+  .site-header { padding: 2rem 1rem 1.5rem; }
+  .section { padding: 1.25rem 0.875rem 2.5rem; }
+
+  .nav-btn { padding: 0.75rem 0.75rem; font-size: 0.6rem; letter-spacing: 0.08em; }
+
+  .catalog-grid { grid-template-columns: 1fr 1fr; }
+  .hand-icon { width: 70px; height: 70px; }
+  .card-name { font-size: 1.1rem; }
+
+  .mudra-card.open .card-face {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .mudra-card.open .card-meta { text-align: center; }
+
+  .elem-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .elem-svg { width: 44px; height: 48px; }
+
+  .sym-grid { grid-template-columns: 1fr 1fr; }
+  .sym-glyph { width: 70px; height: 70px; }
+
+  /* Chakra spine stays left */
+  .chakra-dot { width: 44px; height: 44px; }
+  .chakra-name-en { font-size: 1rem; }
+  .chakra-keyword { font-size: 0.6rem; }
+  .qpill { font-size: 0.55rem; padding: 2px 6px; }
+
+  /* Search input full width */
+  .search-row { flex-direction: column; align-items: stretch; }
+  .search-input { width: 100%; }
+
+  /* Filter buttons wrap */
+  .filter-btns { gap: 4px; }
+  .filter-btn { font-size: 0.6rem; padding: 5px 10px; }
+}
+
+/* ── Tablet: 2 cols for chakra layout ── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .chakra-detail-inner { grid-template-columns: 1fr; }
+  .expand-inner { grid-template-columns: 1fr; }
+  .usage-blocks { grid-template-columns: 1fr; }
+}
+
+
+  /* ── TRADITION CARDS (martial / music-dance pages) ── */
+  .trad-page { max-width: 960px; margin: 0 auto; }
+  .trad-intro { max-width: 700px; margin: 0 auto 3rem; font-size: 0.875rem; line-height: 1.9; color: var(--ink-soft); }
+  .trad-intro .pull { font-family:"Cormorant Garamond",serif; font-style:italic; font-size:1.05rem; color:var(--accent-saffron); border-left:2px solid var(--accent-saffron); padding-left:1.2rem; margin:1.5rem 0; line-height:1.7; }
+  .cat-label { font-size:0.65rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--accent-saffron); margin:3rem 0 1.25rem; padding-bottom:0.5rem; border-bottom:1px solid var(--line); }
+  .trad-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin-bottom:0.5rem; }
+  .trad-card { background:var(--parchment); cursor:pointer; transition:background 0.2s; overflow:visible; border-bottom:none; }
+  .trad-card:hover { background:var(--parchment-deep); }
+  .trad-card.open { background:var(--parchment-deep); grid-column:1/-1; }
+  .trad-face { display:flex; flex-direction:column; align-items:center; padding:1.75rem 1.25rem 1.5rem; gap:0.85rem; user-select:none; }
+  .trad-card.open .trad-face { flex-direction:row; padding:1.5rem 2rem; gap:1.75rem; border-bottom:1px solid var(--line); }
+  .trad-card.open .trad-meta { text-align:left; }
+  .trad-glyph { width:100px; height:100px; flex-shrink:0; border-radius:8px; }
+  .trad-meta { text-align:center; }
+  .trad-name { font-family:"Cormorant Garamond",serif; font-size:1.35rem; font-weight:400; color:var(--ink); line-height:1.1; }
+  .trad-san { font-family:serif; font-size:0.85rem; display:block; margin-top:2px; }
+  .trad-origin { font-size:0.65rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-faint); margin-top:5px; }
+  .trad-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:4px; margin-top:8px; }
+  .trad-tag { font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; padding:2px 8px; border-radius:2px; }
+  .trad-expand { max-height:0; overflow:hidden; transition:max-height 0.55s cubic-bezier(0.4,0,0.2,1); }
+  .trad-card.open .trad-expand { max-height:9999px; }
+  .trad-inner { padding:1.5rem 2rem 2.5rem; display:grid; grid-template-columns:1fr 1fr; gap:0 2.5rem; }
+  .trad-inner > * { grid-column:1/-1; }
+  .trad-sec { font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent-saffron); margin:1.25rem 0 0.5rem; display:block; }
+  .trad-body { font-size:0.83rem; line-height:1.85; color:var(--ink-soft); }
+  .trad-pills { display:flex; flex-wrap:wrap; gap:6px; margin-top:0.4rem; }
+  .trad-pill { font-size:0.72rem; padding:4px 10px; border:1px solid var(--line); border-radius:2px; color:var(--ink-soft); background:var(--parchment); }
+  .trad-usages { grid-column:1/-1; display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; margin-top:0.5rem; }
+  .trad-usage { padding:13px 14px 11px; border:1px solid var(--line); border-radius:4px; background:var(--parchment); }
+  .trad-usage-cat { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:500; margin-bottom:5px; }
+  .trad-usage-desc { font-size:0.79rem; color:var(--ink-soft); line-height:1.65; }
+  .trad-usage-ref { font-size:0.68rem; color:var(--ink-faint); font-style:italic; margin-top:5px; padding-top:5px; border-top:1px solid var(--line); }
+  .trad-sources { grid-column:1/-1; margin-top:1.75rem; padding-top:1rem; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .expand-cue { font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-whisper); margin-top:10px; display:block; transition:color 0.2s; }
+  .trad-card:hover .expand-cue { color:var(--ink-faint); }
+  .trad-card.open .expand-cue { color:var(--accent-saffron); }
+  .cue-arr { display:inline-block; transition:transform 0.3s; }
+  .trad-card.open .cue-arr { transform:rotate(180deg); }
+  @media(max-width:768px){
+    .trad-grid { grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); }
+    .trad-card.open .trad-face { flex-direction:column; align-items:center; }
+    .trad-card.open .trad-meta { text-align:center; }
+    .trad-inner { padding:1.25rem 1rem 2rem; grid-template-columns:1fr; }
+    .trad-usages { grid-template-columns:1fr; }
+    .trad-glyph { width:80px; height:80px; }
+  }
+
+  /* ── MARTIAL / PERFORMING CARDS ── */
+  .m-grid, .p-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0;border:1px solid var(--line);border-bottom:none; }
+  .m-card, .p-card { background:var(--parchment);cursor:pointer;border-bottom:1px solid var(--line);border-right:1px solid var(--line);transition:background 0.2s;animation:fadeUp 0.4s ease both; }
+  .m-card.open, .p-card.open { background:var(--parchment-deep);grid-column:1/-1;border-right:none; }
+  .m-face, .p-face { display:flex;gap:1rem;align-items:flex-start;padding:1.5rem 1.25rem 1.25rem; }
+  .m-name,.p-name { font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:5px; }
+  .m-expand,.p-expand { max-height:0;overflow:hidden;transition:max-height 0.55s cubic-bezier(0.4,0,0.2,1); }
+  .m-expand-inner { padding:1.75rem 2rem 2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem 2rem; }
+  .m-expand-inner > .full { grid-column:1/-1; }
+  .mudra-row { padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:var(--parchment);margin-bottom:8px; }
+  .mudra-row-name { font-size:0.78rem;font-weight:500;margin-bottom:2px; }
+  .mudra-row-form { font-size:0.74rem;color:var(--ink-faint);margin-bottom:3px; }
+  .mudra-row-use { font-size:0.78rem;color:var(--ink-soft);line-height:1.6; }
+  .m-filter-btn { font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--ink-faint);cursor:pointer;transition:all 0.15s; }
+  .m-filter-btn.active { background:var(--ink);color:var(--parchment);border-color:var(--ink); }
+  .section-divider { margin:3rem 0 1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--line); }
+  .section-divider-label { font-size:0.65rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--accent-saffron);margin-bottom:6px; }
+  .section-divider-title { font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--ink); }
+  @media(max-width:600px){ .m-grid,.p-grid{grid-template-columns:1fr;} .m-expand-inner{padding:1.25rem 1rem 2rem;grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="devanagari">मुद्रा</div>
+  <h1 class="site-title">MUDRA</h1>
+  <p class="site-subtitle">An Illustrated Compendium of Sacred Hand Gestures</p>
+</header>
+<nav class="nav-strip">
+  <a class="nav-btn" href="index.html">Catalog</a>
+  <span class="nav-btn active">About Mudras</span>
+  <a class="nav-btn" href="chakras.html">Mudras &amp; Chakras</a>
+  <a class="nav-btn" href="martial.html">Martial Arts</a>
+  <a class="nav-btn" href="performing.html">Music &amp; Dance</a>
+  <a class="nav-btn" href="symbols.html">Sacred Symbols</a>
+  <a class="nav-btn" href="sources.html">Sources &amp; Texts</a>
+</nav>
+<main class="main">
+<div id="about" class="section active">
+  <div class="text-content">
+    <div class="intro-eyebrow">What is a Mudra</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;line-height:1.1;margin-bottom:1.5rem;">The Sacred Language of the Hand</h2>
+    <p>The word <em>mudra</em> (Sanskrit: मुद्रा) translates as "seal," "mark," or "gesture." Far more than a hand position, a mudra is a complete symbolic vocabulary — a living alphabet that bridges the inner world of consciousness with outward expression. For millennia, mudras have been encoded into yoga, dance, temple sculpture, ritual worship, and meditation across the Indian subcontinent and throughout Southeast Asia.</p>
+    <div class="pull">"Yato hastastato drishtihi — where the hand is, the eyes follow. Where the eyes go, the mind follows. Where the mind goes, the emotion follows. Where the emotion is, rasa (essence) arises."<br><small style="font-size:0.75rem;font-style:normal;">— Natya Shastra</small></div>
+    <p>Mudras operate on multiple levels simultaneously. Physiologically, the fingertips contain a dense network of nerve endings; specific contact configurations are believed to redirect the flow of prana (life force) through the body's 72,000 nadis (energy channels). Aesthetically, they form the expressive vocabulary of classical dance — the hands narrate epics, evoke deities, and paint the entire cosmos without a spoken word.</p>
+
+    <h3>The Five Elements in the Hand</h3>
+    <p>According to yogic science, the five fingers correspond to the Pancha Tattvas — the five fundamental elements that compose all matter and life:</p>
+    <div class="elem-grid">
+
+      <div class="elem-card">
+        <svg viewBox="0 0 80 88" xmlns="http://www.w3.org/2000/svg" class="elem-svg">
+          
+          <ellipse cx="40" cy="68" rx="22" ry="8" fill="#f5c080" opacity="0.3"/>
+          
+          <path d="M40 76 Q26 62 28 46 Q30 34 36 26 Q34 38 40 44 Q42 32 40 20 Q46 30 48 42 Q54 34 52 22 Q60 36 58 52 Q62 44 60 34 Q68 48 64 62 Q60 76 40 76Z" fill="#c8641a" opacity="0.9"/>
+          
+          <path d="M40 72 Q32 60 34 50 Q36 42 40 38 Q42 46 44 50 Q48 42 46 34 Q52 44 50 56 Q52 66 40 72Z" fill="#f0a040" opacity="0.85"/>
+          
+          <path d="M40 68 Q36 60 38 54 Q40 50 42 54 Q44 58 40 68Z" fill="#fde090" opacity="0.9"/>
+          
+          <circle cx="28" cy="38" r="1.8" fill="#f0a040" opacity="0.5"/>
+          <circle cx="54" cy="32" r="1.4" fill="#f0a040" opacity="0.4"/>
+          <circle cx="32" cy="28" r="1.2" fill="#f0a040" opacity="0.35"/>
+        </svg>
+        <div class="elem-name">Fire</div>
+        <div class="elem-finger">Thumb · Agni</div>
+        <div class="elem-quality">Transformation</div>
+      </div>
+
+      <div class="elem-card">
+        <svg viewBox="0 0 80 88" xmlns="http://www.w3.org/2000/svg" class="elem-svg">
+          
+          <path d="M8 30 Q22 22 38 28 Q54 34 68 26" stroke="#6aace8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <path d="M4 42 Q20 33 38 40 Q56 47 72 38" stroke="#6aace8" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M8 54 Q24 46 40 52 Q56 58 70 50" stroke="#6aace8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M14 64 Q28 58 42 63 Q56 68 68 62" stroke="#6aace8" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          
+          <path d="M50 22 Q62 16 66 24 Q70 32 62 36 Q54 40 50 32 Q48 24 54 20" stroke="#6aace8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          
+          <circle cx="18" cy="36" r="1.8" fill="#6aace8" opacity="0.5"/>
+          <circle cx="44" cy="28" r="1.5" fill="#6aace8" opacity="0.4"/>
+          <circle cx="62" cy="44" r="1.5" fill="#6aace8" opacity="0.4"/>
+          <circle cx="30" cy="58" r="1.3" fill="#6aace8" opacity="0.35"/>
+          <circle cx="56" cy="67" r="1.2" fill="#6aace8" opacity="0.3"/>
+          
+          <path d="M20 72 Q28 62 34 68 Q28 74 22 76 Q18 74 20 72Z" fill="#aad0f0" opacity="0.55"/>
+          <line x1="20" y1="72" x2="34" y2="68" stroke="#6aace8" stroke-width="1" opacity="0.6"/>
+        </svg>
+        <div class="elem-name">Air</div>
+        <div class="elem-finger">Index · Vayu</div>
+        <div class="elem-quality">Movement</div>
+      </div>
+
+      <div class="elem-card">
+        <svg viewBox="0 0 80 88" xmlns="http://www.w3.org/2000/svg" class="elem-svg">
+          
+          <ellipse cx="40" cy="44" rx="34" ry="34" fill="#e8eaf8" opacity="0.5"/>
+          
+          <circle cx="40" cy="44" r="30" stroke="#3a3880" stroke-width="0.7" fill="none" opacity="0.2"/>
+          <circle cx="40" cy="44" r="22" stroke="#3a3880" stroke-width="0.8" fill="none" opacity="0.3"/>
+          <circle cx="40" cy="44" r="14" stroke="#3a3880" stroke-width="1" fill="none" opacity="0.4"/>
+          <circle cx="40" cy="44" r="7"  stroke="#3a3880" stroke-width="1.2" fill="none" opacity="0.6"/>
+          
+          <circle cx="40" cy="44" r="3.5" fill="#3a3880" opacity="0.7"/>
+          
+          <circle cx="14" cy="18" r="1.8" fill="#3a3880" opacity="0.5"/>
+          <circle cx="62" cy="14" r="2.2" fill="#3a3880" opacity="0.55"/>
+          <circle cx="72" cy="36" r="1.5" fill="#3a3880" opacity="0.4"/>
+          <circle cx="10" cy="58" r="1.5" fill="#3a3880" opacity="0.4"/>
+          <circle cx="68" cy="64" r="1.8" fill="#3a3880" opacity="0.45"/>
+          <circle cx="22" cy="72" r="1.4" fill="#3a3880" opacity="0.35"/>
+          <circle cx="56" cy="76" r="1.6" fill="#3a3880" opacity="0.4"/>
+          
+          <path d="M40 36 L42 42 L48 44 L42 46 L40 52 L38 46 L32 44 L38 42 Z" fill="#3a3880" opacity="0.25"/>
+        </svg>
+        <div class="elem-name">Space</div>
+        <div class="elem-finger">Middle · Akasha</div>
+        <div class="elem-quality">Expansion</div>
+      </div>
+
+      <div class="elem-card">
+        <svg viewBox="0 0 80 88" xmlns="http://www.w3.org/2000/svg" class="elem-svg">
+          
+          <rect x="0" y="0" width="80" height="44" fill="#eaf2f5" rx="4"/>
+          
+          <rect x="0" y="44" width="80" height="44" fill="#e8dcc0" rx="0 0 4 4"/>
+          
+          <line x1="0" y1="44" x2="80" y2="44" stroke="#a07840" stroke-width="1.5"/>
+          
+          <path d="M0 44 L16 22 L28 32 L40 14 L52 30 L64 20 L80 44Z" fill="#c8a870" opacity="0.65"/>
+          
+          <path d="M40 14 L36 22 L44 22Z" fill="white" opacity="0.8"/>
+          <path d="M64 20 L61 26 L67 26Z" fill="white" opacity="0.7"/>
+          
+          <path d="M40 44 Q34 54 28 62 Q22 70 18 78" stroke="#8a6030" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M40 44 Q40 56 40 68 Q40 76 40 84" stroke="#8a6030" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M40 44 Q46 54 52 62 Q58 70 62 78" stroke="#8a6030" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M28 62 Q24 70 20 74" stroke="#8a6030" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          <path d="M52 62 Q56 70 60 74" stroke="#8a6030" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+          
+          <circle cx="12" cy="56" r="1.5" fill="#a07840" opacity="0.35"/>
+          <circle cx="64" cy="62" r="1.8" fill="#a07840" opacity="0.35"/>
+          <circle cx="50" cy="72" r="1.4" fill="#a07840" opacity="0.3"/>
+        </svg>
+        <div class="elem-name">Earth</div>
+        <div class="elem-finger">Ring · Prithvi</div>
+        <div class="elem-quality">Stability</div>
+      </div>
+
+      <div class="elem-card">
+        <svg viewBox="0 0 80 88" xmlns="http://www.w3.org/2000/svg" class="elem-svg">
+          
+          <path d="M40 10 Q40 10 26 34 Q18 50 20 58 Q20 74 40 76 Q60 74 60 58 Q62 50 54 34 Q40 10 40 10Z" fill="#a8d4e8" opacity="0.75" stroke="#4a9ab8" stroke-width="1.2"/>
+          
+          <path d="M40 18 Q34 30 30 42 Q28 52 32 58 Q36 64 40 64" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+          
+          <ellipse cx="40" cy="80" rx="26" ry="5" stroke="#4a9ab8" stroke-width="1" fill="none" opacity="0.4"/>
+          <ellipse cx="40" cy="80" rx="18" ry="3.5" stroke="#4a9ab8" stroke-width="0.8" fill="none" opacity="0.35"/>
+          <ellipse cx="40" cy="80" rx="10" ry="2" stroke="#4a9ab8" stroke-width="0.7" fill="none" opacity="0.3"/>
+          
+          <circle cx="46" cy="36" r="2.5" fill="white" opacity="0.55"/>
+          <circle cx="44" cy="28" r="1.5" fill="white" opacity="0.4"/>
+          
+          <circle cx="22" cy="46" r="3" fill="#a8d4e8" opacity="0.5" stroke="#4a9ab8" stroke-width="0.8"/>
+          <circle cx="58" cy="40" r="2.5" fill="#a8d4e8" opacity="0.45" stroke="#4a9ab8" stroke-width="0.7"/>
+          <circle cx="16" cy="62" r="2" fill="#a8d4e8" opacity="0.35"/>
+        </svg>
+        <div class="elem-name">Water</div>
+        <div class="elem-finger">Little · Jala</div>
+        <div class="elem-quality">Flow</div>
+      </div>
+
+    </div>
+    <p>By connecting specific fingertips, a practitioner influences the elemental balance within the body — amplifying one element, suppressing another, or creating a circuit of balanced energy. This is the science behind yoga mudras. In dance, this same principle gives each gesture its expressive charge beyond its literal meaning.</p>
+
+    <h3>The Foundational Texts</h3>
+    <p>The systematic study of mudras is rooted in three ancient texts. The <strong>Natya Shastra</strong> (c. 200 BCE–200 CE), attributed to the sage Bharata Muni, is the primary treatise on Indian performing arts — it defines 28 single-hand (Asamyuta Hasta) and 24 double-hand (Samyuta Hasta) gestures, each with prescribed meanings called <em>viniyogas</em>. The <strong>Abhinaya Darpana</strong> ("Mirror of Gesture," c. 10th–12th century CE) by Nandikeshvara refines this vocabulary for dancers. The <strong>Hastalakshana Deepika</strong>, a Kerala-specific text, forms the backbone of Kathakali's unique gesture system.</p>
+
+    <h3>Across Traditions</h3>
+    <p>One of the most remarkable features of mudras is their spread. From the classical Indian stage to Thai court dance, from Cambodian Apsara dance to Tibetan thangka paintings, from Balinese Legong to Japanese Buddhist ritual — the same family of hand gestures appears wherever Hindu and Buddhist culture traveled. In Buddhist sculpture alone, mudras identify which Buddha is depicted, what moment in his life is portrayed, and what teaching is being transmitted — all in a single frozen gesture of the hand.</p>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  Mudra Compendium &mdash; compiled for reference and study &middot; Sources: Natya Shastra, Abhinaya Darpana, Wikipedia, Smarthistory, iPassio, Yoga Jala &amp; more
+</footer>
+<script>
+// static
+</script>
+
+</body>
+</html>

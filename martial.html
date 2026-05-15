@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martial Arts & Mudras — Mudra Compendium</title>
+  <meta name="description" content="How mudras are used as weapons, vital-point keys, and combat techniques in Indian martial arts — Kalaripayattu, Varma Kalai, Silambam, Thang-Ta and more.">
+  <meta name="theme-color" content="#faf6f0">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --ink: #1a1410;
+    --ink-soft: #4a3f35;
+    --ink-faint: #8a7a6e;
+    --ink-whisper: #c8bdb0;
+    --parchment: #faf6f0;
+    --parchment-deep: #f2ebe0;
+    --parchment-shadow: #e8ddd0;
+    --accent-saffron: #c8641a;
+    --accent-gold: #b8882a;
+    --accent-vermillion: #c03830;
+    --accent-teal: #2a7a6a;
+    --accent-indigo: #3a3880;
+    --line: rgba(26,20,16,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── TEXTURE OVERLAY ── */
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events:none; z-index:0;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    position: relative;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    background: var(--parchment);
+  }
+  .site-header::after {
+    content:'';
+    display:block;
+    width:80px; height:2px;
+    background: var(--accent-saffron);
+    margin: 1.5rem auto 0;
+  }
+  .devanagari {
+    font-size: 2rem;
+    color: var(--accent-saffron);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-family: serif;
+  }
+  .site-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .site-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 1rem;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-strip {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--line);
+    background: var(--parchment);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-strip::-webkit-scrollbar { display:none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    position: relative;
+    top: 1px;
+  }
+  .nav-btn:hover { color: var(--ink); }
+  .nav-btn.active {
+    color: var(--accent-saffron);
+    border-bottom-color: var(--accent-saffron);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main { position: relative; z-index: 1; }
+  .section { display:none; padding: 2.5rem 1.5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .section.active { display:block; }
+
+  /* ── SECTION INTRO ── */
+  .section-intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  @media(max-width:600px){ .section-intro { grid-template-columns:1fr; gap:1.5rem; } }
+  .intro-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 0.75rem;
+  }
+  .intro-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .intro-text {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .intro-quote {
+    margin-top: 1.5rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--accent-saffron);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  /* ── CATALOG GRID ── */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    border-bottom: none;
+  }
+
+  /* ── MUDRA CARD ── */
+  .mudra-card {
+    background: var(--parchment);
+    cursor: pointer;
+    transition: background 0.2s;
+    overflow: visible;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  /* When open, span full row so content is never cropped */
+  .mudra-card.open {
+    grid-column: 1 / -1;
+    background: var(--parchment-deep);
+    border-right: none;
+  }
+  .mudra-card:hover { background: var(--parchment-deep); }
+
+  .card-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem 1.75rem;
+    gap: 1rem;
+    user-select: none;
+  }
+  /* When card is open, show face inline left beside content */
+  .mudra-card.open .card-face {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.75rem 2rem 1.5rem;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .mudra-card.open .card-meta { text-align: left; }
+
+  .hand-icon {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    border-radius: 6px;
+  }
+
+  .card-meta { text-align: center; }
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .card-name-san {
+    font-family: serif;
+    font-size: 0.85rem;
+    color: var(--accent-saffron);
+    margin-top: 2px;
+    display: block;
+  }
+  .card-tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 10px;
+  }
+  .tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+  .tag-dance { background: #fce8d8; color: #8a3a10; }
+  .tag-yoga  { background: #dff0e8; color: #1a5a3a; }
+  .tag-icon  { background: #e0e4f5; color: #252070; }
+  .tag-univ  { background: #f0e8dc; color: #6a4020; }
+  .expand-hint {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-whisper);
+    margin-top: 12px;
+    transition: color 0.2s;
+  }
+  .mudra-card:hover .expand-hint { color: var(--ink-faint); }
+  .mudra-card.open .expand-hint { color: var(--accent-saffron); }
+  .expand-arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  .mudra-card.open .expand-arrow { transform: rotate(180deg); }
+
+  /* ── EXPANDED PANEL ── */
+  .card-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .mudra-card.open .card-expand { max-height: 9999px; }
+
+  .expand-inner {
+    padding: 1.5rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+  }
+  /* Labels and text blocks span both columns */
+  .expand-inner > .expand-section-label,
+  .expand-inner > .expand-text,
+  .expand-inner > .expand-list,
+  .expand-inner > .sources-row {
+    grid-column: 1 / -1;
+  }
+  /* Usage blocks column */
+  .expand-inner > .usage-section-label { grid-column: 1 / -1; }
+  .expand-section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .expand-text {
+    font-size: 0.83rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .expand-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.4rem;
+  }
+  .expand-list li {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--parchment);
+  }
+  .usage-blocks {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 0.5rem;
+  }
+  .usage-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 14px 12px;
+    background: var(--parchment);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .usage-block-head {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .usage-icon {
+    width: 34px; height: 34px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .usage-body { flex:1; }
+  .usage-cat {
+    font-size: 0.63rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .usage-desc {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-top: 0;
+  }
+  .usage-ref {
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    font-style: italic;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+    margin-top: 2px;
+  }
+  /* ── SOURCES ROW ── */
+  .sources-row {
+    grid-column: 1 / -1;
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .sources-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-right: 4px;
+  }
+  .source-chip {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--parchment);
+  }
+  .source-chip:hover {
+    border-color: var(--accent-saffron);
+    color: var(--accent-saffron);
+    background: var(--parchment-deep);
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+    background: var(--parchment-deep);
+  }
+
+  /* ── ABOUT SECTION ── */
+  .text-content {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .text-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
+  }
+  .text-content p {
+    font-size: 0.875rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  .text-content .pull {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--accent-saffron);
+    border-left: 3px solid var(--accent-saffron);
+    padding-left: 1.25rem;
+    margin: 2rem 0;
+    line-height: 1.6;
+  }
+  .elem-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 1.5rem 0;
+  }
+  @media(max-width:600px){ .elem-grid { grid-template-columns: repeat(3,1fr); } }
+  .elem-card {
+    text-align: center;
+    padding: 1.1rem 0.5rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--parchment);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .elem-card:hover { border-color: var(--accent-saffron); transform: translateY(-2px); }
+  .elem-svg {
+    width: 64px;
+    height: 70px;
+    display: block;
+    margin: 0 auto 8px;
+  }
+  .elem-name { font-size: 0.8rem; font-weight: 500; color: var(--ink); }
+  .elem-finger { font-size: 0.67rem; color: var(--ink-faint); margin-top: 3px; letter-spacing: 0.04em; }
+  .elem-quality { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-saffron); margin-top: 4px; opacity: 0.8; }
+
+  /* ── SOURCES SECTION ── */
+  .ref-block {
+    border: 1px solid var(--line);
+    padding: 1.25rem;
+    margin-bottom: 10px;
+    border-radius: 2px;
+  }
+  .ref-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .ref-meta { font-size: 0.72rem; color: var(--ink-faint); margin-bottom: 6px; }
+  .ref-desc { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.7; }
+  .ref-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    color: var(--accent-saffron);
+    text-decoration: none;
+    margin-top: 6px;
+  }
+  .ref-link:hover { text-decoration: underline; }
+
+  /* ── SEARCH BAR ── */
+  .search-row {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .search-input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus { border-color: var(--accent-saffron); }
+  .search-input::placeholder { color: var(--ink-whisper); }
+  .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-btn {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--ink-faint);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover { color: var(--ink); border-color: var(--ink-whisper); }
+  .filter-btn.active { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+
+  /* ── MUDRA COUNT ── */
+  .count-bar {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(16px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .mudra-card { animation: fadeUp 0.4s ease both; }
+  /* ── SYMBOLS SECTION ── */
+  .symbols-intro {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  .symbols-intro p {
+    font-size: 0.875rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-top: 1rem;
+  }
+  .sym-family-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 3rem 0 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 0.5rem;
+  }
+  .sym-card {
+    background: var(--parchment);
+    cursor: pointer;
+    transition: background 0.2s;
+    overflow: visible;
+    border-bottom: none;
+  }
+  .sym-card:hover { background: var(--parchment-deep); }
+  .sym-card.open  { background: var(--parchment-deep); grid-column: 1 / -1; }
+  .sym-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.75rem 1.25rem 1.5rem;
+    gap: 0.9rem;
+    user-select: none;
+  }
+  .sym-card.open .sym-face {
+    flex-direction: row;
+    padding: 1.5rem 2rem;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-card.open .sym-meta { text-align: left; }
+  .sym-glyph {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+  }
+  .sym-meta { text-align: center; }
+  .sym-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .sym-san {
+    font-family: serif;
+    font-size: 1rem;
+    color: var(--accent-saffron);
+    display: block;
+    margin-top: 2px;
+  }
+  .sym-tagline {
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+  .sym-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .sym-card.open .sym-expand { max-height: 9999px; }
+  .sym-expand-inner {
+    padding: 1.5rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+  }
+  .sym-expand-inner > * { grid-column: 1 / -1; }
+  .sym-section-lbl {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .sym-body {
+    font-size: 0.83rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .sym-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.4rem;
+  }
+  .sym-pill {
+    font-size: 0.72rem;
+    padding: 4px 11px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--parchment);
+  }
+  .sym-usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 12px;
+    margin-top: 0.5rem;
+  }
+  .sym-usage {
+    padding: 13px 14px 11px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--parchment);
+  }
+  .sym-usage-cat {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .sym-usage-desc {
+    font-size: 0.79rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .sym-sources {
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  /* ══ CHAKRAS SECTION ══ */
+  .chakra-page { max-width: 900px; margin: 0 auto; }
+  .chakra-intro {
+    font-size: 0.875rem; line-height: 1.9; color: var(--ink-soft);
+    max-width: 680px; margin: 0 auto 3rem;
+  }
+  .chakra-intro .pull {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--accent-saffron);
+    border-left: 2px solid var(--accent-saffron); padding-left: 1.2rem;
+    margin: 1.5rem 0; line-height: 1.7;
+  }
+  /* The spine track */
+  .chakra-track {
+    position: relative;
+    padding: 1rem 0 2rem;
+  }
+  .spine-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+      #c8641a 0%, #e8a030 14%, #e8c830 28%,
+      #2a9a5a 42%, #3a80c8 56%, #5040a0 70%, #9050c0 84%, #9050c0 100%);
+    transform: translateX(-50%);
+    opacity: 0.35;
+    z-index: 0;
+  }
+  @media(max-width: 640px) {
+    .spine-line { left: 28px; }
+  }
+  /* Individual chakra row */
+  .chakra-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    gap: 0 1.5rem;
+    margin-bottom: 0;
+    z-index: 1;
+    align-items: start;
+  }
+  @media(max-width: 640px) {
+    .chakra-row { grid-template-columns: 56px 1fr; gap: 0 1rem; }
+    .chakra-row .chakra-left { display: none; }
+    .chakra-row:nth-child(odd) .chakra-right,
+    .chakra-row:nth-child(even) .chakra-right { grid-column: 2; }
+  }
+  /* Alternating: odd = content left, even = content right */
+  .chakra-row.flip .chakra-left  { order: 3; }
+  .chakra-row.flip .chakra-spine { order: 2; }
+  .chakra-row.flip .chakra-right { order: 1; }
+
+  .chakra-spine {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+  .chakra-dot {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 2;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 6px var(--parchment);
+  }
+  .chakra-dot svg { width: 36px; height: 36px; }
+  .chakra-connector {
+    width: 2px; flex: 1; min-height: 40px;
+    opacity: 0.3;
+  }
+  /* Chakra card (left or right panel) */
+  .chakra-card {
+    background: var(--parchment);
+    border: 1px solid var(--line);
+    border-radius: var(--border-radius-lg, 12px);
+    padding: 1.25rem 1.4rem 1.1rem;
+    margin: 0.6rem 0 0.6rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .chakra-card:hover { background: var(--parchment-deep); transform: translateY(-1px); }
+  .chakra-card.open  { background: var(--parchment-deep); border-left-width: 3px; }
+  .chakra-empty { /* spacer for alternating layout */ }
+
+  .chakra-number {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-whisper); margin-bottom: 4px;
+  }
+  .chakra-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; line-height: 1.1;
+    color: var(--ink);
+  }
+  .chakra-name-san {
+    font-family: serif; font-size: 0.9rem; display: block; margin-top: 2px;
+  }
+  .chakra-keyword {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    margin-top: 6px; opacity: 0.8;
+  }
+  /* Quick-glance pills row */
+  .chakra-quick {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+  }
+  .qpill {
+    font-size: 0.65rem; padding: 3px 9px;
+    border-radius: 2px; border: 1px solid;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .expand-cue {
+    font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-whisper); margin-top: 10px; display: block;
+    transition: color 0.2s;
+  }
+  .chakra-card:hover .expand-cue { color: var(--ink-faint); }
+  .chakra-card.open  .expand-cue { color: var(--accent-saffron); }
+  .cue-arrow { display: inline-block; transition: transform 0.3s; }
+  .chakra-card.open .cue-arrow { transform: rotate(180deg); }
+
+  /* Expanded detail panel — spans full row below */
+  .chakra-detail-row {
+    grid-column: 1 / -1;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .chakra-row.expanded .chakra-detail-row { max-height: 9999px; }
+  .chakra-detail-inner {
+    border: 1px solid var(--line);
+    border-radius: var(--border-radius-lg, 12px);
+    background: var(--parchment-deep);
+    margin: 0 0 1.5rem;
+    padding: 1.75rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem 2rem;
+  }
+  .chakra-detail-inner > .full { grid-column: 1 / -1; }
+  .detail-label {
+    font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent-saffron); margin-bottom: 6px; display: block;
+  }
+  .detail-body { font-size: 0.82rem; line-height: 1.85; color: var(--ink-soft); }
+  .mudra-invoke-card {
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: 1rem 1.1rem;
+    background: var(--parchment);
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .mudra-invoke-glyph {
+    width: 70px; height: 70px; flex-shrink: 0; border-radius: 4px;
+  }
+  .mudra-invoke-body { flex: 1; }
+  .mudra-invoke-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--ink);
+  }
+  .mudra-invoke-form {
+    font-size: 0.77rem; color: var(--ink-soft); line-height: 1.65; margin-top: 3px;
+  }
+  .signs-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+  }
+  .sign-block {
+    font-size: 0.75rem; padding: 8px 10px;
+    border: 1px solid var(--line); border-radius: 4px;
+  }
+  .sign-label {
+    font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .sign-text { color: var(--ink-soft); line-height: 1.5; }
+  .practice-steps {
+    list-style: none; margin-top: 4px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .practice-steps li {
+    font-size: 0.78rem; color: var(--ink-soft); line-height: 1.65;
+    padding-left: 1.2rem; position: relative;
+  }
+  .practice-steps li::before {
+    content: attr(data-n);
+    position: absolute; left: 0;
+    font-size: 0.65rem; font-weight: 500;
+    color: var(--accent-saffron);
+  }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MOBILE FIRST
+   Breakpoints: 480px (phone), 768px (tablet)
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── Header ── */
+  .site-header { padding: 2.5rem 1.25rem 2rem; }
+  .devanagari { font-size: 1.4rem; }
+  .site-title { font-size: clamp(2rem, 10vw, 3.2rem); }
+  .site-subtitle { font-size: 0.7rem; letter-spacing: 0.18em; }
+
+  /* ── Nav ── */
+  .nav-strip { padding: 0; }
+  .nav-btn { padding: 0.8rem 1rem; font-size: 0.65rem; letter-spacing: 0.12em; }
+
+  /* ── Sections ── */
+  .section { padding: 1.5rem 1rem 3rem; }
+
+  /* ── Catalog grid — 1 or 2 cols on mobile ── */
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .mudra-card.open {
+    grid-column: 1 / -1;
+  }
+  .card-face { padding: 1.5rem 1rem 1.25rem; gap: 0.75rem; }
+  .hand-icon { width: 80px; height: 80px; }
+  .card-name { font-size: 1.2rem; }
+  .card-tagline { font-size: 0.65rem; }
+
+  /* Open card face goes horizontal */
+  .mudra-card.open .card-face {
+    padding: 1.25rem 1.25rem 1rem;
+    gap: 1rem;
+  }
+  .mudra-card.open .hand-icon { width: 70px; height: 70px; }
+
+  /* Expanded inner — single column on mobile */
+  .expand-inner {
+    padding: 1.25rem 1.25rem 2rem;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .usage-blocks {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── About page ── */
+  .text-content h2 { font-size: 2rem !important; }
+  .text-content h3 { font-size: 1.3rem; }
+  .elem-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .elem-svg { width: 50px; height: 56px; }
+  .elem-name { font-size: 0.72rem; }
+  .elem-finger { font-size: 0.6rem; }
+  .pull { font-size: 0.95rem; }
+
+  /* ── Symbols grid ── */
+  .sym-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .sym-card.open { grid-column: 1 / -1; }
+  .sym-face { padding: 1.5rem 1rem 1.25rem; gap: 0.75rem; }
+  .sym-glyph { width: 80px; height: 80px; }
+  .sym-name { font-size: 1.1rem; }
+  .sym-expand-inner {
+    padding: 1.25rem 1.25rem 2rem;
+    grid-template-columns: 1fr;
+  }
+  .sym-usage-grid { grid-template-columns: 1fr; }
+  .sym-card.open .sym-face {
+    flex-direction: row;
+    padding: 1.25rem;
+    gap: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-card.open .sym-meta { text-align: left; }
+
+  /* ── Chakras page ── */
+  .chakra-page { padding: 0 0.25rem; }
+  .chakra-intro { font-size: 0.82rem; }
+  .chakra-intro .pull { font-size: 0.95rem; }
+  .spine-line { left: 28px; width: 2px; }
+
+  /* Stack chakra rows vertically, spine on left */
+  .chakra-row {
+    grid-template-columns: 56px 1fr;
+    gap: 0 0.75rem;
+    margin-bottom: 0;
+  }
+  .chakra-row .chakra-empty { display: none; }
+  /* Override flip — all rows same direction on mobile */
+  .chakra-row.flip { direction: ltr; }
+  .chakra-row.flip .chakra-left  { order: unset; }
+  .chakra-row.flip .chakra-spine { order: unset; }
+  .chakra-row.flip .chakra-right { order: unset; }
+
+  /* Force all cards into column 2 */
+  .chakra-card { margin: 0.4rem 0; }
+  .chakra-name-en { font-size: 1.1rem; }
+  .chakra-quick { gap: 4px; }
+  .qpill { font-size: 0.58rem; padding: 2px 7px; }
+
+  /* Detail panel full width */
+  .chakra-detail-row { grid-column: 1 / -1; }
+  .chakra-detail-inner {
+    padding: 1.25rem 1rem 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .mudra-invoke-card { flex-direction: column; gap: 0.75rem; }
+  .mudra-invoke-glyph { width: 80px; height: 80px; }
+  .signs-grid { grid-template-columns: 1fr; }
+  .detail-ref-grid { grid-template-columns: 1fr 1fr; }
+
+  /* ── Sources ── */
+  .ref-block { padding: 1rem; }
+  .ref-title { font-size: 1rem; }
+
+  /* ── Symbols intro heading ── */
+  .symbols-intro h2 { font-size: 2rem !important; }
+  .sym-family-label { margin: 2rem 0 1rem; }
+
+  /* ── Sources row chips ── */
+  .sources-row { gap: 6px; }
+  .source-chip { font-size: 0.65rem; padding: 4px 10px; }
+}
+
+@media (max-width: 480px) {
+
+  /* Phone — tighter still */
+  .site-header { padding: 2rem 1rem 1.5rem; }
+  .section { padding: 1.25rem 0.875rem 2.5rem; }
+
+  .nav-btn { padding: 0.75rem 0.75rem; font-size: 0.6rem; letter-spacing: 0.08em; }
+
+  .catalog-grid { grid-template-columns: 1fr 1fr; }
+  .hand-icon { width: 70px; height: 70px; }
+  .card-name { font-size: 1.1rem; }
+
+  .mudra-card.open .card-face {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .mudra-card.open .card-meta { text-align: center; }
+
+  .elem-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .elem-svg { width: 44px; height: 48px; }
+
+  .sym-grid { grid-template-columns: 1fr 1fr; }
+  .sym-glyph { width: 70px; height: 70px; }
+
+  /* Chakra spine stays left */
+  .chakra-dot { width: 44px; height: 44px; }
+  .chakra-name-en { font-size: 1rem; }
+  .chakra-keyword { font-size: 0.6rem; }
+  .qpill { font-size: 0.55rem; padding: 2px 6px; }
+
+  /* Search input full width */
+  .search-row { flex-direction: column; align-items: stretch; }
+  .search-input { width: 100%; }
+
+  /* Filter buttons wrap */
+  .filter-btns { gap: 4px; }
+  .filter-btn { font-size: 0.6rem; padding: 5px 10px; }
+}
+
+/* ── Tablet: 2 cols for chakra layout ── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .chakra-detail-inner { grid-template-columns: 1fr; }
+  .expand-inner { grid-template-columns: 1fr; }
+  .usage-blocks { grid-template-columns: 1fr; }
+}
+
+
+  /* ── MARTIAL / PERFORMING CARDS ── */
+  .m-grid, .p-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    border-bottom: none;
+  }
+  .m-card, .p-card {
+    background: var(--parchment);
+    cursor: pointer;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    transition: background 0.2s;
+    animation: fadeUp 0.4s ease both;
+  }
+  .m-card:hover, .p-card:hover { background: var(--parchment-deep); }
+  .m-card.open, .p-card.open { background: var(--parchment-deep); grid-column: 1 / -1; border-right: none; }
+  .m-face, .p-face {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+  .m-face img, .p-face svg { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; }
+  .m-card.open .m-face, .p-card.open .p-face {
+    border-bottom: 1px solid var(--line);
+    padding: 1.5rem 2rem;
+  }
+  .m-meta, .p-meta { flex: 1; }
+  .m-tag, .p-period {
+    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 3px; font-weight: 500;
+  }
+  .m-name, .p-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; line-height: 1.1;
+    color: var(--ink); margin-bottom: 5px;
+  }
+  .m-region, .p-trad { margin-bottom: 6px; }
+  .m-summary, .p-summary {
+    font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 8px;
+  }
+  .m-expand, .p-expand {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .m-expand-inner {
+    padding: 1.75rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 1.5rem 2rem;
+  }
+  .m-expand-inner > .full { grid-column: 1 / -1; }
+  .mudra-row {
+    padding: 10px 12px; border: 1px solid var(--line);
+    border-radius: 4px; background: var(--parchment);
+    margin-bottom: 8px;
+  }
+  .mudra-row-name {
+    font-size: 0.78rem; font-weight: 500; margin-bottom: 2px;
+  }
+  .mudra-row-form {
+    font-size: 0.74rem; color: var(--ink-faint); margin-bottom: 3px;
+  }
+  .mudra-row-use { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; }
+  .m-filter-btn {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 6px 14px; border: 1px solid var(--line); border-radius: 2px;
+    background: transparent; color: var(--ink-faint); cursor: pointer; transition: all 0.15s;
+  }
+  .m-filter-btn:hover { color: var(--ink); border-color: var(--ink-whisper); }
+  .m-filter-btn.active { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+  .p-icon-text {
+    width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+  }
+  .section-divider {
+    margin: 3rem 0 1.5rem; padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-divider-label {
+    font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent-saffron); margin-bottom: 6px;
+  }
+  .section-divider-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 300; color: var(--ink);
+  }
+  @media (max-width: 600px) {
+    .m-grid, .p-grid { grid-template-columns: 1fr; }
+    .m-face, .p-face { padding: 1.25rem 1rem; }
+    .m-expand-inner { padding: 1.25rem 1rem 2rem; grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="devanagari">मुद्रा</div>
+  <h1 class="site-title">MUDRA</h1>
+  <p class="site-subtitle">An Illustrated Compendium of Sacred Hand Gestures</p>
+</header>
+<nav class="nav-strip">
+  <a class="nav-btn" href="index.html">Catalog</a>
+  <a class="nav-btn" href="about.html">About Mudras</a>
+  <a class="nav-btn" href="chakras.html">Mudras &amp; Chakras</a>
+  <span class="nav-btn active">Martial Arts</span>
+  <a class="nav-btn" href="performing.html">Music &amp; Dance</a>
+  <a class="nav-btn" href="symbols.html">Sacred Symbols</a>
+  <a class="nav-btn" href="sources.html">Sources &amp; Texts</a>
+</nav>
+<main class="main">
+<div id="martial" class="section active">
+  <div class="text-content" style="max-width:100%;margin-bottom:2rem;">
+    <div class="intro-eyebrow">Where combat becomes mudra</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;line-height:1.1;margin-bottom:1rem;">Indian Martial Arts &amp; Mudras</h2>
+    <p style="font-size:0.875rem;line-height:1.9;color:var(--ink-soft);max-width:720px;">In Indian martial arts, mudras are not symbolic — they are functional. The shape of the hand is the technique: it determines which vital point is struck, how energy travels through the body, and what kind of force is delivered. The same 108 vital points (marma/varmam) that a warrior targets for combat are what a healer activates for medicine, and what a yogi accesses for energy work. Warrior, healer, dancer, and yogi were trained in the same school — the mudra was their common language.</p>
+    <div style="margin-top:1rem;display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="m-filter-btn active" onclick="setMartialFilter('all',this)">All Traditions</button>
+      <button class="m-filter-btn" onclick="setMartialFilter('south',this)">South India</button>
+      <button class="m-filter-btn" onclick="setMartialFilter('east',this)">East &amp; Northeast</button>
+      <button class="m-filter-btn" onclick="setMartialFilter('north',this)">Maharashtra</button>
+    </div>
+  </div>
+  <div class="m-grid" id="martial-grid"></div>
+</div>
+</main>
+<footer class="site-footer">
+  Mudra Compendium &mdash; compiled for reference and study &middot; Sources: Natya Shastra, Abhinaya Darpana, Wikipedia, Smarthistory, iPassio, Yoga Jala &amp; more
+</footer>
+<script>
+// ══════════════════════════════════════════
+// MARTIAL ARTS DATA
+// ══════════════════════════════════════════
+
+const martialData = [
+  {
+    id: 'kalaripayattu',
+    name: 'Kalaripayattu',
+    region: 'Kerala',
+    age: 'c. 3rd century BCE',
+    tag: 'The Source of All',
+    color: '#c8641a', colorLight: '#fce8d8', colorText: '#7a3a0a',
+    summary: 'Considered the world\'s oldest surviving martial art, Kalaripayattu is the common ancestor of Indian classical dance, Kathakali, yoga, and Ayurvedic healing. The word kalari means battlefield; payattu means practice.',
+    mudra_role: 'Mudras in Kalaripayattu are not symbolic — they are the weapon itself. The shape of the hand determines the angle and force of a strike, the grip of a weapon, and the activation of internal energy (prana) through the practitioner\'s body. Specific mudras are also used in the gurukula (teacher-student) ritual at the opening of each training session — the student touches the guru\'s feet in Anjali, and the guru places hands on the student\'s head in a blessing mudra.',
+    mudras: [
+      { name: 'Mushti', form: 'Clenched fist, thumb across fingers', use: 'Primary strike formation. Activates fire element — maximum concentrated force.' },
+      { name: 'Agni', form: 'Index finger extended, others curled', use: 'Piercing strike to vital points (marma). Named for fire, used to "ignite" pressure points.' },
+      { name: 'Pataka', form: 'Open flat hand, fingers together', use: 'Blocking and deflecting. Also the salutation mudra at the opening of training — connecting directly to the Bharatanatyam usage.' },
+      { name: 'Mriga', form: 'Deer-head formation — ring and little fingers curl, others open', use: 'Used in the lower body combat sequences (angathari). Mirrors the Mrigashirsha mudra of Bharatanatyam exactly.' },
+    ],
+    connection: 'The Hastalakshana Deepika — the primary mudra text for Kathakali — is believed to have co-evolved from Kalari hand formations. The stance vocabulary is shared: Āleedam, Prathyaleedam, and Samapadham appear identically in both Kalari training and Bharatanatyam. Some Kalari schools follow Shiva-Shakti principles in Meypayattu, with linear and circular movements corresponding directly to Tandava (masculine) and Lasya (feminine) in classical dance.',
+    sources: [
+      { label: 'Akademi — Introduction to Kalaripayattu', url: 'https://www.akademi.co.uk/introduction-to-kalarippayattu/' },
+      { label: 'Rishikul Yogshala', url: 'https://www.rishikulyogshala.org/blog/kalaripayattu-martial-art/' },
+    ]
+  },
+  {
+    id: 'varmakalai',
+    name: 'Varma Kalai',
+    region: 'Tamil Nadu / Kerala',
+    age: 'c. 2nd century BCE, Sangam period',
+    tag: 'The Art of Vital Points',
+    color: '#c03830', colorLight: '#fce8e5', colorText: '#7a1a10',
+    summary: 'Varma Kalai — "the art of vital points" — is the most sophisticated system of mudra-as-weapon in the world. It combines combat, healing, and Siddha medicine into a single unified body of knowledge. Traced to the sage Agastya, who received the knowledge from Shiva himself.',
+    mudra_role: 'In Varma Kalai, every hand formation is a precisely engineered key designed to activate, disrupt, or restore the 108 varmam (vital energy points) distributed across the human body. The hand mudra determines which varmam is struck, how deep the disruption reaches, and whether the effect is therapeutic or lethal. The same mudra applied gently heals; applied with force, it kills. This dual nature — one gesture, two applications — is the defining philosophy of the tradition.',
+    mudras: [
+      { name: 'Gaja Mukha (Elephant Face)', form: 'Thumb presses against bent index finger forming a trunk shape', use: 'Targets the temporal and facial varmam points. Used both to strike and to restore consciousness.' },
+      { name: 'Ashva Mukha (Horse Face)', form: 'Two middle fingers extended together, others curled', use: 'Penetrating strike to the neck and shoulder varmam cluster.' },
+      { name: 'Vishnu Mudra', form: 'Index and middle fingers fold to palm; ring, little finger and thumb extend', use: 'Used in Siddha healing rituals to restore disrupted prana flow after a varmam strike.' },
+      { name: 'Vel Mudra (Spear)', form: 'All fingers tightly together, pointed — mimicking Murugan\'s spear', use: 'The primary striking formation for hard varmam points. Named after the divine weapon of Murugan, the patron deity of Tamil martial arts.' },
+      { name: 'Naga (Snake Face)', form: 'Fingers spread in an arc, slightly curved — the cobra hood', use: 'Ambidextrous strike formation used in the advanced Varma Adi sequences.' },
+    ],
+    connection: 'Varma Kalai shares its complete anatomical map — the 108 varmam/marma points — with Ayurveda, Siddha medicine, and yoga. The 108 varmam correspond directly to the 108 sacred spots in yoga, the 108 beads of a mala, and the 108 mudras of the Natya Shastra. The same number is not a coincidence: it encodes a complete map of the human subtle body.',
+    sources: [
+      { label: 'Wikipedia — Varma Kalai', url: 'https://en.wikipedia.org/wiki/Varma_kalai' },
+      { label: 'ResearchGate — Varma Mudras', url: 'https://www.researchgate.net/figure/arma-mudras-from-left-to-right-and-top-to-bottom-elephant-face-mudra-horseface_fig4_273422300' },
+    ]
+  },
+  {
+    id: 'kuttuvarisai',
+    name: 'Kuttu Varisai',
+    region: 'Tamil Nadu',
+    age: 'c. Sangam period (300 BCE – 300 CE)',
+    tag: 'Empty-Hand Combat',
+    color: '#8a3a10', colorLight: '#f5e8dc', colorText: '#5a2000',
+    summary: 'Kuttu Varisai is the unarmed combat system of Tamil Nadu — the bare-hand foundation underlying Silambam and Varma Kalai. It incorporates animal-form combat where the hand shape embodies the animal\'s attacking weapon: tiger claw, eagle talon, snake fang, crane beak.',
+    mudra_role: 'Every animal form in Kuttu Varisai is a mudra. The practitioner doesn\'t just imitate an animal\'s movement — they adopt the animal\'s hand formation as a precision instrument. Each maps directly to a named mudra in classical dance: the tiger claw is Simhamukha, the crane beak is Muktapadma, the snake fang is Sarpa hasta. The combat system and the dance vocabulary are different applications of the same gesture library.',
+    mudras: [
+      { name: 'Puli (Tiger Claw)', form: 'All fingers spread and curved sharply at the second knuckle', use: 'Raking strike to the face and throat. Mirrors Simhamukha in Bharatanatyam — used to depict a lion\'s face.' },
+      { name: 'Nandu (Crab Grip)', form: 'Both hands form pincers — thumb and two fingers grip', use: 'Joint lock and pressure point grip. Equivalent to Karkata (crab) in double-hand dance mudras.' },
+      { name: 'Kokku (Crane Beak)', form: 'All five fingertips gathered to a single point', use: 'Piercing strike to soft tissue. Identical to Muktapadma (opened lotus bud) in Bharatanatyam.' },
+      { name: 'Pambu (Snake Fang)', form: 'Two fingers extended in a V, wrist undulates', use: 'Strike to the eyes and throat. Directly mirrors the Sarpa (serpent) hasta of classical dance.' },
+    ],
+    connection: 'Kuttu Varisai\'s animal-form mudras are the clearest evidence of the shared origin between Indian martial arts and classical dance. When a Bharatanatyam dancer forms Simhamukha to portray a lion, and a Kuttu Varisai practitioner forms Puli to attack, they are using the same hand formation for radically different purposes — proof of a common ancestor in the ancient knowledge systems of Tamil Nadu.',
+    sources: [
+      { label: 'Cultural Heritage of India', url: 'https://cultureandheritage.org/2024/02/ancient-indian-martial-arts-exploring-the-spiritual-and-cultural-depths-of-indias-fighting-traditions.html' },
+    ]
+  },
+  {
+    id: 'silambam',
+    name: 'Silambam',
+    region: 'Tamil Nadu',
+    age: 'c. 4th century BCE, Sangam period',
+    tag: 'Staff & Weapon Art',
+    color: '#2a6a3a', colorLight: '#e0f0e4', colorText: '#1a4020',
+    summary: 'Silambam — "bamboo from the Kurinji hills" — is primarily a staff-fighting art, but its empty-hand module uses grip mudras that are architecturally identical to yoga hasta mudras. UNESCO has inscribed Silambam as an intangible cultural heritage.',
+    mudra_role: 'In Silambam, the grip mudra determines everything: how force transfers from body through weapon to target, how the wrist rotates for a spinning strike, and how energy flows through the practitioner. There are specific named grip formations for each weapon — the bamboo staff, sword, shield, and whip — and each is a distinct mudra. The footwork patterns (kaaladi) and animal stances (புலி = tiger, கொக்கு = crane, மான் = deer) directly mirror Kuttu Varisai and classical dance formations.',
+    mudras: [
+      { name: 'Kambu Piditha (Staff Grip)', form: 'Full wrap grip, thumb locked over index finger', use: 'The primary Silambam staff grip. The position of the thumb (fire element) determines whether the strike is hard or flexible.' },
+      { name: 'Maan Nilai (Deer Stance Hands)', form: 'Soft open hand, fingers gently curved — mimicking a deer\'s delicate movement', use: 'Defensive and evasive hand formation. Directly mirrors Mrigashirsha (deer head) in Bharatanatyam.' },
+      { name: 'Puli Adi (Tiger Strike)', form: 'Sharp curved fingers for raking or gripping', use: 'Empty-hand strike formation — identical to Kuttu Varisai\'s Puli and Bharatanatyam\'s Simhamukha.' },
+    ],
+    connection: 'Silambam has had documented mutual influence with Tamil classical dance for over 2,000 years. The Silappadikaram (Tamil epic, c. 2nd century CE) describes both Silambam practice and classical dance performance in the same cultural context, often by the same community. The footwork patterns of Silambam are cited by scholars as a direct ancestor of Bharatanatyam\'s adavu (basic step) system.',
+    sources: [
+      { label: 'Wikipedia — Silambam', url: 'https://en.wikipedia.org/wiki/Silambam' },
+      { label: 'Cultural Heritage of India', url: 'https://cultureandheritage.org/2024/02/ancient-indian-martial-arts-exploring-the-spiritual-and-cultural-depths-of-indias-fighting-traditions.html' },
+    ]
+  },
+  {
+    id: 'thangta',
+    name: 'Thang-Ta',
+    region: 'Manipur',
+    age: 'Ancient; revived 17th century',
+    tag: 'Sword, Spear & Spirit',
+    color: '#3a3880', colorLight: '#e6e4f5', colorText: '#201870',
+    summary: 'Thang-Ta — "sword and spear" — is the martial art of the Meitei people of Manipur. It is impossible to separate from Manipuri classical dance: the two traditions are performed by the same practitioners, draw from the same ritual vocabulary, and share the same hand formations.',
+    mudra_role: 'In Thang-Ta, the unarmed hand formations (called sarit sarak — empty-hand combat) use mudras that are functionally identical to those in Manipuri dance. The Manipuri dance tradition is itself deeply spiritual — centred on the Rasleela of Radha and Krishna — and its hand gestures carry both narrative and energetic meaning. In Thang-Ta combat, those same gestures carry combat meaning. The system is unified: one gesture, two registers (devotion and destruction).',
+    mudras: [
+      { name: 'Lotus Hand (Padma)', form: 'Fingers spread and curved upward — the opening lotus', use: 'In dance: depicts the lotus, beauty, divine offering. In combat: open-palm deflection and redirection — the attacker\'s force is received and curved away.' },
+      { name: 'Fist (Mushti)', form: 'Compact fist with thumb alongside', use: 'Primary strike. In Manipuri dance: depicts anger, force, the wielding of a weapon in battle scenes.' },
+    ],
+    connection: 'Thang-Ta and Manipuri dance share a single root in the indigenous Meitei spiritual tradition of Sanamahism. The same cultural ceremonies include both combat demonstrations and devotional dance. Some Thang-Ta masters are also Manipuri dance teachers. The hand formations are not borrowings — they were never separated.',
+    sources: [
+      { label: 'Cultural Heritage of India', url: 'https://cultureandheritage.org/2024/02/ancient-indian-martial-arts-exploring-the-spiritual-and-cultural-depths-of-indias-fighting-traditions.html' },
+      { label: 'The Prayas India', url: 'https://theprayasindia.com/martial-arts-of-india/' },
+    ]
+  },
+  {
+    id: 'paikaakhada',
+    name: 'Paika Akhada',
+    region: 'Odisha',
+    age: 'Ancient; documented from 12th century CE',
+    tag: 'Warrior & Dancer as One',
+    color: '#6a4800', colorLight: '#f5ecd8', colorText: '#4a2800',
+    summary: 'Paika Akhada is the martial art of Odisha — and it is still practised as part of Chhau dance. This is the most visible surviving example in India of the warrior and the dancer being literally the same person performing the same movements in different contexts.',
+    mudra_role: 'The Paika warrior\'s combat formations directly overlap with Odissi dance mudras. The distinctive Odissi tribhanga (three-bend) posture — the most recognisable in all of Indian dance — is derived from Paika combat stance positions. The hand formations used in Paika combat sequences (Paika Nrutya) are identical to Odissi hastas. During festival performances, Paika Akhada is presented as combat-dance with no distinction between the two.',
+    mudras: [
+      { name: 'Trisula (Trident)', form: 'Three middle fingers extended, others folded — the divine trident', use: 'Combat: three-point strike to the face. Dance: depicts Shiva\'s trishula, the symbol of divine power over the three realms.' },
+      { name: 'Shield Guard', form: 'Open flat palm facing outward — identical to Pataka', use: 'Primary defensive guard in Paika. In Odissi: same Pataka formation used for blessing, sky, denial.' },
+    ],
+    connection: 'Chhau dance (from the Jharkhand / Odisha / West Bengal border region) grew directly out of Paika Akhada. The acrobatic leaps, martial stances, and hand formations of Chhau are combat moves performed to music. UNESCO recognised Chhau as an intangible cultural heritage in 2010.',
+    sources: [
+      { label: 'Land of Surprises — Martial Arts of India', url: 'https://incindiaorgin.wordpress.com/2021/06/02/8-different-forms-of-martial-arts-in-india/' },
+    ]
+  },
+  {
+    id: 'mardanikhel',
+    name: 'Mardani Khel',
+    region: 'Maharashtra',
+    age: 'Maratha Empire era, c. 16th–18th century',
+    tag: 'Maratha Warrior Art',
+    color: '#7a3000', colorLight: '#f5e0d0', colorText: '#4a1800',
+    summary: 'Mardani Khel is the armed martial art of the Maratha warriors — the military tradition of Chhatrapati Shivaji\'s empire. It emphasises weapons (patta sword, vita — weighted rope dart, lathi staff) but its empty-hand techniques carry the mudra-as-energy-director principle common to all Indian martial traditions.',
+    mudra_role: 'In Mardani Khel, specific grip formations (called "goth") for each weapon are named mudras. The Patta (gauntlet-sword) grip requires a specific wrist formation that channels power from the shoulder through to the blade — the same principle as yoga mudras channelling prana through the fingers. Mardani Khel is also performed at the Ganesh Chaturthi and Shivaji Jayanti festivals — in that context, the combat sequences become ritual performance, and the mudras carry devotional as well as martial meaning.',
+    mudras: [
+      { name: 'Patta Goth (Gauntlet Grip)', form: 'Hand slides into the gauntlet-sword; wrist locked in a specific rotation', use: 'The defining grip of Mardani Khel — allows 360° spinning sword arcs. The wrist rotation is identical to the wrist movement in Bharatanatyam\'s Alapadma (full lotus) gesture.' },
+      { name: 'Open Challenge (Ahvan)', form: 'Right arm raised, palm facing outward — a direct Abhaya mudra', use: 'The ritual challenge gesture at the opening of a bout. Identical to the Abhaya mudra of Hindu and Buddhist iconography.' },
+    ],
+    connection: 'Mardani Khel shares the festival performance context with several folk dance traditions of Maharashtra — it is displayed alongside Lavani and Gondhal dances at religious festivals. The warriors who performed Mardani Khel in Shivaji\'s era were also expected to know the devotional arts.',
+    sources: [
+      { label: 'Cultural Heritage of India', url: 'https://cultureandheritage.org/2024/02/ancient-indian-martial-arts-exploring-the-spiritual-and-cultural-depths-of-indias-fighting-traditions.html' },
+    ]
+  },
+  {
+    id: 'chhau',
+    name: 'Chhau',
+    region: 'Jharkhand / Odisha / West Bengal',
+    age: 'c. 18th century (codified); ancient roots',
+    tag: 'Martial Dance of the Tribes',
+    color: '#4a2060', colorLight: '#ede0f5', colorText: '#2a0840',
+    summary: 'Chhau is a semi-classical martial dance — it began as Paika Akhada combat training and evolved into performance art. It uses large masks depicting deities, demons, animals, and natural forces, and its hand formations are pure combat mudras performed to rhythm.',
+    mudra_role: 'Chhau has three regional styles — Seraikella (Jharkhand), Purulia (West Bengal), and Mayurbhanj (Odisha). The Seraikella and Purulia styles use masks, which means the face cannot express emotion — the entire emotional and narrative weight falls on the body and hands. The hand formations in Chhau are consequently more forceful and gestural than in any other Indian dance form, carrying simultaneously the martial function (they are combat positions) and the narrative function (they depict deities and cosmic forces).',
+    mudras: [
+      { name: 'Demon Strike (Asura Mudra)', form: 'Fingers clawed and spread wide, wrists turned outward — the demon\'s attacking hands', use: 'Used in battle scenes depicting demon characters. Intensified version of Kartarimukha (scissors) from classical dance.' },
+      { name: 'Divine Weapon (Astra)', form: 'Single finger pointed forward like an arrow, other hand as a bow', use: 'Depicts the release of a divine weapon — seen in scenes from the Mahabharata and Ramayana. Combat training origin: the "arrow hand" trains the index finger\'s pointing precision for vital point strikes.' },
+    ],
+    connection: 'UNESCO recognised Chhau as an intangible cultural heritage of humanity in 2010. Its direct lineage from Paika Akhada combat makes it the most openly martial of all Indian classical and semi-classical dance traditions — it never pretended to separate combat from performance. The mask tradition connects it to the tantric ritual tradition of masked deity performance across India.',
+    sources: [
+      { label: 'Asian Traditional Theatre — Bharata & Natyashastra', url: 'https://disco.teak.fi/asia/bharata-and-his-natyashastra/' },
+    ]
+  },
+];
+
+// ── SVG ICONS for each tradition ──
+const martialIcons = {
+  kalaripayattu: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#fce8d8" rx="40"/><path d="M20 60 L35 25 L40 35 L45 20 L60 55" stroke="#c8641a" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="38" r="8" fill="none" stroke="#c8641a" stroke-width="1.5" opacity="0.4"/><line x1="40" y1="14" x2="40" y2="22" stroke="#c8641a" stroke-width="1.5"/><line x1="40" y1="58" x2="40" y2="66" stroke="#c8641a" stroke-width="1.5"/></svg>`,
+  varmakalai: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#fce8e5" rx="40"/><circle cx="40" cy="40" r="22" fill="none" stroke="#c03830" stroke-width="1.5" stroke-dasharray="4,3"/><circle cx="40" cy="40" r="14" fill="none" stroke="#c03830" stroke-width="1.5"/><circle cx="40" cy="40" r="6" fill="#c03830" opacity="0.7"/><circle cx="40" cy="18" r="3" fill="#c03830" opacity="0.5"/><circle cx="62" cy="40" r="3" fill="#c03830" opacity="0.5"/><circle cx="40" cy="62" r="3" fill="#c03830" opacity="0.5"/><circle cx="18" cy="40" r="3" fill="#c03830" opacity="0.5"/><circle cx="55" cy="25" r="2.5" fill="#c03830" opacity="0.4"/><circle cx="55" cy="55" r="2.5" fill="#c03830" opacity="0.4"/><circle cx="25" cy="55" r="2.5" fill="#c03830" opacity="0.4"/><circle cx="25" cy="25" r="2.5" fill="#c03830" opacity="0.4"/></svg>`,
+  kuttuvarisai: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#f5e8dc" rx="40"/><path d="M30 55 Q22 42 28 30 Q34 20 40 22 Q48 24 46 32 Q44 40 50 44 Q58 50 55 60" stroke="#8a3a10" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 50 L24 58" stroke="#8a3a10" stroke-width="2" stroke-linecap="round"/><path d="M38 48 L34 60" stroke="#8a3a10" stroke-width="2" stroke-linecap="round"/><path d="M44 50 L44 62" stroke="#8a3a10" stroke-width="2" stroke-linecap="round"/><path d="M50 48 L54 58" stroke="#8a3a10" stroke-width="2" stroke-linecap="round"/><path d="M55 44 L62 50" stroke="#8a3a10" stroke-width="2" stroke-linecap="round"/></svg>`,
+  silambam: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#e0f0e4" rx="40"/><path d="M18 62 L62 18" stroke="#2a6a3a" stroke-width="3.5" stroke-linecap="round"/><path d="M28 52 Q35 45 40 40 Q45 35 52 28" stroke="#2a6a3a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/><path d="M55 22 L65 18 L62 28" fill="#2a6a3a" opacity="0.5"/><circle cx="40" cy="40" r="5" fill="#2a6a3a" opacity="0.3"/></svg>`,
+  thangta: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#e6e4f5" rx="40"/><path d="M40 15 L40 65" stroke="#3a3880" stroke-width="2.5" stroke-linecap="round"/><path d="M15 40 L65 40" stroke="#3a3880" stroke-width="2.5" stroke-linecap="round"/><path d="M40 15 L25 30 M40 15 L55 30" stroke="#3a3880" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="40" cy="40" r="10" fill="none" stroke="#3a3880" stroke-width="1.5" opacity="0.5"/><circle cx="40" cy="40" r="4" fill="#3a3880" opacity="0.6"/></svg>`,
+  paikaakhada: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#f5ecd8" rx="40"/><path d="M28 62 Q20 50 24 36 Q28 22 40 20 Q52 18 58 30 Q64 44 56 56 Q48 66 36 64" stroke="#6a4800" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M36 64 L28 62" stroke="#6a4800" stroke-width="2" stroke-linecap="round"/><path d="M34 42 Q40 30 46 42" stroke="#6a4800" stroke-width="1.5" fill="none" stroke-linecap="round"/><line x1="40" y1="28" x2="40" y2="55" stroke="#6a4800" stroke-width="1.5" opacity="0.4"/></svg>`,
+  mardanikhel: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#f5e0d0" rx="40"/><path d="M24 56 L56 24" stroke="#7a3000" stroke-width="2.5" stroke-linecap="round"/><path d="M24 56 L20 44 L32 48 Z" fill="#7a3000" opacity="0.7"/><path d="M56 24 L60 36 L48 32 Z" fill="#7a3000" opacity="0.7"/><ellipse cx="38" cy="42" rx="10" ry="5" stroke="#7a3000" stroke-width="1.2" fill="none" transform="rotate(-45,38,42)" opacity="0.5"/></svg>`,
+  chhau: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#ede0f5" rx="40"/><path d="M28 60 Q20 48 22 36 Q24 22 40 18 Q56 22 58 36 Q60 48 52 60 L28 60 Z" fill="#c8b0e0" opacity="0.5" stroke="#4a2060" stroke-width="1.5"/><circle cx="34" cy="36" r="4" fill="#4a2060" opacity="0.6"/><circle cx="46" cy="36" r="4" fill="#4a2060" opacity="0.6"/><path d="M34 48 Q40 54 46 48" stroke="#4a2060" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M30 24 L25 16 M50 24 L55 16" stroke="#4a2060" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+};
+
+// ── RENDER ──
+let martialFilter = 'all';
+
+function renderMartial() {
+  const grid = document.getElementById('martial-grid');
+  if (!grid) return;
+  const filtered = martialFilter === 'all' ? martialData :
+    martialData.filter(m => {
+      if (martialFilter === 'south') return ['kalaripayattu','varmakalai','kuttuvarisai','silambam'].includes(m.id);
+      if (martialFilter === 'east') return ['thangta','paikaakhada','chhau'].includes(m.id);
+      if (martialFilter === 'north') return ['mardanikhel'].includes(m.id);
+      return true;
+    });
+
+  grid.innerHTML = filtered.map((m,i) => {
+    const delay = i * 50;
+    return `<div class="m-card" id="mc-${m.id}" style="animation-delay:${delay}ms;border-top:3px solid ${m.color}" onclick="toggleMartial('${m.id}')">
+      <div class="m-face">
+        ${martialIcons[m.id] || ''}
+        <div class="m-meta">
+          <p class="m-tag" style="color:${m.color}">${m.tag}</p>
+          <p class="m-name">${m.name}</p>
+          <p class="m-region"><span style="background:${m.colorLight};color:${m.colorText};padding:2px 8px;border-radius:2px;font-size:0.65rem;letter-spacing:0.1em">${m.region}</span> &nbsp;<span style="color:var(--ink-faint);font-size:0.7rem">${m.age}</span></p>
+          <p class="m-summary">${m.summary.slice(0,120)}…</p>
+          <span class="expand-cue">Tap to explore <span class="cue-arrow">↓</span></span>
+        </div>
+      </div>
+      <div class="m-expand" id="mx-${m.id}">
+        <div class="m-expand-inner">
+          <div class="full">
+            <span class="detail-label">Role of mudras in this tradition</span>
+            <p class="detail-body">${m.mudra_role}</p>
+          </div>
+          <div>
+            <span class="detail-label">Specific mudras used</span>
+            ${m.mudras.map(g => `<div class="mudra-row">
+              <p class="mudra-row-name" style="color:${m.color}">${g.name}</p>
+              <p class="mudra-row-form"><em>${g.form}</em></p>
+              <p class="mudra-row-use">${g.use}</p>
+            </div>`).join('')}
+          </div>
+          <div>
+            <span class="detail-label">Connection to dance & yoga</span>
+            <p class="detail-body">${m.connection}</p>
+          </div>
+          <div class="sources-row full">
+            <span class="sources-label">References</span>
+            ${m.sources.map(s=>`<a class="source-chip" href="${s.url}" target="_blank" onclick="event.stopPropagation()">↗ ${s.label}</a>`).join('')}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleMartial(id) {
+  const card = document.getElementById('mc-'+id);
+  const exp  = document.getElementById('mx-'+id);
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.m-card.open').forEach(c => c.classList.remove('open'));
+  document.querySelectorAll('.m-expand').forEach(e => e.style.maxHeight='0');
+  if (!isOpen) {
+    card.classList.add('open');
+    exp.style.maxHeight = exp.scrollHeight + 2000 + 'px';
+    setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'start'}),60);
+  }
+}
+
+function setMartialFilter(f, btn) {
+  martialFilter = f;
+  document.querySelectorAll('.m-filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderMartial();
+}
+
+renderMartial();
+
+</script>
+
+</body>
+</html>

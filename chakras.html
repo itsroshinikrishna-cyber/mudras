@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mudras & Chakras</title>
+  <meta name="description" content="An illustrated compendium of sacred Indian hand gestures across yoga, dance, chakras, symbols, martial arts and music.">
+  <meta name="theme-color" content="#faf6f0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --ink: #1a1410;
+    --ink-soft: #4a3f35;
+    --ink-faint: #8a7a6e;
+    --ink-whisper: #c8bdb0;
+    --parchment: #faf6f0;
+    --parchment-deep: #f2ebe0;
+    --parchment-shadow: #e8ddd0;
+    --accent-saffron: #c8641a;
+    --accent-gold: #b8882a;
+    --accent-vermillion: #c03830;
+    --accent-teal: #2a7a6a;
+    --accent-indigo: #3a3880;
+    --line: rgba(26,20,16,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── TEXTURE OVERLAY ── */
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events:none; z-index:0;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    position: relative;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    background: var(--parchment);
+  }
+  .site-header::after {
+    content:'';
+    display:block;
+    width:80px; height:2px;
+    background: var(--accent-saffron);
+    margin: 1.5rem auto 0;
+  }
+  .devanagari {
+    font-size: 2rem;
+    color: var(--accent-saffron);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-family: serif;
+  }
+  .site-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .site-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 1rem;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-strip {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--line);
+    background: var(--parchment);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-strip::-webkit-scrollbar { display:none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    position: relative;
+    top: 1px;
+  }
+  .nav-btn:hover { color: var(--ink); }
+  .nav-btn.active {
+    color: var(--accent-saffron);
+    border-bottom-color: var(--accent-saffron);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main { position: relative; z-index: 1; }
+  .section { display:none; padding: 2.5rem 1.5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .section.active { display:block; }
+
+  /* ── SECTION INTRO ── */
+  .section-intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  @media(max-width:600px){ .section-intro { grid-template-columns:1fr; gap:1.5rem; } }
+  .intro-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 0.75rem;
+  }
+  .intro-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .intro-text {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .intro-quote {
+    margin-top: 1.5rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--accent-saffron);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  /* ── CATALOG GRID ── */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    border-bottom: none;
+  }
+
+  /* ── MUDRA CARD ── */
+  .mudra-card {
+    background: var(--parchment);
+    cursor: pointer;
+    transition: background 0.2s;
+    overflow: visible;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  /* When open, span full row so content is never cropped */
+  .mudra-card.open {
+    grid-column: 1 / -1;
+    background: var(--parchment-deep);
+    border-right: none;
+  }
+  .mudra-card:hover { background: var(--parchment-deep); }
+
+  .card-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem 1.75rem;
+    gap: 1rem;
+    user-select: none;
+  }
+  /* When card is open, show face inline left beside content */
+  .mudra-card.open .card-face {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.75rem 2rem 1.5rem;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .mudra-card.open .card-meta { text-align: left; }
+
+  .hand-icon {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    border-radius: 6px;
+  }
+
+  .card-meta { text-align: center; }
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .card-name-san {
+    font-family: serif;
+    font-size: 0.85rem;
+    color: var(--accent-saffron);
+    margin-top: 2px;
+    display: block;
+  }
+  .card-tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 10px;
+  }
+  .tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+  .tag-dance { background: #fce8d8; color: #8a3a10; }
+  .tag-yoga  { background: #dff0e8; color: #1a5a3a; }
+  .tag-icon  { background: #e0e4f5; color: #252070; }
+  .tag-univ  { background: #f0e8dc; color: #6a4020; }
+  .expand-hint {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-whisper);
+    margin-top: 12px;
+    transition: color 0.2s;
+  }
+  .mudra-card:hover .expand-hint { color: var(--ink-faint); }
+  .mudra-card.open .expand-hint { color: var(--accent-saffron); }
+  .expand-arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  .mudra-card.open .expand-arrow { transform: rotate(180deg); }
+
+  /* ── EXPANDED PANEL ── */
+  .card-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .mudra-card.open .card-expand { max-height: 9999px; }
+
+  .expand-inner {
+    padding: 1.5rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+  }
+  /* Labels and text blocks span both columns */
+  .expand-inner > .expand-section-label,
+  .expand-inner > .expand-text,
+  .expand-inner > .expand-list,
+  .expand-inner > .sources-row {
+    grid-column: 1 / -1;
+  }
+  /* Usage blocks column */
+  .expand-inner > .usage-section-label { grid-column: 1 / -1; }
+  .expand-section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .expand-text {
+    font-size: 0.83rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .expand-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.4rem;
+  }
+  .expand-list li {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--parchment);
+  }
+  .usage-blocks {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 0.5rem;
+  }
+  .usage-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 14px 12px;
+    background: var(--parchment);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .usage-block-head {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .usage-icon {
+    width: 34px; height: 34px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .usage-body { flex:1; }
+  .usage-cat {
+    font-size: 0.63rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .usage-desc {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-top: 0;
+  }
+  .usage-ref {
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    font-style: italic;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+    margin-top: 2px;
+  }
+  /* ── SOURCES ROW ── */
+  .sources-row {
+    grid-column: 1 / -1;
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .sources-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-right: 4px;
+  }
+  .source-chip {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--parchment);
+  }
+  .source-chip:hover {
+    border-color: var(--accent-saffron);
+    color: var(--accent-saffron);
+    background: var(--parchment-deep);
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+    background: var(--parchment-deep);
+  }
+
+  /* ── ABOUT SECTION ── */
+  .text-content {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .text-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
+  }
+  .text-content p {
+    font-size: 0.875rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  .text-content .pull {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--accent-saffron);
+    border-left: 3px solid var(--accent-saffron);
+    padding-left: 1.25rem;
+    margin: 2rem 0;
+    line-height: 1.6;
+  }
+  .elem-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 1.5rem 0;
+  }
+  @media(max-width:600px){ .elem-grid { grid-template-columns: repeat(3,1fr); } }
+  .elem-card {
+    text-align: center;
+    padding: 1.1rem 0.5rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--parchment);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .elem-card:hover { border-color: var(--accent-saffron); transform: translateY(-2px); }
+  .elem-svg {
+    width: 64px;
+    height: 70px;
+    display: block;
+    margin: 0 auto 8px;
+  }
+  .elem-name { font-size: 0.8rem; font-weight: 500; color: var(--ink); }
+  .elem-finger { font-size: 0.67rem; color: var(--ink-faint); margin-top: 3px; letter-spacing: 0.04em; }
+  .elem-quality { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-saffron); margin-top: 4px; opacity: 0.8; }
+
+  /* ── SOURCES SECTION ── */
+  .ref-block {
+    border: 1px solid var(--line);
+    padding: 1.25rem;
+    margin-bottom: 10px;
+    border-radius: 2px;
+  }
+  .ref-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .ref-meta { font-size: 0.72rem; color: var(--ink-faint); margin-bottom: 6px; }
+  .ref-desc { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.7; }
+  .ref-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    color: var(--accent-saffron);
+    text-decoration: none;
+    margin-top: 6px;
+  }
+  .ref-link:hover { text-decoration: underline; }
+
+  /* ── SEARCH BAR ── */
+  .search-row {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .search-input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus { border-color: var(--accent-saffron); }
+  .search-input::placeholder { color: var(--ink-whisper); }
+  .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-btn {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--ink-faint);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover { color: var(--ink); border-color: var(--ink-whisper); }
+  .filter-btn.active { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+
+  /* ── MUDRA COUNT ── */
+  .count-bar {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(16px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .mudra-card { animation: fadeUp 0.4s ease both; }
+  /* ── SYMBOLS SECTION ── */
+  .symbols-intro {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  .symbols-intro p {
+    font-size: 0.875rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-top: 1rem;
+  }
+  .sym-family-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 3rem 0 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 0.5rem;
+  }
+  .sym-card {
+    background: var(--parchment);
+    cursor: pointer;
+    transition: background 0.2s;
+    overflow: visible;
+    border-bottom: none;
+  }
+  .sym-card:hover { background: var(--parchment-deep); }
+  .sym-card.open  { background: var(--parchment-deep); grid-column: 1 / -1; }
+  .sym-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.75rem 1.25rem 1.5rem;
+    gap: 0.9rem;
+    user-select: none;
+  }
+  .sym-card.open .sym-face {
+    flex-direction: row;
+    padding: 1.5rem 2rem;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-card.open .sym-meta { text-align: left; }
+  .sym-glyph {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+  }
+  .sym-meta { text-align: center; }
+  .sym-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .sym-san {
+    font-family: serif;
+    font-size: 1rem;
+    color: var(--accent-saffron);
+    display: block;
+    margin-top: 2px;
+  }
+  .sym-tagline {
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+  .sym-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .sym-card.open .sym-expand { max-height: 9999px; }
+  .sym-expand-inner {
+    padding: 1.5rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+  }
+  .sym-expand-inner > * { grid-column: 1 / -1; }
+  .sym-section-lbl {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .sym-body {
+    font-size: 0.83rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .sym-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.4rem;
+  }
+  .sym-pill {
+    font-size: 0.72rem;
+    padding: 4px 11px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--parchment);
+  }
+  .sym-usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 12px;
+    margin-top: 0.5rem;
+  }
+  .sym-usage {
+    padding: 13px 14px 11px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--parchment);
+  }
+  .sym-usage-cat {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .sym-usage-desc {
+    font-size: 0.79rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .sym-sources {
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  /* ══ CHAKRAS SECTION ══ */
+  .chakra-page { max-width: 900px; margin: 0 auto; }
+  .chakra-intro {
+    font-size: 0.875rem; line-height: 1.9; color: var(--ink-soft);
+    max-width: 680px; margin: 0 auto 3rem;
+  }
+  .chakra-intro .pull {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--accent-saffron);
+    border-left: 2px solid var(--accent-saffron); padding-left: 1.2rem;
+    margin: 1.5rem 0; line-height: 1.7;
+  }
+  /* The spine track */
+  .chakra-track {
+    position: relative;
+    padding: 1rem 0 2rem;
+  }
+  .spine-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+      #c8641a 0%, #e8a030 14%, #e8c830 28%,
+      #2a9a5a 42%, #3a80c8 56%, #5040a0 70%, #9050c0 84%, #9050c0 100%);
+    transform: translateX(-50%);
+    opacity: 0.35;
+    z-index: 0;
+  }
+  @media(max-width: 640px) {
+    .spine-line { left: 28px; }
+  }
+  /* Individual chakra row */
+  .chakra-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    gap: 0 1.5rem;
+    margin-bottom: 0;
+    z-index: 1;
+    align-items: start;
+  }
+  @media(max-width: 640px) {
+    .chakra-row { grid-template-columns: 56px 1fr; gap: 0 1rem; }
+    .chakra-row .chakra-left { display: none; }
+    .chakra-row:nth-child(odd) .chakra-right,
+    .chakra-row:nth-child(even) .chakra-right { grid-column: 2; }
+  }
+  /* Alternating: odd = content left, even = content right */
+  .chakra-row.flip .chakra-left  { order: 3; }
+  .chakra-row.flip .chakra-spine { order: 2; }
+  .chakra-row.flip .chakra-right { order: 1; }
+
+  .chakra-spine {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+  .chakra-dot {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 2;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 6px var(--parchment);
+  }
+  .chakra-dot svg { width: 36px; height: 36px; }
+  .chakra-connector {
+    width: 2px; flex: 1; min-height: 40px;
+    opacity: 0.3;
+  }
+  /* Chakra card (left or right panel) */
+  .chakra-card {
+    background: var(--parchment);
+    border: 1px solid var(--line);
+    border-radius: var(--border-radius-lg, 12px);
+    padding: 1.25rem 1.4rem 1.1rem;
+    margin: 0.6rem 0 0.6rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .chakra-card:hover { background: var(--parchment-deep); transform: translateY(-1px); }
+  .chakra-card.open  { background: var(--parchment-deep); border-left-width: 3px; }
+  .chakra-empty { /* spacer for alternating layout */ }
+
+  .chakra-number {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-whisper); margin-bottom: 4px;
+  }
+  .chakra-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; line-height: 1.1;
+    color: var(--ink);
+  }
+  .chakra-name-san {
+    font-family: serif; font-size: 0.9rem; display: block; margin-top: 2px;
+  }
+  .chakra-keyword {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    margin-top: 6px; opacity: 0.8;
+  }
+  /* Quick-glance pills row */
+  .chakra-quick {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+  }
+  .qpill {
+    font-size: 0.65rem; padding: 3px 9px;
+    border-radius: 2px; border: 1px solid;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .expand-cue {
+    font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-whisper); margin-top: 10px; display: block;
+    transition: color 0.2s;
+  }
+  .chakra-card:hover .expand-cue { color: var(--ink-faint); }
+  .chakra-card.open  .expand-cue { color: var(--accent-saffron); }
+  .cue-arrow { display: inline-block; transition: transform 0.3s; }
+  .chakra-card.open .cue-arrow { transform: rotate(180deg); }
+
+  /* Expanded detail panel — spans full row below */
+  .chakra-detail-row {
+    grid-column: 1 / -1;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .chakra-row.expanded .chakra-detail-row { max-height: 9999px; }
+  .chakra-detail-inner {
+    border: 1px solid var(--line);
+    border-radius: var(--border-radius-lg, 12px);
+    background: var(--parchment-deep);
+    margin: 0 0 1.5rem;
+    padding: 1.75rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem 2rem;
+  }
+  .chakra-detail-inner > .full { grid-column: 1 / -1; }
+  .detail-label {
+    font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent-saffron); margin-bottom: 6px; display: block;
+  }
+  .detail-body { font-size: 0.82rem; line-height: 1.85; color: var(--ink-soft); }
+  .mudra-invoke-card {
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: 1rem 1.1rem;
+    background: var(--parchment);
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .mudra-invoke-glyph {
+    width: 70px; height: 70px; flex-shrink: 0; border-radius: 4px;
+  }
+  .mudra-invoke-body { flex: 1; }
+  .mudra-invoke-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--ink);
+  }
+  .mudra-invoke-form {
+    font-size: 0.77rem; color: var(--ink-soft); line-height: 1.65; margin-top: 3px;
+  }
+  .signs-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+  }
+  .sign-block {
+    font-size: 0.75rem; padding: 8px 10px;
+    border: 1px solid var(--line); border-radius: 4px;
+  }
+  .sign-label {
+    font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .sign-text { color: var(--ink-soft); line-height: 1.5; }
+  .practice-steps {
+    list-style: none; margin-top: 4px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .practice-steps li {
+    font-size: 0.78rem; color: var(--ink-soft); line-height: 1.65;
+    padding-left: 1.2rem; position: relative;
+  }
+  .practice-steps li::before {
+    content: attr(data-n);
+    position: absolute; left: 0;
+    font-size: 0.65rem; font-weight: 500;
+    color: var(--accent-saffron);
+  }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MOBILE FIRST
+   Breakpoints: 480px (phone), 768px (tablet)
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── Header ── */
+  .site-header { padding: 2.5rem 1.25rem 2rem; }
+  .devanagari { font-size: 1.4rem; }
+  .site-title { font-size: clamp(2rem, 10vw, 3.2rem); }
+  .site-subtitle { font-size: 0.7rem; letter-spacing: 0.18em; }
+
+  /* ── Nav ── */
+  .nav-strip { padding: 0; }
+  .nav-btn { padding: 0.8rem 1rem; font-size: 0.65rem; letter-spacing: 0.12em; }
+
+  /* ── Sections ── */
+  .section { padding: 1.5rem 1rem 3rem; }
+
+  /* ── Catalog grid — 1 or 2 cols on mobile ── */
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .mudra-card.open {
+    grid-column: 1 / -1;
+  }
+  .card-face { padding: 1.5rem 1rem 1.25rem; gap: 0.75rem; }
+  .hand-icon { width: 80px; height: 80px; }
+  .card-name { font-size: 1.2rem; }
+  .card-tagline { font-size: 0.65rem; }
+
+  /* Open card face goes horizontal */
+  .mudra-card.open .card-face {
+    padding: 1.25rem 1.25rem 1rem;
+    gap: 1rem;
+  }
+  .mudra-card.open .hand-icon { width: 70px; height: 70px; }
+
+  /* Expanded inner — single column on mobile */
+  .expand-inner {
+    padding: 1.25rem 1.25rem 2rem;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .usage-blocks {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── About page ── */
+  .text-content h2 { font-size: 2rem !important; }
+  .text-content h3 { font-size: 1.3rem; }
+  .elem-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .elem-svg { width: 50px; height: 56px; }
+  .elem-name { font-size: 0.72rem; }
+  .elem-finger { font-size: 0.6rem; }
+  .pull { font-size: 0.95rem; }
+
+  /* ── Symbols grid ── */
+  .sym-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .sym-card.open { grid-column: 1 / -1; }
+  .sym-face { padding: 1.5rem 1rem 1.25rem; gap: 0.75rem; }
+  .sym-glyph { width: 80px; height: 80px; }
+  .sym-name { font-size: 1.1rem; }
+  .sym-expand-inner {
+    padding: 1.25rem 1.25rem 2rem;
+    grid-template-columns: 1fr;
+  }
+  .sym-usage-grid { grid-template-columns: 1fr; }
+  .sym-card.open .sym-face {
+    flex-direction: row;
+    padding: 1.25rem;
+    gap: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-card.open .sym-meta { text-align: left; }
+
+  /* ── Chakras page ── */
+  .chakra-page { padding: 0 0.25rem; }
+  .chakra-intro { font-size: 0.82rem; }
+  .chakra-intro .pull { font-size: 0.95rem; }
+  .spine-line { left: 28px; width: 2px; }
+
+  /* Stack chakra rows vertically, spine on left */
+  .chakra-row {
+    grid-template-columns: 56px 1fr;
+    gap: 0 0.75rem;
+    margin-bottom: 0;
+  }
+  .chakra-row .chakra-empty { display: none; }
+  /* Override flip — all rows same direction on mobile */
+  .chakra-row.flip { direction: ltr; }
+  .chakra-row.flip .chakra-left  { order: unset; }
+  .chakra-row.flip .chakra-spine { order: unset; }
+  .chakra-row.flip .chakra-right { order: unset; }
+
+  /* Force all cards into column 2 */
+  .chakra-card { margin: 0.4rem 0; }
+  .chakra-name-en { font-size: 1.1rem; }
+  .chakra-quick { gap: 4px; }
+  .qpill { font-size: 0.58rem; padding: 2px 7px; }
+
+  /* Detail panel full width */
+  .chakra-detail-row { grid-column: 1 / -1; }
+  .chakra-detail-inner {
+    padding: 1.25rem 1rem 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .mudra-invoke-card { flex-direction: column; gap: 0.75rem; }
+  .mudra-invoke-glyph { width: 80px; height: 80px; }
+  .signs-grid { grid-template-columns: 1fr; }
+  .detail-ref-grid { grid-template-columns: 1fr 1fr; }
+
+  /* ── Sources ── */
+  .ref-block { padding: 1rem; }
+  .ref-title { font-size: 1rem; }
+
+  /* ── Symbols intro heading ── */
+  .symbols-intro h2 { font-size: 2rem !important; }
+  .sym-family-label { margin: 2rem 0 1rem; }
+
+  /* ── Sources row chips ── */
+  .sources-row { gap: 6px; }
+  .source-chip { font-size: 0.65rem; padding: 4px 10px; }
+}
+
+@media (max-width: 480px) {
+
+  /* Phone — tighter still */
+  .site-header { padding: 2rem 1rem 1.5rem; }
+  .section { padding: 1.25rem 0.875rem 2.5rem; }
+
+  .nav-btn { padding: 0.75rem 0.75rem; font-size: 0.6rem; letter-spacing: 0.08em; }
+
+  .catalog-grid { grid-template-columns: 1fr 1fr; }
+  .hand-icon { width: 70px; height: 70px; }
+  .card-name { font-size: 1.1rem; }
+
+  .mudra-card.open .card-face {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .mudra-card.open .card-meta { text-align: center; }
+
+  .elem-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .elem-svg { width: 44px; height: 48px; }
+
+  .sym-grid { grid-template-columns: 1fr 1fr; }
+  .sym-glyph { width: 70px; height: 70px; }
+
+  /* Chakra spine stays left */
+  .chakra-dot { width: 44px; height: 44px; }
+  .chakra-name-en { font-size: 1rem; }
+  .chakra-keyword { font-size: 0.6rem; }
+  .qpill { font-size: 0.55rem; padding: 2px 6px; }
+
+  /* Search input full width */
+  .search-row { flex-direction: column; align-items: stretch; }
+  .search-input { width: 100%; }
+
+  /* Filter buttons wrap */
+  .filter-btns { gap: 4px; }
+  .filter-btn { font-size: 0.6rem; padding: 5px 10px; }
+}
+
+/* ── Tablet: 2 cols for chakra layout ── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .chakra-detail-inner { grid-template-columns: 1fr; }
+  .expand-inner { grid-template-columns: 1fr; }
+  .usage-blocks { grid-template-columns: 1fr; }
+}
+
+
+  /* ── TRADITION CARDS (martial / music-dance pages) ── */
+  .trad-page { max-width: 960px; margin: 0 auto; }
+  .trad-intro { max-width: 700px; margin: 0 auto 3rem; font-size: 0.875rem; line-height: 1.9; color: var(--ink-soft); }
+  .trad-intro .pull { font-family:"Cormorant Garamond",serif; font-style:italic; font-size:1.05rem; color:var(--accent-saffron); border-left:2px solid var(--accent-saffron); padding-left:1.2rem; margin:1.5rem 0; line-height:1.7; }
+  .cat-label { font-size:0.65rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--accent-saffron); margin:3rem 0 1.25rem; padding-bottom:0.5rem; border-bottom:1px solid var(--line); }
+  .trad-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin-bottom:0.5rem; }
+  .trad-card { background:var(--parchment); cursor:pointer; transition:background 0.2s; overflow:visible; border-bottom:none; }
+  .trad-card:hover { background:var(--parchment-deep); }
+  .trad-card.open { background:var(--parchment-deep); grid-column:1/-1; }
+  .trad-face { display:flex; flex-direction:column; align-items:center; padding:1.75rem 1.25rem 1.5rem; gap:0.85rem; user-select:none; }
+  .trad-card.open .trad-face { flex-direction:row; padding:1.5rem 2rem; gap:1.75rem; border-bottom:1px solid var(--line); }
+  .trad-card.open .trad-meta { text-align:left; }
+  .trad-glyph { width:100px; height:100px; flex-shrink:0; border-radius:8px; }
+  .trad-meta { text-align:center; }
+  .trad-name { font-family:"Cormorant Garamond",serif; font-size:1.35rem; font-weight:400; color:var(--ink); line-height:1.1; }
+  .trad-san { font-family:serif; font-size:0.85rem; display:block; margin-top:2px; }
+  .trad-origin { font-size:0.65rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-faint); margin-top:5px; }
+  .trad-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:4px; margin-top:8px; }
+  .trad-tag { font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; padding:2px 8px; border-radius:2px; }
+  .trad-expand { max-height:0; overflow:hidden; transition:max-height 0.55s cubic-bezier(0.4,0,0.2,1); }
+  .trad-card.open .trad-expand { max-height:9999px; }
+  .trad-inner { padding:1.5rem 2rem 2.5rem; display:grid; grid-template-columns:1fr 1fr; gap:0 2.5rem; }
+  .trad-inner > * { grid-column:1/-1; }
+  .trad-sec { font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent-saffron); margin:1.25rem 0 0.5rem; display:block; }
+  .trad-body { font-size:0.83rem; line-height:1.85; color:var(--ink-soft); }
+  .trad-pills { display:flex; flex-wrap:wrap; gap:6px; margin-top:0.4rem; }
+  .trad-pill { font-size:0.72rem; padding:4px 10px; border:1px solid var(--line); border-radius:2px; color:var(--ink-soft); background:var(--parchment); }
+  .trad-usages { grid-column:1/-1; display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; margin-top:0.5rem; }
+  .trad-usage { padding:13px 14px 11px; border:1px solid var(--line); border-radius:4px; background:var(--parchment); }
+  .trad-usage-cat { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:500; margin-bottom:5px; }
+  .trad-usage-desc { font-size:0.79rem; color:var(--ink-soft); line-height:1.65; }
+  .trad-usage-ref { font-size:0.68rem; color:var(--ink-faint); font-style:italic; margin-top:5px; padding-top:5px; border-top:1px solid var(--line); }
+  .trad-sources { grid-column:1/-1; margin-top:1.75rem; padding-top:1rem; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .expand-cue { font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-whisper); margin-top:10px; display:block; transition:color 0.2s; }
+  .trad-card:hover .expand-cue { color:var(--ink-faint); }
+  .trad-card.open .expand-cue { color:var(--accent-saffron); }
+  .cue-arr { display:inline-block; transition:transform 0.3s; }
+  .trad-card.open .cue-arr { transform:rotate(180deg); }
+  @media(max-width:768px){
+    .trad-grid { grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); }
+    .trad-card.open .trad-face { flex-direction:column; align-items:center; }
+    .trad-card.open .trad-meta { text-align:center; }
+    .trad-inner { padding:1.25rem 1rem 2rem; grid-template-columns:1fr; }
+    .trad-usages { grid-template-columns:1fr; }
+    .trad-glyph { width:80px; height:80px; }
+  }
+
+  /* ── MARTIAL / PERFORMING CARDS ── */
+  .m-grid, .p-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0;border:1px solid var(--line);border-bottom:none; }
+  .m-card, .p-card { background:var(--parchment);cursor:pointer;border-bottom:1px solid var(--line);border-right:1px solid var(--line);transition:background 0.2s;animation:fadeUp 0.4s ease both; }
+  .m-card.open, .p-card.open { background:var(--parchment-deep);grid-column:1/-1;border-right:none; }
+  .m-face, .p-face { display:flex;gap:1rem;align-items:flex-start;padding:1.5rem 1.25rem 1.25rem; }
+  .m-name,.p-name { font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:5px; }
+  .m-expand,.p-expand { max-height:0;overflow:hidden;transition:max-height 0.55s cubic-bezier(0.4,0,0.2,1); }
+  .m-expand-inner { padding:1.75rem 2rem 2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem 2rem; }
+  .m-expand-inner > .full { grid-column:1/-1; }
+  .mudra-row { padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:var(--parchment);margin-bottom:8px; }
+  .mudra-row-name { font-size:0.78rem;font-weight:500;margin-bottom:2px; }
+  .mudra-row-form { font-size:0.74rem;color:var(--ink-faint);margin-bottom:3px; }
+  .mudra-row-use { font-size:0.78rem;color:var(--ink-soft);line-height:1.6; }
+  .m-filter-btn { font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--ink-faint);cursor:pointer;transition:all 0.15s; }
+  .m-filter-btn.active { background:var(--ink);color:var(--parchment);border-color:var(--ink); }
+  .section-divider { margin:3rem 0 1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--line); }
+  .section-divider-label { font-size:0.65rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--accent-saffron);margin-bottom:6px; }
+  .section-divider-title { font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--ink); }
+  @media(max-width:600px){ .m-grid,.p-grid{grid-template-columns:1fr;} .m-expand-inner{padding:1.25rem 1rem 2rem;grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="devanagari">मुद्रा</div>
+  <h1 class="site-title">MUDRA</h1>
+  <p class="site-subtitle">An Illustrated Compendium of Sacred Hand Gestures</p>
+</header>
+<nav class="nav-strip">
+  <a class="nav-btn" href="index.html">Catalog</a>
+  <a class="nav-btn" href="about.html">About Mudras</a>
+  <span class="nav-btn active">Mudras &amp; Chakras</span>
+  <a class="nav-btn" href="martial.html">Martial Arts</a>
+  <a class="nav-btn" href="performing.html">Music &amp; Dance</a>
+  <a class="nav-btn" href="symbols.html">Sacred Symbols</a>
+  <a class="nav-btn" href="sources.html">Sources &amp; Texts</a>
+</nav>
+<main class="main">
+
+
+<div id="chakras" class="section active">
+  <div class="chakra-page">
+    <div class="intro-eyebrow" style="text-align:center;">The Subtle Body</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;line-height:1.1;text-align:center;margin-bottom:1rem;">Mudras & the Seven Chakras</h2>
+    <div class="chakra-intro">
+      <p>Chakras (Sanskrit: चक्र, "wheel") are the seven primary energy centres arranged along the sushumna nadi — the central channel of the subtle body running from the base of the spine to the crown of the head. Each chakra governs specific dimensions of physical, emotional, and spiritual life. Mudras are one of the primary tools for activating, balancing, and directing prana (life force) through these centres.</p>
+      <div class="pull">"When you form a mudra, you activate elemental connections and send healing vibrations into your nervous system and chakras. The fingers are the keys; the chakras are the locks."</div>
+      <p>The relationship works through the finger–element–chakra chain: <strong>each finger corresponds to one of the five elements</strong>, each element resonates with a specific chakra, and each mudra — by connecting specific fingertips — creates a circuit that amplifies or redirects elemental energy to its corresponding centre. Combined with bija mantras (seed sound vibrations) and focused awareness at the chakra location, mudras become a complete invocation system.</p>
+    </div>
+    <div class="chakra-track" id="chakra-track">
+      <div class="spine-line"></div>
+      
+    </div>
+    <div style="text-align:center;margin-top:2rem;padding:1.5rem;border:1px solid var(--line);border-radius:var(--border-radius-lg);max-width:600px;margin-left:auto;margin-right:auto;">
+      <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-saffron);margin-bottom:0.5rem;">How to use this section</p>
+      <p style="font-size:0.82rem;color:var(--ink-soft);line-height:1.8;">Tap any chakra card to expand the full invocation practice — mudra form, bija mantra, signs of imbalance, and step-by-step meditation instructions. Work from the root upward for a complete chakra meditation sequence.</p>
+    </div>
+  </div>
+</div>
+
+
+</main>
+<footer class="site-footer">
+  Mudra Compendium &mdash; compiled for reference and study &middot; Sources: Natya Shastra, Abhinaya Darpana, Wikipedia, Smarthistory, iPassio, Yoga Jala &amp; more
+</footer>
+<script>
+
+// CHAKRA × MUDRA DATA
+// ══════════════════════════════════════════
+
+const chakraData = [
+  {
+    n: 1, id: 'muladhara',
+    name: 'Mūlādhāra', san: 'मूलाधार', en: 'Root Chakra',
+    keyword: 'Survival · Grounding · Safety',
+    location: 'Base of the spine / perineum',
+    element: 'Earth · Prithvi', finger: 'Ring finger',
+    color: '#c8200a', colorLight: '#fce8e5', colorText: '#8a1a0a',
+    bija: 'LAM', petals: 4, deity: 'Brahma / Dakini',
+    affirmation: 'I AM',
+    mudra: {
+      name: 'Prithvi Mudra',
+      san: 'पृथ्वी मुद्रा',
+      form: 'Touch the tip of the ring finger to the tip of the thumb. Extend the remaining three fingers gently outward. Rest both hands on the knees, palms facing upward.',
+      svg: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="mudra-invoke-glyph"><rect width="120" height="120" fill="#fdf5f5" rx="6"/><rect x="0" y="60" width="120" height="60" fill="#f0e8d8" opacity="0.5" rx="0 0 6 6"/><line x1="0" y1="60" x2="120" y2="60" stroke="#a07840" stroke-width="1.5"/><path d="M0 60 L18 38 L32 48 L60 20 L88 48 L102 38 L120 60Z" fill="#c8a870" opacity="0.55"/><path d="M60 20 L56 28 L64 28Z" fill="white" opacity="0.7"/><path d="M60 60 Q54 72 48 84 Q42 94 36 100" stroke="#8a6030" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M60 60 Q60 74 60 88 Q60 96 60 108" stroke="#8a6030" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M60 60 Q66 72 72 84 Q78 94 84 100" stroke="#8a6030" stroke-width="1.8" fill="none" stroke-linecap="round"/><circle cx="60" cy="60" r="8" fill="#c8200a" opacity="0.8"/><circle cx="60" cy="60" r="4" fill="#fdf5f5"/></svg>`
+    },
+    about: 'The Root Chakra is the foundation of the entire energy system — your physical, primal connection to the earth. It governs survival instincts, the feeling of being safe in the body, physical vitality, and the sense of belonging to a family and place. When balanced, there is an unshakeable sense of stability, patience, and presence. When deficient, anxiety, restlessness, financial fear, and a feeling of perpetual groundlessness arise.',
+    imbalance: { excess: 'Hoarding, rigidity, resistance to change, heaviness, materialism', deficient: 'Anxiety, fearfulness, restlessness, disconnection from the body, financial instability' },
+    practice: [
+      'Sit cross-legged on the floor — direct contact with earth amplifies the practice.',
+      'Form Prithvi Mudra on both hands and rest them on your knees.',
+      'Breathe deeply. On each exhale, chant "LAM" (pronounced lum) three times — feel the vibration at the base of the spine.',
+      'Visualise a glowing red four-petalled lotus at the perineum, roots extending deep into the earth.',
+      'Hold for 10–15 minutes. Ideal at dawn, seated directly on the ground outdoors.'
+    ]
+  },
+  {
+    n: 2, id: 'svadhisthana',
+    name: 'Svādhiṣṭhāna', san: 'स्वाधिष्ठान', en: 'Sacral Chakra',
+    keyword: 'Creativity · Pleasure · Emotion',
+    location: 'Lower abdomen, 2 inches below navel',
+    element: 'Water · Jala', finger: 'Little finger',
+    color: '#d86010', colorLight: '#fdf0e0', colorText: '#8a3a00',
+    bija: 'VAM', petals: 6, deity: 'Vishnu / Rakini',
+    affirmation: 'I FEEL',
+    mudra: {
+      name: 'Varun Mudra',
+      san: 'वरुण मुद्रा',
+      form: 'Touch the tip of the little finger to the tip of the thumb. Keep the remaining three fingers extended and slightly relaxed. Palms face upward on the knees.',
+      svg: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="mudra-invoke-glyph"><rect width="120" height="120" fill="#f0f8fc" rx="6"/><path d="M40 18 Q40 18 26 42 Q18 58 20 66 Q20 82 40 84 Q60 82 60 66 Q62 58 54 42 Q40 18 40 18Z" fill="#a8d4e8" opacity="0.7" stroke="#4a9ab8" stroke-width="1.2"/><circle cx="46" cy="40" r="2.5" fill="white" opacity="0.5"/><ellipse cx="40" cy="90" rx="26" ry="5" stroke="#4a9ab8" stroke-width="0.8" fill="none" opacity="0.4"/><ellipse cx="40" cy="90" rx="16" ry="3" stroke="#4a9ab8" stroke-width="0.7" fill="none" opacity="0.3"/><path d="M70 30 Q80 30 84 38 Q88 46 82 52 Q76 58 68 52 Q62 46 66 38 Q68 30 70 30Z" fill="#a8d4e8" opacity="0.5" stroke="#4a9ab8" stroke-width="1"/><circle cx="80" cy="65" r="3" fill="#a8d4e8" opacity="0.45" stroke="#4a9ab8" stroke-width="0.8"/><circle cx="90" cy="48" r="2.5" fill="#a8d4e8" opacity="0.4"/></svg>`
+    },
+    about: 'The Sacral Chakra is the seat of creative life force, sensual pleasure, and emotional intelligence. It governs how we relate to our own desires, to other people, and to the flow of life. Water is its element — and like water, Svadhisthana is meant to move, flow, and adapt. When open, there is fluid creativity, healthy pleasure, emotional depth, and joyful social connection.',
+    imbalance: { excess: 'Emotional overdependence, addiction, excessive sexuality, fantasy, manipulation', deficient: 'Numbness, lack of creativity, rigidity, guilt around pleasure, emotional isolation' },
+    practice: [
+      'Sit comfortably. Form Varun Mudra on both hands, palms upward.',
+      'Place hands on or near the lower abdomen, just below the navel.',
+      'Chant "VAM" (vum) on each exhale — feel the vibration flowing through the pelvis.',
+      'Visualise a warm orange six-petalled lotus opening like a flower in the pelvic bowl.',
+      'Sway gently side to side as you breathe — embody the water element in motion. Hold 10 minutes.'
+    ]
+  },
+  {
+    n: 3, id: 'manipura',
+    name: 'Maṇipūra', san: 'मणिपूर', en: 'Solar Plexus Chakra',
+    keyword: 'Power · Will · Confidence',
+    location: 'Behind the navel, upper abdomen',
+    element: 'Fire · Agni', finger: 'Thumb',
+    color: '#c8a000', colorLight: '#fdf8e0', colorText: '#7a6000',
+    bija: 'RAM', petals: 10, deity: 'Rudra / Lakini',
+    affirmation: 'I DO',
+    mudra: {
+      name: 'Surya / Agni Mudra',
+      san: 'सूर्य मुद्रा',
+      form: 'Bend the ring finger down to touch the base of the thumb. Rest the thumb lightly on top of the bent ring finger. Extend the remaining three fingers straight outward.',
+      svg: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="mudra-invoke-glyph"><rect width="120" height="120" fill="#fdf8e8" rx="6"/><g stroke="#b8882a" stroke-width="1.2" opacity="0.45"><line x1="60" y1="12" x2="60" y2="24"/><line x1="60" y1="96" x2="60" y2="108"/><line x1="12" y1="60" x2="24" y2="60"/><line x1="96" y1="60" x2="108" y2="60"/><line x1="24" y1="24" x2="32" y2="32"/><line x1="88" y1="24" x2="80" y2="32"/><line x1="24" y1="96" x2="32" y2="88"/><line x1="88" y1="96" x2="80" y2="88"/></g><circle cx="60" cy="60" r="28" fill="#f8e888" opacity="0.7" stroke="#b8882a" stroke-width="1.5"/><circle cx="60" cy="60" r="18" fill="#e8c840" opacity="0.7"/><circle cx="60" cy="60" r="10" fill="#c8a000" opacity="0.85"/><circle cx="60" cy="60" r="5" fill="#fdf8e8"/><path d="M60 20 L63 32 L76 28 L68 38 L80 44 L68 46 L72 60 L62 52 L60 66 L58 52 L48 60 L52 46 L40 44 L52 38 L44 28 L57 32Z" fill="#e8c840" opacity="0.25"/></svg>`
+    },
+    about: 'Manipura — "city of jewels" — is the power centre of the personality. It governs self-confidence, willpower, digestion (the body\'s inner fire), and the capacity to act on your intentions. The fire element of the thumb, when activated through Agni Mudra, directly stokes the digestive fire (agni) and the inner flame of personal power. A balanced Manipura allows clear, decisive action without aggression or passivity.',
+    imbalance: { excess: 'Domineering, arrogance, hyperactivity, perfectionism, excessive control', deficient: 'Low self-esteem, indecisiveness, poor digestion, fatigue, submissiveness' },
+    practice: [
+      'Sit upright with a tall spine — this activates the solar channel.',
+      'Form Agni Mudra on both hands. Place them before the solar plexus, palms facing the belly.',
+      'Breathe Kapalabhati (rapid exhales) for 30 breaths — this fans the inner fire.',
+      'Then slow the breath. Chant "RAM" (rum) on each exhale, feeling warmth radiate from the navel.',
+      'Visualise a blazing golden-yellow ten-petalled lotus spinning like a sun at the navel centre.'
+    ]
+  },
+  {
+    n: 4, id: 'anahata',
+    name: 'Anāhata', san: 'अनाहत', en: 'Heart Chakra',
+    keyword: 'Love · Compassion · Union',
+    location: 'Centre of the chest',
+    element: 'Air · Vayu', finger: 'Index finger',
+    color: '#2a8a4a', colorLight: '#e0f5e8', colorText: '#1a5a2a',
+    bija: 'YAM', petals: 12, deity: 'Isha / Kakini',
+    affirmation: 'I LOVE',
+    mudra: {
+      name: 'Hridaya / Gyan Mudra',
+      san: 'हृदय मुद्रा',
+      form: 'Touch the tip of the index finger to the tip of the thumb, forming a circle. Extend the remaining three fingers gently. For Hridaya (heart) mudra specifically: place right hand at heart, left hand in Gyan on the knee.',
+      svg: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="mudra-invoke-glyph"><rect width="120" height="120" fill="#f0f8f2" rx="6"/><g stroke="#2a8a4a" stroke-width="0.7" opacity="0.3"><line x1="60" y1="60" x2="60" y2="8"/><line x1="60" y1="60" x2="104" y2="34"/><line x1="60" y1="60" x2="104" y2="86"/><line x1="60" y1="60" x2="60" y2="112"/><line x1="60" y1="60" x2="16" y2="86"/><line x1="60" y1="60" x2="16" y2="34"/></g><g fill="#a0d8b0" opacity="0.35"><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(0,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(30,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(60,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(90,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(120,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(150,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(180,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(210,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(240,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(270,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(300,60,60)"/><ellipse cx="60" cy="20" rx="6" ry="10" transform="rotate(330,60,60)"/></g><path d="M48 50 Q48 42 56 42 Q60 42 60 48 Q60 42 64 42 Q72 42 72 50 Q72 58 60 68 Q48 58 48 50Z" fill="#2a8a4a" opacity="0.7"/><circle cx="60" cy="60" r="8" fill="none" stroke="#2a8a4a" stroke-width="1.5" opacity="0.4"/></svg>`
+    },
+    about: 'Anahata — "unstruck sound" — is the bridge between the lower three earthly chakras and the upper three transcendent ones. The heart centre is where individual self-love expands into universal compassion. Its element, air, moves freely in all directions — as love does when unobstructed. The index finger (air element) forms the circle of Gyan/Hridaya mudra, connecting individual consciousness to the boundless. A balanced Anahata gives and receives love with equal ease.',
+    imbalance: { excess: 'Codependency, possessiveness, jealousy, smothering love, martyrdom', deficient: 'Coldness, grief, loneliness, inability to receive love, isolation, bitterness' },
+    practice: [
+      'Sit quietly. Place the right hand at the heart centre, forming a soft Hridaya mudra.',
+      'Left hand rests in Gyan mudra on the left knee.',
+      'Breathe slowly and deeply into the chest. On each exhale chant "YAM" (yum) softly.',
+      'Visualise a green twelve-petalled lotus opening at the heart, filling the chest with warm light.',
+      'With each inhale: receive love. With each exhale: send love outward in all directions. 10–15 minutes.'
+    ]
+  },
+  {
+    n: 5, id: 'vishuddha',
+    name: 'Viśuddha', san: 'विशुद्ध', en: 'Throat Chakra',
+    keyword: 'Expression · Truth · Communication',
+    location: 'Centre of the throat',
+    element: 'Space · Akasha', finger: 'Middle finger',
+    color: '#2060a8', colorLight: '#e0ecf8', colorText: '#163a6a',
+    bija: 'HAM', petals: 16, deity: 'Panchavaktra Shiva / Shakini',
+    affirmation: 'I SPEAK',
+    mudra: {
+      name: 'Akasha Mudra',
+      san: 'आकाश मुद्रा',
+      form: 'Touch the tip of the middle finger to the tip of the thumb. Keep the remaining fingers extended and relaxed. Both hands rest on the knees, palms facing upward.',
+      svg: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="mudra-invoke-glyph"><rect width="120" height="120" fill="#f0f4fc" rx="6"/><circle cx="60" cy="58" r="42" fill="none" stroke="#2060a8" stroke-width="0.6" opacity="0.12"/><circle cx="60" cy="58" r="34" fill="none" stroke="#2060a8" stroke-width="0.7" opacity="0.18"/><circle cx="60" cy="58" r="26" fill="none" stroke="#2060a8" stroke-width="0.8" opacity="0.25"/><circle cx="60" cy="58" r="18" fill="none" stroke="#2060a8" stroke-width="1" opacity="0.35"/><circle cx="60" cy="58" r="10" fill="none" stroke="#2060a8" stroke-width="1.5" opacity="0.5"/><circle cx="60" cy="58" r="5" fill="#2060a8" opacity="0.7"/><circle cx="18" cy="22" r="1.5" fill="#2060a8" opacity="0.4"/><circle cx="96" cy="16" r="2" fill="#2060a8" opacity="0.45"/><circle cx="106" cy="44" r="1.5" fill="#2060a8" opacity="0.35"/><circle cx="14" cy="72" r="1.5" fill="#2060a8" opacity="0.35"/><circle cx="100" cy="80" r="1.8" fill="#2060a8" opacity="0.4"/><circle cx="32" cy="100" r="1.4" fill="#2060a8" opacity="0.3"/></svg>`
+    },
+    about: 'Vishuddha — "purification" — is the gateway between thought and expression. Its element is Akasha (space/ether) — the most subtle of the five elements, the medium through which sound travels. The middle finger (space element) connecting to the thumb in Akasha Mudra opens the space of the throat for authentic expression. A balanced Vishuddha allows you to speak your truth clearly, listen deeply, and communicate with integrity. It is the chakra of the artist, the teacher, and the poet.',
+    imbalance: { excess: 'Talking too much, inability to listen, gossiping, using words to control', deficient: 'Fear of speaking, difficulty finding words, voice barely audible, swallowing feelings' },
+    practice: [
+      'Sit with the throat relaxed and free — avoid tucking the chin.',
+      'Form Akasha Mudra on both hands, palms facing up at the knees.',
+      'Take a deep breath. Open the mouth wide and chant "HAM" (hum) on the exhale — feel the vibration in the throat.',
+      'Visualise a luminous blue sixteen-petalled lotus at the throat, petals opening like a tuning fork resonating.',
+      'Practice humming continuously for 2–3 minutes — this is the direct massage of the throat chakra. 10 minutes total.'
+    ]
+  },
+  {
+    n: 6, id: 'ajna',
+    name: 'Ājñā', san: 'आज्ञा', en: 'Third Eye Chakra',
+    keyword: 'Intuition · Perception · Wisdom',
+    location: 'Between the eyebrows (brow centre)',
+    element: 'Light / All elements transcended', finger: 'All elements unified',
+    color: '#4030a0', colorLight: '#eceaf8', colorText: '#2a206a',
+    bija: 'OM / AUM', petals: 2, deity: 'Ardhanarishvara / Hakini',
+    affirmation: 'I SEE',
+    mudra: {
+      name: 'Jnana / Hakini Mudra',
+      san: 'ज्ञान / हाकिनी मुद्रा',
+      form: 'For Jnana: tip of index finger to tip of thumb on each hand. For Hakini (specifically for Ajna): bring all five fingertips of both hands together, touching tip to tip, forming a hollow sphere between the palms.',
+      svg: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="mudra-invoke-glyph"><rect width="120" height="120" fill="#f2f0fc" rx="6"/><circle cx="60" cy="58" r="36" fill="#e6e4f8" stroke="#4030a0" stroke-width="1.2"/><path d="M20 58 Q40 28 60 28 Q80 28 100 58 Q80 88 60 88 Q40 88 20 58Z" fill="#d8d4f5" stroke="#4030a0" stroke-width="1.5"/><circle cx="60" cy="58" r="16" fill="#b8b0e8" opacity="0.6"/><circle cx="60" cy="58" r="10" stroke="#4030a0" stroke-width="2" fill="none"/><circle cx="60" cy="58" r="5" fill="#4030a0" opacity="0.85"/><circle cx="64" cy="54" r="2.5" fill="white" opacity="0.8"/><path d="M60 44 L64 54 L74 56 L64 60 L60 72 L56 60 L46 56 L56 54Z" fill="#4030a0" opacity="0.15"/></svg>`
+    },
+    about: 'Ajna — "command" or "perceive" — is the seat of intuition, higher wisdom, and the faculty that perceives beyond the five physical senses. Its two petals represent the dual currents of Ida (left, lunar) and Pingala (right, solar) nadis uniting at the brow in the Sushumna. When Ajna opens, the inner guru speaks clearly: decisions become intuitive, patterns are perceived before they manifest, and the boundary between the personal and universal self becomes translucent. The Hakini mudra, by joining all five fingertips, unifies all five elements into a sphere — the gestural symbol of omnidirectional perception.',
+    imbalance: { excess: 'Over-intellectualisation, delusion, headaches, living in fantasy, inability to ground visions', deficient: 'Poor memory, lack of imagination, denial of intuition, rigid thinking, confusion of purpose' },
+    practice: [
+      'Sit in a comfortable, upright position. Close the eyes and direct awareness to the brow centre.',
+      'Form Hakini Mudra — all fingertips touching, a hollow sphere between the palms. Hold before the face.',
+      'Breathe slowly. On each exhale chant "OM" (ohm) — feel the vibration between the eyebrows.',
+      'Visualise a deep indigo or violet two-petalled lotus at the third eye, like two wings of a butterfly.',
+      'After 5 minutes, silently ask a question you need guidance on — then simply listen. Hold 10–20 minutes.'
+    ]
+  },
+  {
+    n: 7, id: 'sahasrara',
+    name: 'Sahasrāra', san: 'सहस्रार', en: 'Crown Chakra',
+    keyword: 'Unity · Enlightenment · Pure Consciousness',
+    location: 'Top of the head (crown)',
+    element: 'Beyond all elements — pure consciousness', finger: 'All transcended',
+    color: '#7030a0', colorLight: '#f0e8fc', colorText: '#4a1870',
+    bija: 'OM / Silence', petals: 1000, deity: 'Shiva (pure consciousness) / Yamini',
+    affirmation: 'I AM ALL',
+    mudra: {
+      name: 'Dhyana / Mahasirs Mudra',
+      san: 'ध्यान / महाशिर्ष मुद्रा',
+      form: 'Dhyana Mudra: right hand resting in left palm, both palms up in the lap, thumbs lightly touching. Or Mahasirs: interlace the fingers, extend both ring fingers upward touching at their tips, cross the thumbs. Hold above the crown or in the lap.',
+      svg: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="mudra-invoke-glyph"><rect width="120" height="120" fill="#f8f0fc" rx="6"/><g opacity="0.2"><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(0,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(12,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(24,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(36,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(48,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(60,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(72,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(84,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(96,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(108,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(120,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(132,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(144,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(156,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(168,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(180,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(192,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(204,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(216,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(228,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(240,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(252,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(264,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(276,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(288,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(300,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(312,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(324,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(336,60,60)"/><ellipse cx="60" cy="20" rx="7" ry="12" transform="rotate(348,60,60)"/></g><circle cx="60" cy="60" r="28" fill="#e0d0f5" stroke="#7030a0" stroke-width="1.5"/><circle cx="60" cy="60" r="18" fill="#d0b8f0" opacity="0.7"/><circle cx="60" cy="60" r="10" fill="#9060c0" opacity="0.7"/><circle cx="60" cy="60" r="5" fill="#7030a0" opacity="0.9"/><circle cx="60" cy="60" r="2" fill="white" opacity="0.9"/><g stroke="#9060c0" stroke-width="0.6" opacity="0.4"><line x1="60" y1="32" x2="60" y2="12"/><line x1="60" y1="88" x2="60" y2="108"/><line x1="32" y1="60" x2="12" y2="60"/><line x1="88" y1="60" x2="108" y2="60"/></g></svg>`
+    },
+    about: 'Sahasrara — "thousand-petalled lotus" — is the crown of the entire chakra system and the seat of pure, non-dual consciousness. It is not activated by any specific finger or element because it transcends all of them — here the practitioner dissolves the boundary between individual self and universal consciousness. The Dhyana mudra — the meditation bowl formed by both hands — is the quintessential Sahasrara mudra, reflecting the posture of the Buddha at enlightenment. The bija is either OM (for the transitional state) or complete silence (for the fully open crown). The Kundalini energy, having risen through all six lower chakras, blossoms here in the final union of Shiva (pure awareness) and Shakti (energy).',
+    imbalance: { excess: 'Spiritual bypass, disconnection from body, grandiosity, existential aimlessness', deficient: 'Spiritual cynicism, feeling cut off from meaning, depression, materialism, inability to meditate' },
+    practice: [
+      'Sit in Padmasana (lotus) or Siddhasana — a posture of completed alignment.',
+      'Form Dhyana Mudra — right palm resting in left, both in the lap, thumbs touching.',
+      'Breathe in complete silence. On the exhale, either chant "OM" very softly, or release into total silence.',
+      'Visualise a thousand-petalled violet/white lotus opening at the crown — a fountain of light descending.',
+      'Let go of all technique. Simply be. The mudra holds itself; the breath breathes itself. Rest here as long as the stillness lasts.'
+    ]
+  },
+];
+
+// ── RENDER CHAKRA TRACK ──
+function renderChakras() {
+  const track = document.getElementById('chakra-track');
+  if (!track) return;
+  // Keep the spine-line div, append rows
+  const spineDiv = track.querySelector('.spine-line');
+
+  chakraData.forEach((c, i) => {
+    const isFlip = i % 2 === 1; // alternate sides
+    // main row
+    const row = document.createElement('div');
+    row.className = 'chakra-row' + (isFlip ? ' flip' : '');
+    row.id = 'crow-' + c.id;
+
+    const cardHTML = `
+      <div class="chakra-card" id="ccard-${c.id}" onclick="toggleChakra('${c.id}')" style="border-left-color:${c.color}">
+        <p class="chakra-number">Chakra ${c.n}</p>
+        <p class="chakra-name-en" style="color:${c.color}">${c.en}</p>
+        <p class="chakra-name-san" style="color:${c.color}">${c.name} · ${c.san}</p>
+        <p class="chakra-keyword" style="color:${c.color}">${c.keyword}</p>
+        <div class="chakra-quick">
+          <span class="qpill" style="background:${c.colorLight};color:${c.colorText};border-color:${c.color}30">🔮 ${c.bija}</span>
+          <span class="qpill" style="background:${c.colorLight};color:${c.colorText};border-color:${c.color}30">✦ ${c.element.split('·')[0].trim()}</span>
+          <span class="qpill" style="background:${c.colorLight};color:${c.colorText};border-color:${c.color}30">🤚 ${c.mudra.name}</span>
+        </div>
+        <span class="expand-cue">Tap to invoke <span class="cue-arrow">↓</span></span>
+      </div>`;
+
+    const spineHTML = `
+      <div class="chakra-spine">
+        <div class="chakra-dot" style="background:${c.colorLight};border:2px solid ${c.color}">
+          <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="14" fill="${c.colorLight}" stroke="${c.color}" stroke-width="2"/>
+            <text x="18" y="23" text-anchor="middle" font-family="serif" font-size="14" fill="${c.color}" font-weight="bold">${c.n}</text>
+          </svg>
+        </div>
+        ${i < 6 ? `<div class="chakra-connector" style="background:${c.color}"></div>` : ''}
+      </div>`;
+
+    if (!isFlip) {
+      row.innerHTML = `${cardHTML}<div>${spineHTML}</div><div class="chakra-empty"></div>`;
+    } else {
+      row.innerHTML = `<div class="chakra-empty"></div><div>${spineHTML}</div>${cardHTML}`;
+    }
+
+    // detail row (full width, hidden until open)
+    const detailRow = document.createElement('div');
+    detailRow.className = 'chakra-detail-row';
+    detailRow.id = 'cdetail-' + c.id;
+    detailRow.style.gridColumn = '1 / -1';
+    detailRow.innerHTML = `
+      <div class="chakra-detail-inner">
+        <div class="full">
+          <span class="detail-label">About this chakra</span>
+          <p class="detail-body">${c.about}</p>
+        </div>
+
+        <div>
+          <span class="detail-label">Invocation mudra</span>
+          <div class="mudra-invoke-card">
+            ${c.mudra.svg}
+            <div class="mudra-invoke-body">
+              <p class="mudra-invoke-name">${c.mudra.name}</p>
+              <p style="font-family:serif;font-size:0.8rem;color:${c.color};margin:2px 0 6px;">${c.mudra.san}</p>
+              <p class="mudra-invoke-form">${c.mudra.form}</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="detail-label">Quick reference</span>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            ${[
+              ['Location', c.location],
+              ['Element', c.element],
+              ['Finger', c.finger],
+              ['Bīja Mantra', c.bija],
+              ['Lotus Petals', c.petals.toLocaleString()],
+              ['Deity', c.deity],
+              ['Affirmation', c.affirmation],
+            ].map(([k,v])=>`<div style="padding:7px 10px;border:1px solid var(--line);border-radius:4px;background:var(--parchment)">
+              <p style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:${c.color};margin-bottom:3px">${k}</p>
+              <p style="font-size:0.77rem;color:var(--ink-soft)">${v}</p>
+            </div>`).join('')}
+          </div>
+        </div>
+
+        <div>
+          <span class="detail-label">Signs of imbalance</span>
+          <div class="signs-grid">
+            <div class="sign-block" style="border-left:3px solid ${c.color}">
+              <p class="sign-label" style="color:${c.color}">Excess</p>
+              <p class="sign-text">${c.imbalance.excess}</p>
+            </div>
+            <div class="sign-block" style="border-left:3px solid ${c.color}">
+              <p class="sign-label" style="color:${c.color}">Deficient</p>
+              <p class="sign-text">${c.imbalance.deficient}</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="detail-label">Invocation practice — step by step</span>
+          <ol class="practice-steps">
+            ${c.practice.map((s,i)=>`<li data-n="${i+1}">${s}</li>`).join('')}
+          </ol>
+        </div>
+      </div>`;
+
+    // Wrap row + detailRow in a container div so detail spans the full width
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'contents';
+    track.appendChild(row);
+    track.appendChild(detailRow);
+  });
+}
+
+function toggleChakra(id) {
+  const card = document.getElementById('ccard-' + id);
+  const detail = document.getElementById('cdetail-' + id);
+  const row = document.getElementById('crow-' + id);
+  const isOpen = card.classList.contains('open');
+
+  // close all
+  document.querySelectorAll('.chakra-card.open').forEach(c => c.classList.remove('open'));
+  document.querySelectorAll('.chakra-detail-row').forEach(d => {
+    d.style.maxHeight = '0';
+    const r = document.getElementById('crow-' + d.id.replace('cdetail-',''));
+    if (r) r.classList.remove('expanded');
+  });
+
+  if (!isOpen) {
+    card.classList.add('open');
+    detail.style.maxHeight = detail.scrollHeight + 2000 + 'px';
+    if (row) row.classList.add('expanded');
+    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+  }
+}
+
+renderChakras();
+renderSymbols();
+
+renderChakras();
+
+</script>
+
+</body>
+</html>

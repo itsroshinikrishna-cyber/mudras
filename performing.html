@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music & Performing Arts — Mudra Compendium</title>
+  <meta name="description" content="Mudras in Indian music and performing arts — Vedic tala, Carnatic composer signatures, Kathak, Sattriya, Kutiyattam, Theyyam, Yakshagana and Krishnattam.">
+  <meta name="theme-color" content="#faf6f0">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --ink: #1a1410;
+    --ink-soft: #4a3f35;
+    --ink-faint: #8a7a6e;
+    --ink-whisper: #c8bdb0;
+    --parchment: #faf6f0;
+    --parchment-deep: #f2ebe0;
+    --parchment-shadow: #e8ddd0;
+    --accent-saffron: #c8641a;
+    --accent-gold: #b8882a;
+    --accent-vermillion: #c03830;
+    --accent-teal: #2a7a6a;
+    --accent-indigo: #3a3880;
+    --line: rgba(26,20,16,0.12);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── TEXTURE OVERLAY ── */
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events:none; z-index:0;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    position: relative;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    background: var(--parchment);
+  }
+  .site-header::after {
+    content:'';
+    display:block;
+    width:80px; height:2px;
+    background: var(--accent-saffron);
+    margin: 1.5rem auto 0;
+  }
+  .devanagari {
+    font-size: 2rem;
+    color: var(--accent-saffron);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    font-family: serif;
+  }
+  .site-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .site-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 1rem;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-strip {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--line);
+    background: var(--parchment);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-strip::-webkit-scrollbar { display:none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    position: relative;
+    top: 1px;
+  }
+  .nav-btn:hover { color: var(--ink); }
+  .nav-btn.active {
+    color: var(--accent-saffron);
+    border-bottom-color: var(--accent-saffron);
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main { position: relative; z-index: 1; }
+  .section { display:none; padding: 2.5rem 1.5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .section.active { display:block; }
+
+  /* ── SECTION INTRO ── */
+  .section-intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  @media(max-width:600px){ .section-intro { grid-template-columns:1fr; gap:1.5rem; } }
+  .intro-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin-bottom: 0.75rem;
+  }
+  .intro-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .intro-text {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .intro-quote {
+    margin-top: 1.5rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--accent-saffron);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  /* ── CATALOG GRID ── */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    border-bottom: none;
+  }
+
+  /* ── MUDRA CARD ── */
+  .mudra-card {
+    background: var(--parchment);
+    cursor: pointer;
+    transition: background 0.2s;
+    overflow: visible;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  /* When open, span full row so content is never cropped */
+  .mudra-card.open {
+    grid-column: 1 / -1;
+    background: var(--parchment-deep);
+    border-right: none;
+  }
+  .mudra-card:hover { background: var(--parchment-deep); }
+
+  .card-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem 1.75rem;
+    gap: 1rem;
+    user-select: none;
+  }
+  /* When card is open, show face inline left beside content */
+  .mudra-card.open .card-face {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.75rem 2rem 1.5rem;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .mudra-card.open .card-meta { text-align: left; }
+
+  .hand-icon {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    border-radius: 6px;
+  }
+
+  .card-meta { text-align: center; }
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .card-name-san {
+    font-family: serif;
+    font-size: 0.85rem;
+    color: var(--accent-saffron);
+    margin-top: 2px;
+    display: block;
+  }
+  .card-tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 10px;
+  }
+  .tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+  .tag-dance { background: #fce8d8; color: #8a3a10; }
+  .tag-yoga  { background: #dff0e8; color: #1a5a3a; }
+  .tag-icon  { background: #e0e4f5; color: #252070; }
+  .tag-univ  { background: #f0e8dc; color: #6a4020; }
+  .expand-hint {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-whisper);
+    margin-top: 12px;
+    transition: color 0.2s;
+  }
+  .mudra-card:hover .expand-hint { color: var(--ink-faint); }
+  .mudra-card.open .expand-hint { color: var(--accent-saffron); }
+  .expand-arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  .mudra-card.open .expand-arrow { transform: rotate(180deg); }
+
+  /* ── EXPANDED PANEL ── */
+  .card-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .mudra-card.open .card-expand { max-height: 9999px; }
+
+  .expand-inner {
+    padding: 1.5rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+  }
+  /* Labels and text blocks span both columns */
+  .expand-inner > .expand-section-label,
+  .expand-inner > .expand-text,
+  .expand-inner > .expand-list,
+  .expand-inner > .sources-row {
+    grid-column: 1 / -1;
+  }
+  /* Usage blocks column */
+  .expand-inner > .usage-section-label { grid-column: 1 / -1; }
+  .expand-section-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .expand-text {
+    font-size: 0.83rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .expand-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.4rem;
+  }
+  .expand-list li {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--parchment);
+  }
+  .usage-blocks {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 0.5rem;
+  }
+  .usage-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 14px 12px;
+    background: var(--parchment);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .usage-block-head {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .usage-icon {
+    width: 34px; height: 34px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .usage-body { flex:1; }
+  .usage-cat {
+    font-size: 0.63rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .usage-desc {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-top: 0;
+  }
+  .usage-ref {
+    font-size: 0.68rem;
+    color: var(--ink-faint);
+    font-style: italic;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+    margin-top: 2px;
+  }
+  /* ── SOURCES ROW ── */
+  .sources-row {
+    grid-column: 1 / -1;
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .sources-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-right: 4px;
+  }
+  .source-chip {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--parchment);
+  }
+  .source-chip:hover {
+    border-color: var(--accent-saffron);
+    color: var(--accent-saffron);
+    background: var(--parchment-deep);
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+    background: var(--parchment-deep);
+  }
+
+  /* ── ABOUT SECTION ── */
+  .text-content {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .text-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
+  }
+  .text-content p {
+    font-size: 0.875rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+  .text-content .pull {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--accent-saffron);
+    border-left: 3px solid var(--accent-saffron);
+    padding-left: 1.25rem;
+    margin: 2rem 0;
+    line-height: 1.6;
+  }
+  .elem-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 1.5rem 0;
+  }
+  @media(max-width:600px){ .elem-grid { grid-template-columns: repeat(3,1fr); } }
+  .elem-card {
+    text-align: center;
+    padding: 1.1rem 0.5rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--parchment);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .elem-card:hover { border-color: var(--accent-saffron); transform: translateY(-2px); }
+  .elem-svg {
+    width: 64px;
+    height: 70px;
+    display: block;
+    margin: 0 auto 8px;
+  }
+  .elem-name { font-size: 0.8rem; font-weight: 500; color: var(--ink); }
+  .elem-finger { font-size: 0.67rem; color: var(--ink-faint); margin-top: 3px; letter-spacing: 0.04em; }
+  .elem-quality { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-saffron); margin-top: 4px; opacity: 0.8; }
+
+  /* ── SOURCES SECTION ── */
+  .ref-block {
+    border: 1px solid var(--line);
+    padding: 1.25rem;
+    margin-bottom: 10px;
+    border-radius: 2px;
+  }
+  .ref-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .ref-meta { font-size: 0.72rem; color: var(--ink-faint); margin-bottom: 6px; }
+  .ref-desc { font-size: 0.8rem; color: var(--ink-soft); line-height: 1.7; }
+  .ref-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    color: var(--accent-saffron);
+    text-decoration: none;
+    margin-top: 6px;
+  }
+  .ref-link:hover { text-decoration: underline; }
+
+  /* ── SEARCH BAR ── */
+  .search-row {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .search-input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus { border-color: var(--accent-saffron); }
+  .search-input::placeholder { color: var(--ink-whisper); }
+  .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filter-btn {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--ink-faint);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover { color: var(--ink); border-color: var(--ink-whisper); }
+  .filter-btn.active { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+
+  /* ── MUDRA COUNT ── */
+  .count-bar {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(16px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .mudra-card { animation: fadeUp 0.4s ease both; }
+  /* ── SYMBOLS SECTION ── */
+  .symbols-intro {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  .symbols-intro p {
+    font-size: 0.875rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-top: 1rem;
+  }
+  .sym-family-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 3rem 0 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 0.5rem;
+  }
+  .sym-card {
+    background: var(--parchment);
+    cursor: pointer;
+    transition: background 0.2s;
+    overflow: visible;
+    border-bottom: none;
+  }
+  .sym-card:hover { background: var(--parchment-deep); }
+  .sym-card.open  { background: var(--parchment-deep); grid-column: 1 / -1; }
+  .sym-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.75rem 1.25rem 1.5rem;
+    gap: 0.9rem;
+    user-select: none;
+  }
+  .sym-card.open .sym-face {
+    flex-direction: row;
+    padding: 1.5rem 2rem;
+    gap: 1.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-card.open .sym-meta { text-align: left; }
+  .sym-glyph {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+  }
+  .sym-meta { text-align: center; }
+  .sym-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .sym-san {
+    font-family: serif;
+    font-size: 1rem;
+    color: var(--accent-saffron);
+    display: block;
+    margin-top: 2px;
+  }
+  .sym-tagline {
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+  .sym-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .sym-card.open .sym-expand { max-height: 9999px; }
+  .sym-expand-inner {
+    padding: 1.5rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+  }
+  .sym-expand-inner > * { grid-column: 1 / -1; }
+  .sym-section-lbl {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-saffron);
+    margin: 1.25rem 0 0.5rem;
+  }
+  .sym-body {
+    font-size: 0.83rem;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+  .sym-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.4rem;
+  }
+  .sym-pill {
+    font-size: 0.72rem;
+    padding: 4px 11px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--parchment);
+  }
+  .sym-usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 12px;
+    margin-top: 0.5rem;
+  }
+  .sym-usage {
+    padding: 13px 14px 11px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--parchment);
+  }
+  .sym-usage-cat {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .sym-usage-desc {
+    font-size: 0.79rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .sym-sources {
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  /* ══ CHAKRAS SECTION ══ */
+  .chakra-page { max-width: 900px; margin: 0 auto; }
+  .chakra-intro {
+    font-size: 0.875rem; line-height: 1.9; color: var(--ink-soft);
+    max-width: 680px; margin: 0 auto 3rem;
+  }
+  .chakra-intro .pull {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--accent-saffron);
+    border-left: 2px solid var(--accent-saffron); padding-left: 1.2rem;
+    margin: 1.5rem 0; line-height: 1.7;
+  }
+  /* The spine track */
+  .chakra-track {
+    position: relative;
+    padding: 1rem 0 2rem;
+  }
+  .spine-line {
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+      #c8641a 0%, #e8a030 14%, #e8c830 28%,
+      #2a9a5a 42%, #3a80c8 56%, #5040a0 70%, #9050c0 84%, #9050c0 100%);
+    transform: translateX(-50%);
+    opacity: 0.35;
+    z-index: 0;
+  }
+  @media(max-width: 640px) {
+    .spine-line { left: 28px; }
+  }
+  /* Individual chakra row */
+  .chakra-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    gap: 0 1.5rem;
+    margin-bottom: 0;
+    z-index: 1;
+    align-items: start;
+  }
+  @media(max-width: 640px) {
+    .chakra-row { grid-template-columns: 56px 1fr; gap: 0 1rem; }
+    .chakra-row .chakra-left { display: none; }
+    .chakra-row:nth-child(odd) .chakra-right,
+    .chakra-row:nth-child(even) .chakra-right { grid-column: 2; }
+  }
+  /* Alternating: odd = content left, even = content right */
+  .chakra-row.flip .chakra-left  { order: 3; }
+  .chakra-row.flip .chakra-spine { order: 2; }
+  .chakra-row.flip .chakra-right { order: 1; }
+
+  .chakra-spine {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+  .chakra-dot {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 2;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 6px var(--parchment);
+  }
+  .chakra-dot svg { width: 36px; height: 36px; }
+  .chakra-connector {
+    width: 2px; flex: 1; min-height: 40px;
+    opacity: 0.3;
+  }
+  /* Chakra card (left or right panel) */
+  .chakra-card {
+    background: var(--parchment);
+    border: 1px solid var(--line);
+    border-radius: var(--border-radius-lg, 12px);
+    padding: 1.25rem 1.4rem 1.1rem;
+    margin: 0.6rem 0 0.6rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .chakra-card:hover { background: var(--parchment-deep); transform: translateY(-1px); }
+  .chakra-card.open  { background: var(--parchment-deep); border-left-width: 3px; }
+  .chakra-empty { /* spacer for alternating layout */ }
+
+  .chakra-number {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-whisper); margin-bottom: 4px;
+  }
+  .chakra-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; line-height: 1.1;
+    color: var(--ink);
+  }
+  .chakra-name-san {
+    font-family: serif; font-size: 0.9rem; display: block; margin-top: 2px;
+  }
+  .chakra-keyword {
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    margin-top: 6px; opacity: 0.8;
+  }
+  /* Quick-glance pills row */
+  .chakra-quick {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+  }
+  .qpill {
+    font-size: 0.65rem; padding: 3px 9px;
+    border-radius: 2px; border: 1px solid;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .expand-cue {
+    font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-whisper); margin-top: 10px; display: block;
+    transition: color 0.2s;
+  }
+  .chakra-card:hover .expand-cue { color: var(--ink-faint); }
+  .chakra-card.open  .expand-cue { color: var(--accent-saffron); }
+  .cue-arrow { display: inline-block; transition: transform 0.3s; }
+  .chakra-card.open .cue-arrow { transform: rotate(180deg); }
+
+  /* Expanded detail panel — spans full row below */
+  .chakra-detail-row {
+    grid-column: 1 / -1;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .chakra-row.expanded .chakra-detail-row { max-height: 9999px; }
+  .chakra-detail-inner {
+    border: 1px solid var(--line);
+    border-radius: var(--border-radius-lg, 12px);
+    background: var(--parchment-deep);
+    margin: 0 0 1.5rem;
+    padding: 1.75rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem 2rem;
+  }
+  .chakra-detail-inner > .full { grid-column: 1 / -1; }
+  .detail-label {
+    font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent-saffron); margin-bottom: 6px; display: block;
+  }
+  .detail-body { font-size: 0.82rem; line-height: 1.85; color: var(--ink-soft); }
+  .mudra-invoke-card {
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: 1rem 1.1rem;
+    background: var(--parchment);
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .mudra-invoke-glyph {
+    width: 70px; height: 70px; flex-shrink: 0; border-radius: 4px;
+  }
+  .mudra-invoke-body { flex: 1; }
+  .mudra-invoke-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 400; color: var(--ink);
+  }
+  .mudra-invoke-form {
+    font-size: 0.77rem; color: var(--ink-soft); line-height: 1.65; margin-top: 3px;
+  }
+  .signs-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+  }
+  .sign-block {
+    font-size: 0.75rem; padding: 8px 10px;
+    border: 1px solid var(--line); border-radius: 4px;
+  }
+  .sign-label {
+    font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .sign-text { color: var(--ink-soft); line-height: 1.5; }
+  .practice-steps {
+    list-style: none; margin-top: 4px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .practice-steps li {
+    font-size: 0.78rem; color: var(--ink-soft); line-height: 1.65;
+    padding-left: 1.2rem; position: relative;
+  }
+  .practice-steps li::before {
+    content: attr(data-n);
+    position: absolute; left: 0;
+    font-size: 0.65rem; font-weight: 500;
+    color: var(--accent-saffron);
+  }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MOBILE FIRST
+   Breakpoints: 480px (phone), 768px (tablet)
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── Header ── */
+  .site-header { padding: 2.5rem 1.25rem 2rem; }
+  .devanagari { font-size: 1.4rem; }
+  .site-title { font-size: clamp(2rem, 10vw, 3.2rem); }
+  .site-subtitle { font-size: 0.7rem; letter-spacing: 0.18em; }
+
+  /* ── Nav ── */
+  .nav-strip { padding: 0; }
+  .nav-btn { padding: 0.8rem 1rem; font-size: 0.65rem; letter-spacing: 0.12em; }
+
+  /* ── Sections ── */
+  .section { padding: 1.5rem 1rem 3rem; }
+
+  /* ── Catalog grid — 1 or 2 cols on mobile ── */
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .mudra-card.open {
+    grid-column: 1 / -1;
+  }
+  .card-face { padding: 1.5rem 1rem 1.25rem; gap: 0.75rem; }
+  .hand-icon { width: 80px; height: 80px; }
+  .card-name { font-size: 1.2rem; }
+  .card-tagline { font-size: 0.65rem; }
+
+  /* Open card face goes horizontal */
+  .mudra-card.open .card-face {
+    padding: 1.25rem 1.25rem 1rem;
+    gap: 1rem;
+  }
+  .mudra-card.open .hand-icon { width: 70px; height: 70px; }
+
+  /* Expanded inner — single column on mobile */
+  .expand-inner {
+    padding: 1.25rem 1.25rem 2rem;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .usage-blocks {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── About page ── */
+  .text-content h2 { font-size: 2rem !important; }
+  .text-content h3 { font-size: 1.3rem; }
+  .elem-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .elem-svg { width: 50px; height: 56px; }
+  .elem-name { font-size: 0.72rem; }
+  .elem-finger { font-size: 0.6rem; }
+  .pull { font-size: 0.95rem; }
+
+  /* ── Symbols grid ── */
+  .sym-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .sym-card.open { grid-column: 1 / -1; }
+  .sym-face { padding: 1.5rem 1rem 1.25rem; gap: 0.75rem; }
+  .sym-glyph { width: 80px; height: 80px; }
+  .sym-name { font-size: 1.1rem; }
+  .sym-expand-inner {
+    padding: 1.25rem 1.25rem 2rem;
+    grid-template-columns: 1fr;
+  }
+  .sym-usage-grid { grid-template-columns: 1fr; }
+  .sym-card.open .sym-face {
+    flex-direction: row;
+    padding: 1.25rem;
+    gap: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .sym-card.open .sym-meta { text-align: left; }
+
+  /* ── Chakras page ── */
+  .chakra-page { padding: 0 0.25rem; }
+  .chakra-intro { font-size: 0.82rem; }
+  .chakra-intro .pull { font-size: 0.95rem; }
+  .spine-line { left: 28px; width: 2px; }
+
+  /* Stack chakra rows vertically, spine on left */
+  .chakra-row {
+    grid-template-columns: 56px 1fr;
+    gap: 0 0.75rem;
+    margin-bottom: 0;
+  }
+  .chakra-row .chakra-empty { display: none; }
+  /* Override flip — all rows same direction on mobile */
+  .chakra-row.flip { direction: ltr; }
+  .chakra-row.flip .chakra-left  { order: unset; }
+  .chakra-row.flip .chakra-spine { order: unset; }
+  .chakra-row.flip .chakra-right { order: unset; }
+
+  /* Force all cards into column 2 */
+  .chakra-card { margin: 0.4rem 0; }
+  .chakra-name-en { font-size: 1.1rem; }
+  .chakra-quick { gap: 4px; }
+  .qpill { font-size: 0.58rem; padding: 2px 7px; }
+
+  /* Detail panel full width */
+  .chakra-detail-row { grid-column: 1 / -1; }
+  .chakra-detail-inner {
+    padding: 1.25rem 1rem 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .mudra-invoke-card { flex-direction: column; gap: 0.75rem; }
+  .mudra-invoke-glyph { width: 80px; height: 80px; }
+  .signs-grid { grid-template-columns: 1fr; }
+  .detail-ref-grid { grid-template-columns: 1fr 1fr; }
+
+  /* ── Sources ── */
+  .ref-block { padding: 1rem; }
+  .ref-title { font-size: 1rem; }
+
+  /* ── Symbols intro heading ── */
+  .symbols-intro h2 { font-size: 2rem !important; }
+  .sym-family-label { margin: 2rem 0 1rem; }
+
+  /* ── Sources row chips ── */
+  .sources-row { gap: 6px; }
+  .source-chip { font-size: 0.65rem; padding: 4px 10px; }
+}
+
+@media (max-width: 480px) {
+
+  /* Phone — tighter still */
+  .site-header { padding: 2rem 1rem 1.5rem; }
+  .section { padding: 1.25rem 0.875rem 2.5rem; }
+
+  .nav-btn { padding: 0.75rem 0.75rem; font-size: 0.6rem; letter-spacing: 0.08em; }
+
+  .catalog-grid { grid-template-columns: 1fr 1fr; }
+  .hand-icon { width: 70px; height: 70px; }
+  .card-name { font-size: 1.1rem; }
+
+  .mudra-card.open .card-face {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .mudra-card.open .card-meta { text-align: center; }
+
+  .elem-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .elem-svg { width: 44px; height: 48px; }
+
+  .sym-grid { grid-template-columns: 1fr 1fr; }
+  .sym-glyph { width: 70px; height: 70px; }
+
+  /* Chakra spine stays left */
+  .chakra-dot { width: 44px; height: 44px; }
+  .chakra-name-en { font-size: 1rem; }
+  .chakra-keyword { font-size: 0.6rem; }
+  .qpill { font-size: 0.55rem; padding: 2px 6px; }
+
+  /* Search input full width */
+  .search-row { flex-direction: column; align-items: stretch; }
+  .search-input { width: 100%; }
+
+  /* Filter buttons wrap */
+  .filter-btns { gap: 4px; }
+  .filter-btn { font-size: 0.6rem; padding: 5px 10px; }
+}
+
+/* ── Tablet: 2 cols for chakra layout ── */
+@media (min-width: 641px) and (max-width: 900px) {
+  .chakra-detail-inner { grid-template-columns: 1fr; }
+  .expand-inner { grid-template-columns: 1fr; }
+  .usage-blocks { grid-template-columns: 1fr; }
+}
+
+
+  /* ── MARTIAL / PERFORMING CARDS ── */
+  .m-grid, .p-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    border-bottom: none;
+  }
+  .m-card, .p-card {
+    background: var(--parchment);
+    cursor: pointer;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    transition: background 0.2s;
+    animation: fadeUp 0.4s ease both;
+  }
+  .m-card:hover, .p-card:hover { background: var(--parchment-deep); }
+  .m-card.open, .p-card.open { background: var(--parchment-deep); grid-column: 1 / -1; border-right: none; }
+  .m-face, .p-face {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+  .m-face img, .p-face svg { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; }
+  .m-card.open .m-face, .p-card.open .p-face {
+    border-bottom: 1px solid var(--line);
+    padding: 1.5rem 2rem;
+  }
+  .m-meta, .p-meta { flex: 1; }
+  .m-tag, .p-period {
+    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 3px; font-weight: 500;
+  }
+  .m-name, .p-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; line-height: 1.1;
+    color: var(--ink); margin-bottom: 5px;
+  }
+  .m-region, .p-trad { margin-bottom: 6px; }
+  .m-summary, .p-summary {
+    font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 8px;
+  }
+  .m-expand, .p-expand {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .m-expand-inner {
+    padding: 1.75rem 2rem 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 1.5rem 2rem;
+  }
+  .m-expand-inner > .full { grid-column: 1 / -1; }
+  .mudra-row {
+    padding: 10px 12px; border: 1px solid var(--line);
+    border-radius: 4px; background: var(--parchment);
+    margin-bottom: 8px;
+  }
+  .mudra-row-name {
+    font-size: 0.78rem; font-weight: 500; margin-bottom: 2px;
+  }
+  .mudra-row-form {
+    font-size: 0.74rem; color: var(--ink-faint); margin-bottom: 3px;
+  }
+  .mudra-row-use { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; }
+  .m-filter-btn {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 6px 14px; border: 1px solid var(--line); border-radius: 2px;
+    background: transparent; color: var(--ink-faint); cursor: pointer; transition: all 0.15s;
+  }
+  .m-filter-btn:hover { color: var(--ink); border-color: var(--ink-whisper); }
+  .m-filter-btn.active { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+  .p-icon-text {
+    width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+  }
+  .section-divider {
+    margin: 3rem 0 1.5rem; padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-divider-label {
+    font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--accent-saffron); margin-bottom: 6px;
+  }
+  .section-divider-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 300; color: var(--ink);
+  }
+  @media (max-width: 600px) {
+    .m-grid, .p-grid { grid-template-columns: 1fr; }
+    .m-face, .p-face { padding: 1.25rem 1rem; }
+    .m-expand-inner { padding: 1.25rem 1rem 2rem; grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="devanagari">मुद्रा</div>
+  <h1 class="site-title">MUDRA</h1>
+  <p class="site-subtitle">An Illustrated Compendium of Sacred Hand Gestures</p>
+</header>
+<nav class="nav-strip">
+  <a class="nav-btn" href="index.html">Catalog</a>
+  <a class="nav-btn" href="about.html">About Mudras</a>
+  <a class="nav-btn" href="chakras.html">Mudras &amp; Chakras</a>
+  <a class="nav-btn" href="martial.html">Martial Arts</a>
+  <span class="nav-btn active">Music &amp; Dance</span>
+  <a class="nav-btn" href="symbols.html">Sacred Symbols</a>
+  <a class="nav-btn" href="sources.html">Sources &amp; Texts</a>
+</nav>
+<main class="main">
+<div id="performing" class="section active">
+  <div class="text-content" style="max-width:100%;margin-bottom:2rem;">
+    <div class="intro-eyebrow">Sound, rhythm, stage &amp; ritual</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;line-height:1.1;margin-bottom:1rem;">Music &amp; Performing Arts</h2>
+    <p style="font-size:0.875rem;line-height:1.9;color:var(--ink-soft);max-width:720px;">Mudras permeate every dimension of Indian performing arts — not just the eight classical dances, but music, folk theatre, ritual performance, and sacred drama. In Carnatic music, mudra is the composer's spiritual signature. In Vedic chanting, it is the origin of rhythm itself. In Theyyam, it is the mechanism of divine possession. And in Kutiyattam — the world's oldest surviving theatre — a single gesture can be unfolded over hours, each micro-shift revealing a new layer of meaning.</p>
+  </div>
+
+  <div class="section-divider">
+    <p class="section-divider-label">Part One</p>
+    <p class="section-divider-title">Music — Four Traditions</p>
+  </div>
+  <div class="p-grid" id="music-grid"></div>
+
+  <div class="section-divider" style="margin-top:3.5rem;">
+    <p class="section-divider-label">Part Two</p>
+    <p class="section-divider-title">Dance &amp; Theatre — Six Traditions</p>
+  </div>
+  <div class="p-grid" id="dance-grid"></div>
+</div>
+</main>
+<footer class="site-footer">
+  Mudra Compendium &mdash; compiled for reference and study &middot; Sources: Natya Shastra, Abhinaya Darpana, Wikipedia, Smarthistory, iPassio, Yoga Jala &amp; more
+</footer>
+<script>
+// ══════════════════════════════════════════
+// MUSIC DATA
+// ══════════════════════════════════════════
+const musicData = [
+  {
+    id: 'vedic_tala',
+    name: 'Vedic Tala Mudras',
+    tradition: 'Vedic Chanting · Samaveda',
+    period: 'c. 1500 BCE — present',
+    color: '#b8882a', colorLight: '#fdf8ec', colorText: '#6a5000',
+    icon: '🕉',
+    summary: 'The oldest use of mudras in Indian music — hand gestures to control rhythm, stress, and intonation in sacred Vedic recitation. This is the direct ancestor of the entire tala (rhythm) system in both Carnatic and Hindustani music.',
+    body: 'The Samaveda — the Veda of song — included a formal system of chironomy (hand signals for vocal direction) called mudras and jatis. These finger and palm postures were used by the lead chanter to direct a group of Vedic priests, setting the speed, syllable stress, and tonal accent of a chant in real time. The jatis (finger counts of the beat) and mudras together form the documented origin of the Indian tala system. When a Carnatic musician today keeps tala by tapping their palm and counting fingers during a kriti, they are performing a living 3,500-year-old descendant of these Vedic gestures.',
+    gestures: [
+      { name: 'Laghu', form: 'One clap of the palm, then finger counts folding down', use: 'Marks the primary beat division of a tala. Still used identically in Carnatic music today.' },
+      { name: 'Drutam', form: 'One clap followed by a wave of the hand outward', use: 'Marks a 2-beat cycle. The wave is a distinct hand formation — a mini-mudra in itself.' },
+      { name: 'Anudrutam', form: 'Single downward clap only', use: 'Marks a single-beat unit. The simplest tala gesture — direct ancestor of keeping time.' },
+    ],
+    significance: 'This is the one place where mudras created music itself. The tala system — which defines the rhythmic architecture of all Indian classical music — literally grew from these hand gestures. Without Vedic tala mudras, there is no mridangam, no tabla, no talam. Every percussion performance in India is, at root, a mudra practice.',
+    sources: [{ label: 'Wikipedia — Tala (music)', url: 'https://en.wikipedia.org/wiki/Tala_(music)' }, { label: 'Hindu American Foundation', url: 'https://www.hinduamerican.org/roots-of-rhythm-in-hindu-dharma-traditions' }]
+  },
+  {
+    id: 'carnatic_mudra',
+    name: 'The Composer\'s Mudra',
+    tradition: 'Carnatic Classical Music',
+    period: 'c. 15th century — present',
+    color: '#c8641a', colorLight: '#fce8d8', colorText: '#7a3a0a',
+    icon: '🎵',
+    summary: 'In Carnatic music, "mudra" has an entirely unique meaning — it is the composer\'s hidden signature woven into the lyrics of a composition, usually in the final verse (charanam). This literary mudra is how a composer seals their identity and devotion inside a song for centuries.',
+    body: 'A Carnatic mudra is a specific word or phrase inserted into the lyric of a kriti (composition) to identify its composer. The word mudra means "seal" — and that is exactly what it is: the composer\'s personal seal, pressed into the wax of the music. It is not always the composer\'s name — it can be the name of their deity, their guru, or a phrase expressing their philosophy. The Trinity of Carnatic music: Tyagaraja uses "Tyagaraja", Muthuswami Dikshitar uses "Guruguha" (his name for Kartikeya, the deity of his initiation), and Syama Shastri uses "Syama Krishna". Purandara Dasa — the father of Carnatic music — uses "Purandara Vittala" in every composition, expressing his complete surrender to Lord Vittala of Pandharpur.',
+    gestures: [
+      { name: 'Tyagaraja', form: '"Tyagaraja" embedded in the charanam verse', use: 'Saint Tyagaraja\'s seal. Example: "Endaro Mahanubhavulu" — "Tyagaraja" appears in the final line.' },
+      { name: 'Guruguha', form: '"Guruguha" embedded in the pallavi or charanam', use: 'Dikshitar\'s seal — his name for Kartikeya (Skanda), whom he received initiation from. Identifies Dikshitar\'s compositions unambiguously.' },
+      { name: 'Purandara Vittala', form: '"Purandara Vittala" as a refrain or final line', use: 'Purandara Dasa\'s seal — present in all ~475,000 compositions attributed to him. Expresses complete surrender to Krishna as Vittala.' },
+    ],
+    significance: 'This is one of the most elegant systems in all of world music — a tradition of signing your work not with your hand but with your heart, hidden inside the words of a song. It ensures that centuries later, musicologists and listeners can identify the composer not from an external catalogue but from the music itself. The mudra is inseparable from the devotion it expresses.',
+    sources: [{ label: 'VijayaDhwani — What is a Mudra?', url: 'https://sapthaswaras.blogspot.com/2009/03/what-is-mudra.html' }, { label: 'Vedadhara — Sacred Signature', url: 'https://www.vedadhara.com/mudras-in-carnatic-music' }]
+  },
+  {
+    id: 'carnatic_vocal',
+    name: 'Carnatic Vocal Gestures',
+    tradition: 'Carnatic Music Performance',
+    period: 'Ancient — present',
+    color: '#2a7a6a', colorLight: '#e0f5ec', colorText: '#1a4a3a',
+    icon: '🎤',
+    summary: 'Carnatic vocalists use hand gestures during performance — not as codified as in dance, but drawing from the same mudra vocabulary. These gestures mark ragas, express bhakti (devotion), and physically embody the swaras (notes) being sung.',
+    body: 'When a Carnatic vocalist performs, their hands are rarely still. Anjali mudra is performed at the opening and close — a gesture of respect to the deity, the guru, and the audience. During improvisation (manodharma), the vocalist\'s hands often trace the contours of the melodic phrase being sung, as if sculpting the raga in the air. This is not formalism — it is an instinctive expression of the principle that music moves through the body, not just the voice. In the context of devout Carnatic performance, specific gestures are used during emotionally charged passages — Varada (boon-granting) when expressing divine grace, Abhaya (fearlessness) when the deity\'s protection is invoked in the lyric.',
+    gestures: [
+      { name: 'Anjali', form: 'Palms joined at the chest, fingers upward', use: 'Opening and closing of performance. Salutation to the deity, guru, and audience — the universal gesture of Carnatic invocation.' },
+      { name: 'Varada', form: 'Right hand extended downward, palm open and outward', use: 'Used during passages where the lyric expresses divine grace or abundance being given by the deity.' },
+      { name: 'Tala Keeping', form: 'Rhythmic clap + finger counts on the palm', use: 'The continuous rhythmic gesture throughout a performance — direct descendant of Vedic tala mudras.' },
+    ],
+    significance: 'The Carnatic vocal tradition demonstrates that mudras are not merely for dancers. The gesture is the natural physical expression of musical devotion — the body can\'t help but move when the heart is full.',
+    sources: [{ label: 'Musikclass — Carnatic Vocal Mudras', url: 'https://musikclass.com/content/carnatic-vocal-mudras-for-kids' }]
+  },
+  {
+    id: 'hindustani_tala',
+    name: 'Hindustani Tala Gestures',
+    tradition: 'Hindustani Classical Music',
+    period: 'Medieval — present',
+    color: '#3a3880', colorLight: '#e6e4f5', colorText: '#1a1860',
+    icon: '🥁',
+    summary: 'In Hindustani music, tala-keeping gestures are used by both performers and listeners — theka gestures on the palm, the waving hand (khali), and the finger counts of the vibhag. These are functional mudras: they don\'t have Sanskrit names, but they are precisely defined hand formations with specific rhythmic meaning.',
+    body: 'The tabla player\'s hands are themselves a complete mudra vocabulary. Each bol (syllable) — dha, ge, na, ti, te, ke — requires a specific finger and palm formation that produces its unique sound. The placement of the index finger, the pressure of the ring finger, the angle of the palm — these are not merely technical; they are the gesture that summons the specific sonic resonance. A tabla master\'s hands in full performance are as expressive as a Bharatanatyam dancer\'s. The sama (first beat) is marked with a clap — the khali (empty beat) with an outward wave. These two gestures — a clap and a wave — are the primary rhythm mudras of all North Indian classical music.',
+    gestures: [
+      { name: 'Sama (First Beat)', form: 'Sharp downward clap of the right palm onto the left', use: 'Marks the beginning of each tala cycle — the most important moment in Hindustani rhythm. Identical in structure to the Vedic Laghu mudra.' },
+      { name: 'Khali (Empty Beat)', form: 'Right hand waves outward and sideways, palm down', use: 'Marks the "empty" or silent accent within the tala cycle. The wave is a distinct gesture — the physical representation of rhythmic emptiness.' },
+      { name: 'Tabla Bol Hands', form: 'Each syllable (dha, ge, ti, na, ke) requires a specific finger-palm formation', use: 'The tabla\'s complete sonic vocabulary is a mudra vocabulary — 30+ distinct hand formations, each producing a unique resonance.' },
+    ],
+    significance: 'The tabla\'s hand positions are arguably the most sophisticated mudra system outside of classical dance — each one a precisely defined energetic and acoustic seal that can only be mastered over decades of practice.',
+    sources: [{ label: 'Artium Academy — Tala in Music', url: 'https://artiumacademy.com/blogs/understanding-tala-time-framework-hindustani-classical-music/' }]
+  },
+];
+
+// ══════════════════════════════════════════
+// DANCE & THEATRE DATA
+// ══════════════════════════════════════════
+const danceData = [
+  {
+    id: 'kathak',
+    name: 'Kathak',
+    region: 'North India (UP, Rajasthan, Maharashtra)',
+    period: 'c. 3rd century BCE (Kathakas); court form 16th–18th century',
+    color: '#3a3880', colorLight: '#e6e4f5', colorText: '#1a1860',
+    icon: '💫',
+    summary: 'Kathak — from the Sanskrit "katha" (story) and "kathakar" (storyteller) — is the only classical Indian dance form shaped equally by Hindu and Mughal influences. It is famous for lightning-fast spins (chakkar), intricate footwork, and a more fluid, conversational mudra vocabulary than the South Indian forms.',
+    mudra_body: 'Kathak\'s mudras draw from the same Natya Shastra root as all classical forms, but their execution is distinctly North Indian — softer at the wrists, more fluid in transition, and often more improvisatory. A Kathak dancer may hold a mudra while spinning at full speed, maintaining the gesture through dozens of rotations. The mudras in Kathak are also more frequently used in abstract (nritta) sections than in purely expressive (abhinaya) ones — a dancer may perform a rapid sequence of five or six mudras as a rhythmic ornament without attached narrative meaning.',
+    key_mudras: ['Pataka — used in expressive passages for sky, denial, blessing; also in abstract sequences as rhythmic gesture', 'Tripataka — crown and royalty; used heavily in Krishna Leela sequences', 'Anjali — salutation at the opening and close of performance', 'Alapadma — beauty, the lotus; used in bhav (emotional) sections depicting devotion to Krishna or Radha'],
+    uniqueness: 'Kathak is the only classical form where the mudra has been significantly shaped by Mughal court aesthetics — the gestures are more graceful, less angular than in the South Indian forms. The famous Lucknow and Jaipur gharanas (schools) have slightly different mudra vocabularies reflecting their distinct court lineages.',
+    sources: [{ label: 'Upaj Academy — Hand Gestures in Kathak', url: 'https://upajacademy.com/dubai/importance-of-hand-gestures-in-kathak/' }, { label: 'Kalashri Academy', url: 'https://kalashriacademy.com/hand-gestures-in-kathak/' }]
+  },
+  {
+    id: 'sattriya',
+    name: 'Sattriya',
+    region: 'Assam',
+    period: '15th century CE (Srimanta Sankardeva)',
+    color: '#2a6a3a', colorLight: '#e0f5e4', colorText: '#0a4020',
+    icon: '🪷',
+    summary: 'Sattriya is the sacred dance of the Vaishnavite monasteries (sattras) of Assam — created by the saint-scholar Srimanta Sankardeva in the 15th century to spread devotion to Krishna. It is the 8th and most recently recognised classical form of India (2000).',
+    mudra_body: 'Sattriya\'s mudra system follows the Natya Shastra with its own Assamese refinements. Its 64 basic exercises (Mati Akhara) match the Natya Shastra\'s 64 foundational sequences exactly. The tradition also preserves the triple classification of mudras — Vedic, tantric, and histrionic (narrative) — more explicitly than most other classical forms. In Assam, the Oja-Pali school of dance within the tantric tradition uses the same gestures as full tantric mudras invoking the serpent goddess Manasa.',
+    key_mudras: ['Chali — the foundational walking gesture that structures all Sattriya movement sequences', 'Jhumura — a rhythmic double-hand formation unique to Assamese folk-classical vocabulary', 'Anjali — as in all traditions, the opening and closing salutation', 'Tripataka — used in sequences depicting Krishna\'s crown and divine attributes'],
+    uniqueness: 'Sattriya uniquely preserves the complete triple classification of mudras. The tantric Oja-Pali tradition within Assam uses the same hand gestures in ritual invocation of deities — the gesture is simultaneously theatrical and magical, narrative and devotional.',
+    sources: [{ label: 'Wikipedia — Sattriya', url: 'https://en.wikipedia.org/wiki/Sattriya' }, { label: 'Sahapedia — Mudra: Various Aspects', url: 'http://www.sahapedia.org/mudra-various-aspects-and-dimensions-0' }]
+  },
+  {
+    id: 'kutiyattam',
+    name: 'Kutiyattam',
+    region: 'Kerala',
+    period: 'c. 2nd century BCE (oldest surviving classical theatre)',
+    color: '#c03830', colorLight: '#fce8e5', colorText: '#7a1a10',
+    icon: '🎭',
+    summary: 'Kutiyattam — "combined acting" — is the oldest surviving classical theatre form in the world, performed in the temple theatres (koothambalams) of Kerala. UNESCO recognised it as an intangible cultural heritage in 2001. Its mudra system is the most granular and time-consuming of any Indian performing art.',
+    mudra_body: 'Kutiyattam uses the same Hastalakshana Deepika gesture system as Kathakali, but where Kathakali performs mudras in seconds, Kutiyattam may hold and slowly unfold a single mudra over many minutes — each micro-shift of the fingers revealing a new layer of meaning. A single verse of Sanskrit may take hours to perform as the actor elaborates every word through gesture. The tradition allows a single gesture to carry hundreds of possible meanings depending on minute variations in angle, speed, and the accompanying eye and facial expression.',
+    key_mudras: ['All 24 Hastalakshana Deepika mudras used at an extraordinary level of granularity', 'Navarasas (nine emotions) expressed through specific facial-mudra combinations held for extended durations', 'Each Sanskrit letter has a corresponding gesture — the alphabet of the Devanagari script can be written in the air with the hands'],
+    uniqueness: 'Kutiyattam is the only performing art in the world where a single gesture can be elaborated over hours. The time-depth of the gesture is itself meaningful — the longer it is held and evolved, the greater the spiritual and emotional density of the moment.',
+    sources: [{ label: 'Asian Traditional Theatre', url: 'https://disco.teak.fi/asia/bharata-and-his-natyashastra/' }]
+  },
+  {
+    id: 'yakshagana',
+    name: 'Yakshagana',
+    region: 'Coastal Karnataka',
+    period: 'c. 11th–16th century',
+    color: '#b8882a', colorLight: '#fdf0d8', colorText: '#6a4800',
+    icon: '🌊',
+    summary: 'Yakshagana — "song of the yakshas (nature spirits)" — is a folk theatre form of coastal Karnataka combining vigorous dance, live music, elaborate costume, extempore dialogue, and a gesture vocabulary rooted in everyday life rather than scripture.',
+    mudra_body: 'Unlike the highly codified classical forms, Yakshagana\'s hand gestures are "natural" mudras — stylised adaptations of gestures from daily Kannada-speaking life. Joining the palms (Anjali) for salutation, a specific sweep of the right palm across the head for a specific Kannada cultural greeting, the two-handed pointing gesture for showing something at a distance. These everyday gestures become powerful performance tools when combined with the elaborate Yakshagana costume and makeup, and synchronised with vigorous footwork and drumming. The folk tradition kept the spirit of mudra — meaningful gesture — without the codified scripture.',
+    key_mudras: ['Anjali variants — the primary salutation gestures, adapted from everyday Kannada culture', 'Pointing gestures — used in extempore dialogue to indicate characters, places, and events', 'Combat gestures — stylised fight sequences using Kalaripayattu-influenced formations (given its Kerala geographic neighbour influence)'],
+    uniqueness: 'Yakshagana represents the "folk end" of the mudra spectrum — the living proof that the impulse to meaningful hand gesture is universal, not confined to the classically trained. It shows what mudras look like when they evolve organically from community life rather than from scripture.',
+    sources: [{ label: 'Sahapedia — Yakshagana: The Performance', url: 'http://www.sahapedia.org/yakshagana-the-performance' }]
+  },
+  {
+    id: 'theyyam',
+    name: 'Theyyam',
+    region: 'North Kerala (Malabar)',
+    period: 'c. 1st millennium CE',
+    color: '#c8641a', colorLight: '#fce8d8', colorText: '#7a3a0a',
+    icon: '🔥',
+    summary: 'Theyyam — "god" in Malayalam — is not dance as performance but as possession ritual. The Theyyam performer becomes the deity. The hand formations used are invocatory tantric mudras, not narrative hastas — they are used to call the divine into the human body.',
+    mudra_body: 'In Theyyam, the mudras function as invocations, not illustrations. Each deity has a specific sequence of hand formations that must be performed during the ritual transformation — the Toyyam (preparation) phase before the deity "descends" into the performer. These are not drawn from the Natya Shastra or Hastalakshana Deepika — they are from the indigenous tantric ritual traditions of North Kerala, preserved within specific hereditary communities (primarily Malayan, Vannan, and Peruvannan). The hand formations activate the divine presence — they are gestures of summoning.',
+    key_mudras: ['Deity-specific invocatory formations — each of the 400+ Theyyam deities has its own gesture sequence during the possession ritual', 'Abhaya variants — the deity reassures devotees through specific protective hand formations once the possession is complete', 'Offering gestures — specific formations for receiving and giving sacred objects, flowers, and blessings during the ritual'],
+    uniqueness: 'Theyyam is the only Indian performance tradition where the mudra\'s function is literal possession — the gesture is not a representation of the divine but the mechanism by which the divine enters. It is the closest surviving link between mudra and its oldest prehistorical function as magic gesture.',
+    sources: [{ label: 'Universal Group — Indian Dance Forms', url: 'https://universalinstitutions.com/indian-dance/' }]
+  },
+  {
+    id: 'krishnattam',
+    name: 'Krishnattam',
+    region: 'Kerala (Guruvayur Temple)',
+    period: '17th century CE (Manaveda, King of Calicut)',
+    color: '#2060a8', colorLight: '#e4eef8', colorText: '#102848',
+    icon: '🦚',
+    summary: 'Krishnattam is a sacred dance-drama performed exclusively at the Guruvayur Sri Krishna Temple in Kerala — the only temple in India where this form is maintained. It depicts the complete life of Krishna over 8 nights and uses the Hastalakshana Deepika mudra system in an extraordinarily devotional context.',
+    mudra_body: 'Krishnattam is the immediate ancestor of Kathakali — it predates Kathakali by about a century and shares its complete mudra vocabulary from the Hastalakshana Deepika. But where Kathakali has become a performative art staged for audiences worldwide, Krishnattam remains exclusively ritualistic — it is performed only within the Guruvayur temple precincts, only by the temple\'s hereditary performers, and only as an offering to Krishna. The mudras are not performed for an audience in the conventional sense — they are performed for the deity. The same hand gestures that in Kathakali communicate to a human audience here communicate directly to God.',
+    key_mudras: ['All 24 Hastalakshana Deepika mudras — the same vocabulary as Kathakali, used in the original temple ritual context', 'Specific "peacock feather" mudra sequences for the Krishna navarasa (nine emotions of Krishna) — these are among the most elaborated in any Indian tradition', 'The Sudarshana Chakra (divine wheel) gesture — a rapid spinning double-hand formation depicting Krishna\'s weapon'],
+    uniqueness: 'Krishnattam is the purest surviving example of mudra-as-devotion — every gesture is a prayer. The form has barely changed since the 17th century because it is protected within a single temple and performed only as divine offering, not public performance.',
+    sources: [{ label: 'Kerala Tourism — Kalaripayattu Marma', url: 'https://www.keralatourism.org/kalaripayattu/kalari-treatment/marmavidya-marmas' }]
+  },
+];
+
+// ── ICONS ──
+const musicIcons = {
+  vedic_tala: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#fdf8ec" rx="40"/><circle cx="40" cy="40" r="24" fill="none" stroke="#b8882a" stroke-width="1.5" opacity="0.3"/><g stroke="#b8882a" stroke-width="1.5"><line x1="40" y1="16" x2="40" y2="28"/><line x1="40" y1="52" x2="40" y2="64"/><line x1="16" y1="40" x2="28" y2="40"/><line x1="52" y1="40" x2="64" y2="40"/><line x1="23" y1="23" x2="31" y2="31"/><line x1="49" y1="49" x2="57" y2="57"/><line x1="57" y1="23" x2="49" y2="31"/><line x1="23" y1="57" x2="31" y2="49"/></g><text x="40" y="46" text-anchor="middle" font-family="serif" font-size="18" fill="#b8882a">ॐ</text></svg>`,
+  carnatic_mudra: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#fce8d8" rx="40"/><path d="M20 55 Q28 38 36 35 Q44 32 50 40 Q56 48 60 42 Q64 36 62 28" stroke="#c8641a" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="36" cy="35" r="4" fill="#c8641a" opacity="0.6"/><circle cx="50" cy="40" r="4" fill="#c8641a" opacity="0.6"/><text x="40" y="68" text-anchor="middle" font-family="serif" font-size="9" fill="#c8641a" opacity="0.8" letter-spacing="1">MUDRA</text></svg>`,
+  carnatic_vocal: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#e0f5ec" rx="40"/><ellipse cx="40" cy="35" rx="12" ry="16" fill="none" stroke="#2a7a6a" stroke-width="2"/><path d="M24 44 Q22 58 40 62 Q58 58 56 44" stroke="#2a7a6a" stroke-width="1.5" fill="none" stroke-linecap="round"/><line x1="40" y1="62" x2="40" y2="70" stroke="#2a7a6a" stroke-width="1.5"/><path d="M32 70 L48 70" stroke="#2a7a6a" stroke-width="1.5" stroke-linecap="round"/><path d="M15 38 Q12 42 15 46" stroke="#2a7a6a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/><path d="M65 38 Q68 42 65 46" stroke="#2a7a6a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/></svg>`,
+  hindustani_tala: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#e6e4f5" rx="40"/><ellipse cx="40" cy="52" rx="20" ry="12" fill="#c8c0e8" stroke="#3a3880" stroke-width="1.5"/><rect x="32" y="28" width="16" height="24" rx="4" fill="#d8d0f0" stroke="#3a3880" stroke-width="1.5"/><ellipse cx="40" cy="28" rx="8" ry="5" fill="#e0d8f8" stroke="#3a3880" stroke-width="1.5"/><line x1="26" y1="40" x2="20" y2="30" stroke="#3a3880" stroke-width="1.5" stroke-linecap="round"/><line x1="54" y1="40" x2="60" y2="30" stroke="#3a3880" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+};
+
+const danceIcons = {
+  kathak: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#e6e4f5" rx="40"/><circle cx="40" cy="40" r="26" fill="none" stroke="#3a3880" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.3"/><circle cx="40" cy="40" r="18" fill="none" stroke="#3a3880" stroke-width="0.8" opacity="0.3"/><circle cx="40" cy="40" r="10" fill="none" stroke="#3a3880" stroke-width="1" opacity="0.5"/><circle cx="40" cy="22" r="3" fill="#3a3880" opacity="0.6"/><circle cx="55" cy="30" r="3" fill="#3a3880" opacity="0.6"/><circle cx="58" cy="50" r="3" fill="#3a3880" opacity="0.6"/><circle cx="45" cy="62" r="3" fill="#3a3880" opacity="0.6"/><circle cx="28" cy="58" r="3" fill="#3a3880" opacity="0.6"/><circle cx="22" cy="40" r="3" fill="#3a3880" opacity="0.6"/><circle cx="40" cy="40" r="5" fill="#3a3880" opacity="0.5"/></svg>`,
+  sattriya: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#e0f5e4" rx="40"/><path d="M40 18 Q34 28 34 38 Q34 50 40 56 Q46 50 46 38 Q46 28 40 18Z" fill="#2a6a3a" opacity="0.5"/><path d="M24 30 Q34 34 36 42 Q28 46 22 44 Q18 36 24 30Z" fill="#2a6a3a" opacity="0.35"/><path d="M56 30 Q46 34 44 42 Q52 46 58 44 Q62 36 56 30Z" fill="#2a6a3a" opacity="0.35"/><circle cx="40" cy="36" r="5" fill="#2a6a3a" opacity="0.6"/><path d="M36 62 Q40 56 44 62" stroke="#2a6a3a" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>`,
+  kutiyattam: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#fce8e5" rx="40"/><path d="M28 55 Q20 42 24 30 Q28 18 40 16 Q52 18 56 30 Q60 42 52 55 L28 55Z" fill="#f0c0b8" opacity="0.5" stroke="#c03830" stroke-width="1.5"/><circle cx="32" cy="34" r="4" fill="#c03830" opacity="0.5"/><circle cx="48" cy="34" r="4" fill="#c03830" opacity="0.5"/><path d="M33 48 Q40 52 47 48" stroke="#c03830" stroke-width="1.5" fill="none" stroke-linecap="round"/><line x1="40" y1="55" x2="40" y2="66" stroke="#c03830" stroke-width="1.5"/><line x1="32" y1="66" x2="48" y2="66" stroke="#c03830" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+  yakshagana: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#fdf0d8" rx="40"/><path d="M40 14 L46 28 L62 28 L50 38 L54 54 L40 44 L26 54 L30 38 L18 28 L34 28 Z" fill="#e8c060" opacity="0.6" stroke="#b8882a" stroke-width="1.2"/><circle cx="40" cy="34" r="7" fill="#b8882a" opacity="0.4"/></svg>`,
+  theyyam: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#fce8d8" rx="40"/><path d="M40 62 Q26 50 28 36 Q30 22 40 18 Q50 22 52 36 Q54 50 40 62Z" fill="#f08040" opacity="0.6" stroke="#c8641a" stroke-width="1.5"/><path d="M28 36 L16 26 M52 36 L64 26" stroke="#c8641a" stroke-width="1.5" stroke-linecap="round"/><path d="M28 48 L18 52 M52 48 L62 52" stroke="#c8641a" stroke-width="1.5" stroke-linecap="round"/><circle cx="40" cy="36" r="8" fill="#fce8d8" opacity="0.8"/><circle cx="36" cy="34" r="2.5" fill="#c8641a" opacity="0.7"/><circle cx="44" cy="34" r="2.5" fill="#c8641a" opacity="0.7"/></svg>`,
+  krishnattam: `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" fill="#e4eef8" rx="40"/><g fill="#2060a8" opacity="0.4"><ellipse cx="40" cy="24" rx="5" ry="9" transform="rotate(0,40,40)"/><ellipse cx="40" cy="24" rx="5" ry="9" transform="rotate(45,40,40)"/><ellipse cx="40" cy="24" rx="5" ry="9" transform="rotate(90,40,40)"/><ellipse cx="40" cy="24" rx="5" ry="9" transform="rotate(135,40,40)"/><ellipse cx="40" cy="24" rx="5" ry="9" transform="rotate(180,40,40)"/><ellipse cx="40" cy="24" rx="5" ry="9" transform="rotate(225,40,40)"/><ellipse cx="40" cy="24" rx="5" ry="9" transform="rotate(270,40,40)"/><ellipse cx="40" cy="24" rx="5" ry="9" transform="rotate(315,40,40)"/></g><circle cx="40" cy="40" r="11" fill="#d0e0f0" stroke="#2060a8" stroke-width="1.5"/><circle cx="40" cy="40" r="5" fill="#2060a8" opacity="0.6"/></svg>`,
+};
+
+// ── RENDER MUSIC ──
+function renderMusic() {
+  const grid = document.getElementById('music-grid');
+  if (!grid) return;
+  grid.innerHTML = musicData.map((m,i) => `
+    <div class="p-card" id="pc-${m.id}" style="animation-delay:${i*50}ms;border-top:3px solid ${m.color}" onclick="toggleP('${m.id}','m')">
+      <div class="p-face">
+        ${musicIcons[m.id] || `<div class="p-icon-text" style="background:${m.colorLight};color:${m.color}">${m.icon}</div>`}
+        <div class="p-meta">
+          <p class="p-period" style="color:${m.color}">${m.period}</p>
+          <p class="p-name">${m.name}</p>
+          <p class="p-trad"><span style="background:${m.colorLight};color:${m.colorText};padding:2px 8px;border-radius:2px;font-size:0.65rem">${m.tradition}</span></p>
+          <p class="p-summary">${m.summary.slice(0,110)}…</p>
+          <span class="expand-cue">Tap to explore <span class="cue-arrow">↓</span></span>
+        </div>
+      </div>
+      <div class="p-expand" id="px-${m.id}">
+        <div class="m-expand-inner">
+          <div class="full"><span class="detail-label">In depth</span><p class="detail-body">${m.body}</p></div>
+          <div>
+            <span class="detail-label">Specific gestures</span>
+            ${m.gestures.map(g=>`<div class="mudra-row"><p class="mudra-row-name" style="color:${m.color}">${g.name}</p><p class="mudra-row-form"><em>${g.form}</em></p><p class="mudra-row-use">${g.use}</p></div>`).join('')}
+          </div>
+          <div class="full"><span class="detail-label">Significance</span><p class="detail-body">${m.significance}</p></div>
+          <div class="sources-row full"><span class="sources-label">References</span>${m.sources.map(s=>`<a class="source-chip" href="${s.url}" target="_blank" onclick="event.stopPropagation()">↗ ${s.label}</a>`).join('')}</div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// ── RENDER DANCE ──
+function renderDance() {
+  const grid = document.getElementById('dance-grid');
+  if (!grid) return;
+  grid.innerHTML = danceData.map((d,i) => `
+    <div class="p-card" id="pc-d${d.id}" style="animation-delay:${i*50}ms;border-top:3px solid ${d.color}" onclick="toggleP('d${d.id}','d')">
+      <div class="p-face">
+        ${danceIcons[d.id] || `<div class="p-icon-text" style="background:${d.colorLight};color:${d.color}">${d.icon}</div>`}
+        <div class="p-meta">
+          <p class="p-period" style="color:${d.color}">${d.period}</p>
+          <p class="p-name">${d.name}</p>
+          <p class="p-trad"><span style="background:${d.colorLight};color:${d.colorText};padding:2px 8px;border-radius:2px;font-size:0.65rem">${d.region}</span></p>
+          <p class="p-summary">${d.summary.slice(0,110)}…</p>
+          <span class="expand-cue">Tap to explore <span class="cue-arrow">↓</span></span>
+        </div>
+      </div>
+      <div class="p-expand" id="px-d${d.id}">
+        <div class="m-expand-inner">
+          <div class="full"><span class="detail-label">About the tradition</span><p class="detail-body">${d.summary}</p></div>
+          <div class="full"><span class="detail-label">Role of mudras</span><p class="detail-body">${d.mudra_body}</p></div>
+          <div>
+            <span class="detail-label">Key mudras used</span>
+            ${d.key_mudras.map(k=>`<div class="mudra-row"><p class="mudra-row-use">${k}</p></div>`).join('')}
+          </div>
+          <div class="full"><span class="detail-label">What makes this tradition unique</span><p class="detail-body">${d.uniqueness}</p></div>
+          <div class="sources-row full"><span class="sources-label">References</span>${d.sources.map(s=>`<a class="source-chip" href="${s.url}" target="_blank" onclick="event.stopPropagation()">↗ ${s.label}</a>`).join('')}</div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleP(id, type) {
+  const card = document.getElementById('pc-'+id);
+  const exp  = document.getElementById('px-'+id);
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.p-card.open').forEach(c=>c.classList.remove('open'));
+  document.querySelectorAll('.p-expand').forEach(e=>e.style.maxHeight='0');
+  if (!isOpen) {
+    card.classList.add('open');
+    exp.style.maxHeight = exp.scrollHeight + 2000 + 'px';
+    setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'start'}),60);
+  }
+}
+
+renderMusic();
+renderDance();
+
+</script>
+
+</body>
+</html>
